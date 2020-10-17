@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import { HashRouter, Route, Link } from "react-router-dom";
+import Muscles from "./pages/Choosemuscles"
+import Workouts from "./pages/Createworkout"
+import Dashboard from "./pages/Datadashboard"
+import Stats from "./pages/Enterstats"
+import Login from "./pages/Login"
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <HashRouter basename='/'>
+    <div>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/about" component={Dashboard}/>
+          <Route exact path="/portfolio" component={Stats}/>
+          <Route exact path="/contact" component={Muscles}/>
+          <Route exact path="/workouts" component={Workouts}/>
     </div>
+  </HashRouter>
+
   );
 }
 
