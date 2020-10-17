@@ -1,7 +1,7 @@
 import React from 'react';
-import Navbar from "../components2/Navbar/Navbar"
-import Footer from "../components2/Footer/Footer"
-import Wrapper from "../components2/Wrapper/Wrapper"
+import Navbar from "../components/Navbar/Navbar"
+import Footer from "../components/Footer/Footer"
+import Wrapper from "../components/Wrapper/Wrapper"
 function Dashboard() {
   
     return (
