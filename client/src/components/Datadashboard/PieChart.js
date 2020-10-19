@@ -1,29 +1,50 @@
 import React, { Component } from 'react';
-import '../node_modules/react-vis/dist/style.css';
-import {XYPlot, LineSeries} from 'react-vis';
+import "../../../node_modules/react-vis/dist/style.css"
+import { RadialChart } from '../../../node_modules/react-vis';
+import "./chartStyle.css"
 
-class TestChart extends Component {
-  render() {
-    const data = [
-      {x: 0, y: 8},
-      {x: 1, y: 5},
-      {x: 2, y: 4},
-      {x: 3, y: 9},
-      {x: 4, y: 1},
-      {x: 5, y: 7},
-      {x: 6, y: 6},
-      {x: 7, y: 3},
-      {x: 8, y: 2},
-      {x: 9, y: 0}
-    ];
-    return (
-      <div className="App">
-        <XYPlot height={300} width={300}>
-          <LineSeries data={data} />
-        </XYPlot>
-      </div>
-    );
-  }
+class PieChart extends Component {
+    render() {
+        const myData = [
+            {
+                angle: 51,
+                innerRadius: 0.7,
+                label: "exercise 1"
+            },
+            {
+                angle: 51,
+                innerRadius: 0.7
+            },
+            {
+                angle: 51,
+                innerRadius: 0.7
+            },
+            {
+                angle: 51,
+                innerRadius: 0.7
+            },
+            {
+                angle: 51,
+                innerRadius: 0.7
+            },
+            {
+                angle: 51,
+                innerRadius: 0.7
+            },
+            {
+                angle: 52,
+                innerRadius: 0.7,
+                color: "#8df542"
+            }
+        ];
+
+        return (
+            <div className="chart col-lg-4 col-md-4 col-sm-8 m-5">
+                <p>Muscle Balance History</p>
+                <RadialChart data={myData} width={300} height={300}/>
+            </div>
+        );
+    }
 }
 
-export default TestChart;
+export default PieChart;
