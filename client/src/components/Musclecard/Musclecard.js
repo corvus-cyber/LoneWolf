@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import muscles from "../../exercises.json";
+import { Link } from "react-router-dom";
 import Form from "./Form"
 import Container from "../SelectionContainer/SelectionContainer"
 
@@ -26,7 +27,14 @@ render(){
           />
         ))}
       </div>
-      
+      <div className="row justify-content-center">
+        <li className="nav-item nav-link">
+            <Link
+                to="/exercises" className={window.location.pathname === "/exercises" || window.location.pathname === "/workouts" ? "nav-link active" : "exercises"}>
+                    <button type="submit" className="btn btn-primary btn-lg btn-block" style={{backgroundColor: "#F4C430", borderColor: "#F4C430"}}>Choose Exercises</button>
+            </Link>
+        </li>
+      </div>
     </div>
     </Container>
 

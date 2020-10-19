@@ -1,5 +1,6 @@
 import React from 'react';
 import { HashRouter, Route, Link } from "react-router-dom";
+import Exercises from "./pages/Chooseexercises"
 import Muscles from "./pages/Choosemuscles"
 import Workouts from "./pages/Createworkout"
 import Dashboard from "./pages/Datadashboard"
@@ -14,6 +15,7 @@ function App() {
           <Route exact path="/dashboard" component={Dashboard}/>
           <Route exact path="/stats" component={Stats}/>
           <Route exact path="/build" component={Muscles}/>
+          <Route exact path="/exercises" component={Exercises}/>
           <Route exact path="/workouts" component={Workouts}/>
     </div>
   </HashRouter>
