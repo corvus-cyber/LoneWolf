@@ -1,0 +1,180 @@
+[
+    {
+        "name": "Chest",
+        "nameID": 1,
+        "image": "/assets/muscleGroups/image1.png",
+        "exercises":[
+            {
+                "exercise": "Rotational Pushup",
+                "exercise-id": 1,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            },
+            {
+                "exercise": "Plyo Pushup",
+                "exercise-id": 2,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            },
+            {
+                "exercise": "Decline Pushup",
+                "exercise-id": 3,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            }
+        ]
+    },
+    {
+        "name": "Back",
+        "nameID": 2,
+        "image":"/assets/muscleGroups/image2.png",
+        "exercises":[
+            {
+                "exercise": "Inverted row",
+                "exercise-id": 1,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            },
+            {
+                "exercise": "Pull-up",
+                "exercise-id": 2,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            },
+            {
+                "exercise": "Around the World Pull-up",
+                "exercise-id": 3,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            }
+        ]
+    },
+    {
+        "name": "Shoulders",
+        "nameID": 3,
+        "image": "/assets/muscleGroups/image1.png",
+        "exercises":[
+            {
+                "exercise": "Rotational Pushup",
+                "exercise-id": 1,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            },
+            {
+                "exercise": "Plyo Pushup",
+                "exercise-id": 2,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            },
+            {
+                "exercise": "Decline Pushup",
+                "exercise-id": 3,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            }
+        ]
+    },
+    {
+        "name": "Biceps",
+        "nameID": 4,
+        "image": "/assets/muscleGroups/image1.png",
+        "exercises":[
+            {
+                "exercise": "Rotational Pushup",
+                "exercise-id": 1,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            },
+            {
+                "exercise": "Plyo Pushup",
+                "exercise-id": 2,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            },
+            {
+                "exercise": "Decline Pushup",
+                "exercise-id": 3,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            }
+        ]
+    },
+    {
+        "name": "Triceps",
+        "nameID": 5,
+        "image": "/assets/muscleGroups/image1.png",
+        "exercises":[
+            {
+                "exercise": "Rotational Pushup",
+                "exercise-id": 1,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            },
+            {
+                "exercise": "Plyo Pushup",
+                "exercise-id": 2,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            },
+            {
+                "exercise": "Decline Pushup",
+                "exercise-id": 3,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            }
+        ]
+    },
+    {
+        "name": "Quadriceps",
+        "nameID": 6,
+        "image": "/assets/muscleGroups/image1.png",
+        "exercises":[
+            {
+                "exercise": "Rotational Pushup",
+                "exercise-id": 1,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            },
+            {
+                "exercise": "Plyo Pushup",
+                "exercise-id": 2,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            },
+            {
+                "exercise": "Decline Pushup",
+                "exercise-id": 3,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            }
+        ]
+    },
+    {
+        "name": "Hamstrings and Glutes",
+        "nameID": 7,
+        "image": "/assets/muscleGroups/image1.png",
+        "exercises":[
+            {
+                "exercise": "Rotational Pushup",
+                "exercise-id": 1,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            },
+            {
+                "exercise": "Plyo Pushup",
+                "exercise-id": 2,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            },
+            {
+                "exercise": "Decline Pushup",
+                "exercise-id": 3,
+                "gif": "test",
+                "description": "Here is write out of how to perform exercise"
+            }
+        ]
+    }
+
+
+
+]

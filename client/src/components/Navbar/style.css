@@ -1,0 +1,24 @@
+.navbar {
+    
+    background-color: #ffffff;
+    border-bottom-style: solid;
+    border-bottom-width: 15px;
+    border-bottom-color: #355e3b;
+} 
+
+.logo{
+    min-width: 300px;    
+    width: 50%;
+}
+
+
+
+.navbar-toggler-icon {
+    color: black;
+}
+
+
+.navbar-light .navbar-nav .nav-link {
+    font-size: large;
+    color: black
+}
