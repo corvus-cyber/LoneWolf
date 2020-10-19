@@ -37,21 +37,21 @@ export default class Navbar extends Component {
                     </li>
                     <li className="nav-item nav-link">
                         <Link
-                                to="/portfolio" className={window.location.pathname === "/portfolio" || window.location.pathname === "/portfolio" ? "nav-link active" : "nav-link"}
+                                to="/dashboard" className={window.location.pathname === "/portfolio" || window.location.pathname === "/portfolio" ? "nav-link active" : "nav-link"}
                         >
                         Dashboard
                         </Link>
                     </li>
                     <li className="nav-item nav-link">
                         <Link
-                                to="/contact" className={window.location.pathname === "/contact" || window.location.pathname === "/contact" ? "nav-link active" : "nav-link"}
+                                to="/stats" className={window.location.pathname === "/contact" || window.location.pathname === "/contact" ? "nav-link active" : "nav-link"}
                         >
                         Enter Stats
                         </Link>
                     </li>
                     <li className="nav-item nav-link">
                         <Link
-                                to="/contact" className={window.location.pathname === "/contact" || window.location.pathname === "/contact" ? "nav-link active" : "nav-link"}
+                                to="/build" className={window.location.pathname === "/contact" || window.location.pathname === "/contact" ? "nav-link active" : "nav-link"}
                         >
                         Build Workout
                         </Link>

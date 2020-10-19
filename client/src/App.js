@@ -11,9 +11,9 @@ function App() {
     <HashRouter basename='/'>
     <div>
           <Route exact path="/" component={Login} />
-          <Route exact path="/about" component={Dashboard}/>
-          <Route exact path="/portfolio" component={Stats}/>
-          <Route exact path="/contact" component={Muscles}/>
+          <Route exact path="/dashboard" component={Dashboard}/>
+          <Route exact path="/stats" component={Stats}/>
+          <Route exact path="/build" component={Muscles}/>
           <Route exact path="/workouts" component={Workouts}/>
     </div>
   </HashRouter>
