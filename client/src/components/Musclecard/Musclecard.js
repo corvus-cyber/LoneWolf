@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import muscles from "../../exercises.json";
 import Form from "./Form"
+import Container from "../SelectionContainer/SelectionContainer"
 
 class Muscles extends Component{
   state= {
@@ -10,9 +11,12 @@ render(){
 
   
   return(
-    <div>
-    <img id="muscleImage" src="logo.svg" alt="muscle groups"></img>
-      <div className="row">
+    <Container>
+    <div className="mt-5 pt-4 pb-4">
+      <div className="row justify-content-center">
+        <img id="muscleImage" src="logo.svg" alt="muscle groups"></img>
+      </div>
+      <div className="row justify-content-center">
         {this.state.muscles.map(muscles=>(
           <Form
             key = {muscles.nameID}
@@ -22,7 +26,9 @@ render(){
           />
         ))}
       </div>
+      
     </div>
+    </Container>
 
 
   );
