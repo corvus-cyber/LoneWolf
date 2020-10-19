@@ -1,7 +1,7 @@
 import React from 'react';
 import Wrapper from "../Wrapper/Wrapper"
 import { Link } from "react-router-dom";
-import "./style.css"
+import "../Style/style.css"
 function Login(){
     return(
         <Wrapper>

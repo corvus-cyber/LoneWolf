@@ -27,35 +27,31 @@ export default class Navbar extends Component {
                 <ul className="navbar-nav ml-auto navFont">
                     <li className="nav-item nav-link">
                         <Link
-                            to="/" className={window.location.pathname === "/" || window.location.pathname === "/about" ? "nav-link active" : "nav-link"}
-                        >
-                        Log Out 
-                        </Link>
-                    </li>
-                    <li className="nav-item nav-link">
-                        <a className="nav-link" href download="resume">Resume</a>
-                    </li>
-                    <li className="nav-item nav-link">
-                        <Link
-                                to="/dashboard" className={window.location.pathname === "/portfolio" || window.location.pathname === "/portfolio" ? "nav-link active" : "nav-link"}
+                                to="/dashboard" className={window.location.pathname === "/dashboard" || window.location.pathname === "/portfolio" ? "nav-link active" : "nav-link"}
                         >
                         Dashboard
                         </Link>
                     </li>
                     <li className="nav-item nav-link">
                         <Link
-                                to="/stats" className={window.location.pathname === "/contact" || window.location.pathname === "/contact" ? "nav-link active" : "nav-link"}
+                                to="/stats" className={window.location.pathname === "/stats" || window.location.pathname === "/contact" ? "nav-link active" : "nav-link"}
                         >
                         Enter Stats
                         </Link>
                     </li>
                     <li className="nav-item nav-link">
                         <Link
-                                to="/build" className={window.location.pathname === "/contact" || window.location.pathname === "/contact" ? "nav-link active" : "nav-link"}
+                                to="/build" className={window.location.pathname === "/build" || window.location.pathname === "/contact" ? "nav-link active" : "nav-link"}
                         >
                         Build Workout
                         </Link>
-    
+                    </li>
+                    <li className="nav-item nav-link">
+                        <Link
+                            to="/" className={window.location.pathname === "/" || window.location.pathname === "/about" ? "nav-link active" : "nav-link"}
+                        >
+                        Log Out 
+                        </Link>
                     </li>
                 </ul>
             </div>
