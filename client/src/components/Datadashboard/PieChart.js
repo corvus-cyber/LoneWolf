@@ -13,7 +13,8 @@ class PieChart extends Component {
             },
             {
                 angle: 51,
-                innerRadius: 0.7
+                innerRadius: 0.7,
+                label: "exercise 2"
             },
             {
                 angle: 51,
@@ -37,10 +38,22 @@ class PieChart extends Component {
             }
         ];
 
+
         return (
             <div className="chart col-lg-4 col-md-4 col-sm-8 m-5">
                 <p>Muscle Balance History</p>
-                <RadialChart data={myData} width={300} height={300} showLabels={true} padAngle={0.05}/>
+                <RadialChart data={myData} width={300} height={300} padAngle={0.05} showLabels={true} 
+                onMouseEnter={(event) => {
+                    const labelText = event.target.childNodes[1].childNodes[0];
+                    console.log(labelText);
+                    labelText.style.display = "inline";
+                    }}
+                onMouseLeave={(event) => {
+                    const labelText = event.target.childNodes[1].childNodes[0];
+                    console.log(labelText);
+                    labelText.style.display = "none";
+                }}
+                />
             </div>
         );
     }
