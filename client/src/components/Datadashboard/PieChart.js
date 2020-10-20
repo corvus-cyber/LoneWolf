@@ -34,14 +34,13 @@ class PieChart extends Component {
             {
                 angle: 52,
                 innerRadius: 0.7,
-                color: "#8df542"
             }
         ];
 
         return (
             <div className="chart col-lg-4 col-md-4 col-sm-8 m-5">
                 <p>Muscle Balance History</p>
-                <RadialChart data={myData} width={300} height={300}/>
+                <RadialChart data={myData} width={300} height={300} showLabels={true} padAngle={0.05}/>
             </div>
         );
     }
