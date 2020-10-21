@@ -15,17 +15,16 @@ const  Muscles = ()=>{
        
         <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center">
             <div className="btn-group-toggle" data-toggle="buttons">
-              <button key={muscles.nameID} type="button" onClick={changeImg, displayExercises} className="btn btn-primary btn-lg btn-block">{muscles.name}</button>
+              <button key={muscles.nameID} type="button" onClick={() => {changeImg(); displayExercises(muscles.name)}} 
+              className="btn btn-primary btn-lg btn-block">{muscles.name}</button>
           </div>
         </div>  
       )
 
     }
   const displayExercises = () =>{
-    console.log(data)
-      let exercises = data.filter((muscles)=>{
-        return muscles.exercises 
-      }).map((exercises)=>{
+    var muscle = exercises.filter(muscle => { return muscle.name === muscleName })[0].map((exercises)=>{
+        return(
         <div className="mr-2 ml-2">
         <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center">
           <div className="card" style={{width: 18 + "rem"}}>
@@ -44,9 +43,10 @@ const  Muscles = ()=>{
           </div> 
         </div> 
       </div>
+        )
       })
-
-  }
+    }
+  // }
   function changeImg() {
     return data.filter()
       document.getElementById("muscleImage").src = process.env.PUBLIC_URL + "muscles.image"
