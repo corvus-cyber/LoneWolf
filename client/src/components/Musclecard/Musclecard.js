@@ -15,7 +15,7 @@ const  Muscles = ()=>{
        
         <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center">
             <div className="btn-group-toggle" data-toggle="buttons">
-              <button key={muscles.nameID} type="button" onClick={() => {changeImg(); displayExercises(muscles.name)}} 
+              <button key={muscles.nameID} type="button" onClick={() => {displayExercises(muscles.name)}} 
               className="btn btn-primary btn-lg btn-block">{muscles.name}</button>
           </div>
         </div>  
@@ -23,7 +23,7 @@ const  Muscles = ()=>{
 
     }
   const displayExercises = () =>{
-    var muscle = exercises.filter(muscle => { return muscle.name === muscleName })[0].map((exercises)=>{
+    var muscle = data.filter(muscle => { return muscle.name === muscle.name[0] }).muscle.exercises.map((exercises)=>{
         return(
         <div className="mr-2 ml-2">
         <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center">
