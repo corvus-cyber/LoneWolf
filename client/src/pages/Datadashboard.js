@@ -6,6 +6,7 @@ import React from 'react';
 import PieChart from "../components/Datadashboard/PieChart";
 import WeightChart from "../components/Datadashboard/WeightChart";
 import RepsChart from "../components/Datadashboard/RepsChart";
+import TimeChart from "../components/Datadashboard/TimeChart";
 
 function Dashboard() {
 
@@ -21,6 +22,9 @@ function Dashboard() {
           </div>
           <div className="row justify-content-center">
             <RepsChart />
+          </div>
+          <div className="row justify-content-center">
+            <TimeChart />
           </div>
         </div>
       </Wrapper>

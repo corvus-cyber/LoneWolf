@@ -4,5 +4,5 @@
 }
 
 .rv-xy-plot__series--label-text {
-    display: none;
+    font-size: 15px;
 }
