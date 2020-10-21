@@ -1,16 +1,22 @@
 import React, { Component } from "react";
-import muscles from "../../exercises.json";
 import { Link } from "react-router-dom";
+import data from "../../exercises.json"
 import Form from "./Form"
 import Container from "../SelectionContainer/SelectionContainer"
 
 class Exercises extends Component{
-  state= {
-    muscles
-  }
-render(){
+  // state= {
+  //   muscles: []
+  // }
 
-  
+  // componentDidMount(result){
+  //     this.setState({
+  //       muscles: result.data
+  //     })
+  // }
+render(){
+  console.log(data)
+  // const {muscles} = this.state;
   return(
     <Container>
     <div className="mt-5 pt-4 pb-4">
@@ -18,13 +24,13 @@ render(){
         <img id="muscleImage" src="logo.svg" alt="muscle groups"></img>
       </div>
       <div className="row justify-content-center">
-        {this.state.muscles.map(muscles=>(
+        {data.map(muscle=>(
           <Form
-            key = {muscles.exercises.exerciseID}
-            gif = {muscles.exercises.gif}
-            id = {muscles.exercises.exerciseID}
-            name= {muscles.exercises.exercise}
-            description= {muscles.exercises.description}
+            key = {muscle.exercises.exerciseID}
+            gif = {muscle.exercises.gif}
+            id = {muscle.exercises.exerciseID}
+            name= {muscle.exercises.exercise}
+            description= {muscle.exercises.description}
           />
         ))}
       </div>
