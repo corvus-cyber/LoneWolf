@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import data from "../../exercises.json";
 import { Link } from "react-router-dom";
 import Container from "../SelectionContainer/SelectionContainer";
@@ -8,7 +8,7 @@ import {
 } from "react-icons/bs";
 
 const  Muscles = ()=>{
-  
+    const  
     
     const Form = () =>{
       console.log(data)
@@ -29,7 +29,7 @@ const  Muscles = ()=>{
     let muscle = data.filter(muscle => { return name === muscle.name})[0]
     console.log("appropriate muscle", muscle)
     muscle.exercises.map((exercises)=>{
-      console.log("digging ", muscle)
+      console.log("digging ", exercises)
         return(
           <div className="mr-2 ml-2">
           <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center">
