@@ -15,30 +15,34 @@ const  Muscles = ()=>{
        
         <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center">
             <div className="btn-group-toggle" data-toggle="buttons">
-              <button key={muscles.nameID} type="button" onClick={() => {displayExercises(muscles.name)}} 
+              <button key={muscles.nameID} type="button" onClick={() => {DisplayExercises(muscles.name)}} 
               className="btn btn-primary btn-lg btn-block">{muscles.name}</button>
           </div>
+          <DisplayExercises/>
         </div>  
       )
 
     }
-  const displayExercises = () =>{
-    var muscle = data.filter(muscle => { return muscle.name === muscle.name[0] }).muscle.exercises.map((exercises)=>{
+  const DisplayExercises = (name) =>{
+    console.log(name)
+    let muscle = data.filter(muscle => { return name === muscle.name})
+    console.log(muscle)
+    muscle.map((muscle)=>{
         return(
         <div className="mr-2 ml-2">
         <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center">
           <div className="card" style={{width: 18 + "rem"}}>
-              <img src={process.env.PUBLIC_URL + exercises.gif} className="card-img-top" alt="portfolio screenshot"/>
+              <img src={process.env.PUBLIC_URL + muscle.exercises.gif} className="card-img-top" alt="portfolio screenshot"/>
                   <div className="card-head">
-                    <h5>{exercises.exercise}</h5>
-                  <button type="button" className="btn btn-custom show-btn " data-rel={exercises.exerciseID}>
+                    <h5>{muscle.exercises.exercise}</h5>
+                  <button type="button" className="btn btn-custom show-btn " data-rel={muscle.exercises.exerciseID}>
                       <BsFillInfoCircleFill/>
                   </button>
                   </div>
-                  <div className="card-reveal" data-rel={exercises.exercise} style={{display: "none"}}>
-                  <button type="button" className="close" data-rel={exercises.exercise} data-dismiss="modal" aria-label="Close">
+                  <div className="card-reveal" data-rel={muscle.exercises.exercise} style={{display: "none"}}>
+                  <button type="button" className="close" data-rel={muscle.exercises.exercise} data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span></button>
-                  <p>{exercises.description}</p>
+                  <p>{muscle.exercises.description}</p>
                 </div>
           </div> 
         </div> 
@@ -72,7 +76,7 @@ const  Muscles = ()=>{
             name= {muscles.name}
           />
         ))} */}
-      
+
       </div>
       <div className="row justify-content-center">
         <li className="nav-item nav-link">
