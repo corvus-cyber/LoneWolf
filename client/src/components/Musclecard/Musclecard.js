@@ -2,26 +2,54 @@ import React from "react";
 import data from "../../exercises.json";
 import { Link } from "react-router-dom";
 import Container from "../SelectionContainer/SelectionContainer"
+import {
+  BsFillInfoCircleFill
+} from "react-icons/bs";
 
 const  Muscles = ()=>{
   
     
     const Form = () =>{
       console.log(data)
-       return data.map(test => 
+       return data.map(muscles => 
        
         <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center">
             <div className="btn-group-toggle" data-toggle="buttons">
-              <button key={test.nameID} type="button" onClick={changeImg} className="btn btn-primary btn-lg btn-block">{test.name}</button>
+              <button key={muscles.nameID} type="button" onClick={changeImg, displayExercises} className="btn btn-primary btn-lg btn-block">{muscles.name}</button>
           </div>
-        </div>
-          
-        )
+        </div>  
+      )
 
     }
+  const displayExercises = () =>{
+    console.log(data)
+      let exercises = data.filter((muscles)=>{
+        return muscles.exercises 
+      }).map((exercises)=>{
+        <div className="mr-2 ml-2">
+        <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center">
+          <div className="card" style={{width: 18 + "rem"}}>
+              <img src={process.env.PUBLIC_URL + exercises.gif} className="card-img-top" alt="portfolio screenshot"/>
+                  <div className="card-head">
+                    <h5>{exercises.exercise}</h5>
+                  <button type="button" className="btn btn-custom show-btn " data-rel={exercises.exerciseID}>
+                      <BsFillInfoCircleFill/>
+                  </button>
+                  </div>
+                  <div className="card-reveal" data-rel={exercises.exercise} style={{display: "none"}}>
+                  <button type="button" className="close" data-rel={exercises.exercise} data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span></button>
+                  <p>{exercises.description}</p>
+                </div>
+          </div> 
+        </div> 
+      </div>
+      })
+
+  }
   function changeImg() {
-    
-      document.getElementById("muscleImage").src = process.env.PUBLIC_URL + test.image
+    return data.filter()
+      document.getElementById("muscleImage").src = process.env.PUBLIC_URL + "muscles.image"
    }
   
    
