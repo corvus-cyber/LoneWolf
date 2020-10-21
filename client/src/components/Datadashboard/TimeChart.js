@@ -3,7 +3,7 @@ import "../../../node_modules/react-vis/dist/style.css"
 import { XYPlot, VerticalGridLines, HorizontalGridLines, LineSeries, XAxis, YAxis } from 'react-vis/dist';
 import "./chartStyle.css"
 
-export default class RepsChart extends Component {
+export default class TimeChart extends Component {
   render() {
     const chest = [
       { x: 0, y: 1 },
@@ -60,17 +60,25 @@ export default class RepsChart extends Component {
       { x: 14, y: 19 },
       { x: 21, y: 12 },
       { x: 28, y: 16 }
-    ]
+    ];
+    const conditioning = [
+        { x: 0, y: 20 },
+        { x: 7, y: 16 },
+        { x: 14, y: 5 },
+        { x: 21, y: 12 },
+        { x: 28, y: 16 }
+      ]
     //plug in the colors of the Line Series here:
-    const myPalette = ["red", "blue", "#03fce7", "green", "orange", "purple", "black", "pink"]
+    const myPalette = ["red", "blue", "#03fce7", "green", "orange", "purple", "black", "pink", "#8af542"]
     
     return (
       <div className="chart col-md-8 col-sm-8 m-5">
-        <p>Cumulative Expercise Reps Chart (Week Total)</p>
+        <p>Cumulative Exercise Time Chart (Week Total)</p>
+
         {/* plug in the x and y range here */}
         <XYPlot height={300} width={700} xDomain={[0, 30]} yDomain={[0, 20]}
           colorType="category"
-          colorDomain={[0, 1, 2, 3, 4, 5, 6, 7]}
+          colorDomain={[0, 1, 2, 3, 4, 5, 6, 7, 8]}
           colorRange={myPalette}>
           <VerticalGridLines />
           <HorizontalGridLines />
@@ -84,9 +92,11 @@ export default class RepsChart extends Component {
           <LineSeries data={quadriceps} color={5} />
           <LineSeries data={hamstringsAndGlutes} color={6} />
           <LineSeries data={abdominals} color={7} />
+          <LineSeries data={conditioning} color={8} />
 
+          {/* plug in x and y axis title here */}
           <XAxis title="dates" />
-          <YAxis title="reps" />
+          <YAxis title="mins" />
         </XYPlot>
       </div>
     );
