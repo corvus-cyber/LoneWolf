@@ -1,0 +1,8 @@
+.chart {
+    font-size: 25px;
+    /* text-align: center; */
+}
+
+.rv-xy-plot__series--label-text {
+    display: none;
+}
