@@ -1,8 +1,8 @@
-import React, {Component} from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 
-function link(){
+function StatsLink(){
     return(
         <div className="row justify-content-center">
             <li className="nav-item nav-link">
@@ -15,4 +15,4 @@ function link(){
     )
 }
 
-export default link;
+export default StatsLink;
