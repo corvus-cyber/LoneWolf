@@ -1,31 +1,50 @@
-import React, { Component } from "react";
-import muscles from "../../exercises.json";
+import React from "react";
+import data from "../../exercises.json";
 import { Link } from "react-router-dom";
-import Form from "./Form"
 import Container from "../SelectionContainer/SelectionContainer"
 
-class Muscles extends Component{
-  state= {
-    muscles
-  }
-render(){
-
+const  Muscles = ()=>{
   
+    
+    const Form = () =>{
+      console.log(data)
+       return data.map(test => 
+       
+        <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center">
+            <div className="btn-group-toggle" data-toggle="buttons">
+              <button key={test.nameID} type="button" onClick={changeImg} className="btn btn-primary btn-lg btn-block">{test.name}</button>
+          </div>
+        </div>
+          
+        )
+
+    }
+  function changeImg() {
+    
+      document.getElementById("muscleImage").src = process.env.PUBLIC_URL + test.image
+   }
+  
+   
+   
   return(
     <Container>
     <div className="mt-5 pt-4 pb-4">
       <div className="row justify-content-center">
         <img id="muscleImage" src="logo.svg" alt="muscle groups"></img>
       </div>
-      <div className="row justify-content-center">
-        {this.state.muscles.map(muscles=>(
+        <div className="row justify-content-center">
+       
+     <Form/>
+
+        {/* {data.map(muscles=>(
           <Form
             key = {muscles.nameID}
             image = {muscles.image}
             id = {muscles.nameID}
             name= {muscles.name}
           />
-        ))}
+        ))} */}
+      
       </div>
       <div className="row justify-content-center">
         <li className="nav-item nav-link">
@@ -40,7 +59,7 @@ render(){
 
 
   );
-}
+
 }
 
 export default Muscles;
