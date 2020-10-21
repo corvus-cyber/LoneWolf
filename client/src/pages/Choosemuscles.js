@@ -3,7 +3,6 @@ import Navbar from "../components/Navbar/Navbar"
 import Footer from "../components/Footer/Footer"
 import Wrapper from "../components/Wrapper/Wrapper"
 import Musclecard from "../components/Musclecard/Musclecard"
-import Exercisecard from "../components/ExerciseCard/Exercisecard"
 function Muscles() {
   
     return (
@@ -11,7 +10,7 @@ function Muscles() {
         <Navbar /> 
         <Wrapper>
             <Musclecard/>
-            <Exercisecard/>
+           
         </Wrapper>
         <Footer />
       </div>
