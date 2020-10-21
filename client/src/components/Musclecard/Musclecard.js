@@ -26,29 +26,29 @@ const  Muscles = ()=>{
   const DisplayExercises = (name) =>{
     console.log(name)
     console.log(data)
-    let muscle = data.filter(muscle => { return name === muscle.name})
-    console.log(muscle)
-    muscle.map((exercises)=>{
-      console.log("digging " + muscle.exercises.exercise)
+    let muscle = data.filter(muscle => { return name === muscle.name})[0]
+    console.log("appropriate muscle", muscle)
+    muscle.exercises.map((exercises)=>{
+      console.log("digging ", muscle)
         return(
-        <div className="mr-2 ml-2">
-        <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center">
-          <div className="card" style={{width: 18 + "rem"}} key={exercises.exerciseID}>
-              <img src={process.env.PUBLIC_URL + exercises.gif} className="card-img-top" alt="portfolio screenshot"/>
-                  <div className="card-head">
-                    <h5>{exercises.exercise}</h5>
-                  <button type="button" className="btn btn-custom show-btn " data-rel={exercises.exerciseID}>
-                      <BsFillInfoCircleFill/>
-                  </button>
+          <div className="mr-2 ml-2">
+          <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center">
+            <div className="card" style={{width: 18 + "rem"}} key={exercises.exerciseID}>
+                <img src={process.env.PUBLIC_URL + exercises.gif} className="card-img-top" alt="portfolio screenshot"/>
+                    <div className="card-head">
+                      <h5>{exercises.exercise}</h5>
+                    <button type="button" className="btn btn-custom show-btn " data-rel={exercises.exerciseID}>
+                        <BsFillInfoCircleFill/>
+                    </button>
+                    </div>
+                    <div className="card-reveal" data-rel={exercises.exercise} style={{display: "none"}}>
+                    <button type="button" className="close" data-rel={exercises.exercise} data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span></button>
+                    <p>{exercises.description}</p>
                   </div>
-                  <div className="card-reveal" data-rel={exercises.exercise} style={{display: "none"}}>
-                  <button type="button" className="close" data-rel={exercises.exercise} data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span></button>
-                  <p>{exercises.description}</p>
-                </div>
+            </div> 
           </div> 
-        </div> 
-      </div>
+        </div>
         )
       })
     }
