@@ -1,4 +1,5 @@
 .selection-container{
-    background-color: #d8d8d8;
-    border-radius: 25px
+    border-color: black;
+    border-radius: 25px;
+    box-shadow: 0 0 5px;
 }
