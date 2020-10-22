@@ -2,7 +2,7 @@
     {
         "name": "Chest",
         "nameID": 1,
-        "image": "/assets/muscleGroups/image1.png",
+        "image": "/assets/muscleGroups/Chest.png",
         "exercises":[
             {
                 "exercise": "Rotational Pushup",
@@ -27,7 +27,7 @@
     {
         "name": "Back",
         "nameID": 2,
-        "image":"/assets/muscleGroups/image2.png",
+        "image":"/assets/muscleGroups/Back.png",
         "exercises":[
             {
                 "exercise": "Inverted Row",
@@ -52,7 +52,7 @@
     {
         "name": "Shoulders",
         "nameID": 3,
-        "image": "/assets/muscleGroups/image1.png",
+        "image": "/assets/muscleGroups/Shoulders.png",
         "exercises":[
             {
                 "exercise": "Pike Press",
@@ -77,7 +77,7 @@
     {
         "name": "Biceps",
         "nameID": 4,
-        "image": "/assets/muscleGroups/image1.png",
+        "image": "/assets/muscleGroups/Biceps.png",
         "exercises":[
             {
                 "exercise": "Inverted Bodyweight Curls",
@@ -102,7 +102,7 @@
     {
         "name": "Triceps",
         "nameID": 5,
-        "image": "/assets/muscleGroups/image1.png",
+        "image": "/assets/muscleGroups/Triceps.png",
         "exercises":[
             {
                 "exercise": "Sphinx Pushups",
@@ -127,7 +127,7 @@
     {
         "name": "Quadriceps",
         "nameID": 6,
-        "image": "/assets/muscleGroups/image1.png",
+        "image": "/assets/muscleGroups/Quadriceps.png",
         "exercises":[
             {
                 "exercise": "Alternating Single Leg Box/Chair Squat",
@@ -152,7 +152,7 @@
     {
         "name": "Hamstrings and Glutes",
         "nameID": 7,
-        "image": "/assets/muscleGroups/image1.png",
+        "image": "/assets/muscleGroups/Hamstrings.png",
         "exercises":[
             {
                 "exercise": "Single Leg Hip Bucks",
@@ -177,7 +177,7 @@
     {
         "name": "Abdominals",
         "nameID": 8,
-        "image": "/assets/muscleGroups/image1.png",
+        "image": "/assets/muscleGroups/Abdominals.png",
         "exercises":[
             {
                 "exercise": "Alternating Seated Ab Circles",
@@ -202,7 +202,7 @@
     {
         "name": "Conditioning",
         "nameID": 9,
-        "image": "/assets/muscleGroups/image1.png",
+        "image": "/assets/muscleGroups/None.png",
         "exercises":[
             {
                 "exercise": "Mountain Climbers",
