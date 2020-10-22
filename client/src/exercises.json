@@ -130,7 +130,7 @@
         "image": "/assets/muscleGroups/Quadriceps.png",
         "exercises":[
             {
-                "exercise": "Alternating Single Leg Box/Chair Squat",
+                "exercise": "Single Leg Box/Chair Squat",
                 "exerciseID": 1,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
