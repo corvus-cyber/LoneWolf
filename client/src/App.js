@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { HashRouter, Route} from "react-router-dom";
+
 import Exercises from "./pages/Chooseexercises"
 import Muscles from "./pages/Choosemuscles"
 import Workouts from "./pages/Createworkout"
