@@ -18,7 +18,7 @@ export default class Navbar extends Component {
     return (
         <nav className="navbar navbar-expand-lg navbar-light absolute-top">
             <div className="navbar-brand">
-                <img className="logo" src="true" alt="LoneWolf logo"/>
+                <img className="logo" src={process.env.PUBLIC_URL + "/assets/logo/Blacklogo.png"} alt="LoneWolf logo"/>
             </div>
             <button className="navbar-toggler ml-auto" type="button" onClick={ this.toggleMenu }>
                 <span className="navbar-toggler-icon"></span>

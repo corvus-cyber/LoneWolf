@@ -31,19 +31,19 @@
         "exercises":[
             {
                 "exercise": "Inverted Row",
-                "exerciseID": 1,
+                "exerciseID": 4,
                 "gif": "test",
                 "description": "If you don't have access to a gym, you can set up for this by placing a broom handle or rod between two benches or chairs. Lie beneath the bar with your shoulders parallel to it, with your legs either bent or straight out. Grab the bar, and pull yourself up till your chest almost touches, squeezing your shoulder blades together. Lower yourself back down and repeat."
             },
             {
                 "exercise": "Pull-up",
-                "exerciseID": 2,
+                "exerciseID": 5,
                 "gif": "test",
                 "description": "Position yourself beneath a pull-up bar. Grab the bar with your hands facing away from you at slightly wider than shoulder width. Contract your shoulder blades together, and pull yourself up till your head comes up over the bar. Be sure to lower yourself all the way back down before beginning to come back up. If not strong enough yet you can still perform by anchoring a resistance band to the bar and looping it through your feet."
             },
             {
                 "exercise": "Around the World Pull-up",
-                "exerciseID": 3,
+                "exerciseID": 6,
                 "gif": "test",
                 "description": "An exercise that will target one side of the back at the time, you will assume the same position as the standard pull-up. As you come up though, you will not do so in a straight line. Instead you'll pull yourself up towards one of your hands, come over the top, and then lower yourself back down on the other side. Pause for a moment, then pull yourself up the opposite way this time."
             }
@@ -56,19 +56,19 @@
         "exercises":[
             {
                 "exercise": "Pike Press",
-                "exerciseID": 1,
+                "exerciseID": 7,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
             },
             {
                 "exercise": "Handstand Pushup",
-                "exerciseID": 2,
+                "exerciseID": 8,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
             },
             {
                 "exercise": "Bodyweight Side-Lateral Raise",
-                "exerciseID": 3,
+                "exerciseID": 9,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
             }
@@ -81,19 +81,19 @@
         "exercises":[
             {
                 "exercise": "Inverted Bodyweight Curls",
-                "exerciseID": 1,
+                "exerciseID": 10,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
             },
             {
                 "exercise": "Chin-ups",
-                "exerciseID": 2,
+                "exerciseID": 11,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
             },
             {
                 "exercise": "Commando Pull-ups",
-                "exerciseID": 3,
+                "exerciseID": 12,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
             }
@@ -106,19 +106,19 @@
         "exercises":[
             {
                 "exercise": "Sphinx Pushups",
-                "exerciseID": 1,
+                "exerciseID": 13,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
             },
             {
                 "exercise": "Bodyweight Tricep Extension",
-                "exerciseID": 2,
+                "exerciseID": 14,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
             },
             {
                 "exercise": "Chair Dips",
-                "exerciseID": 3,
+                "exerciseID": 15,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
             }
@@ -131,19 +131,19 @@
         "exercises":[
             {
                 "exercise": "Single Leg Box/Chair Squat",
-                "exerciseID": 1,
+                "exerciseID": 16,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
             },
             {
                 "exercise": "1 1/2 Prisoner Squats",
-                "exerciseID": 2,
+                "exerciseID": 17,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
             },
             {
                 "exercise": "Jump Squats",
-                "exerciseID": 3,
+                "exerciseID": 18,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
             }
@@ -156,19 +156,19 @@
         "exercises":[
             {
                 "exercise": "Single Leg Hip Bucks",
-                "exerciseID": 1,
+                "exerciseID": 19,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
             },
             {
                 "exercise": "Heel Touch Squats",
-                "exerciseID": 2,
+                "exerciseID": 20,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
             },
             {
                 "exercise": "Plyometric Sprinter Lunge",
-                "exerciseID": 3,
+                "exerciseID": 21,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
             }
@@ -181,19 +181,19 @@
         "exercises":[
             {
                 "exercise": "Alternating Seated Ab Circles",
-                "exerciseID": 1,
+                "exerciseID": 22,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
             },
             {
                 "exercise": "Frog Crunches",
-                "exerciseID": 2,
+                "exerciseID": 23,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
             },
             {
                 "exercise": "Elevated Side Plank Lifts",
-                "exerciseID": 3,
+                "exerciseID": 24,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
             }
@@ -206,19 +206,19 @@
         "exercises":[
             {
                 "exercise": "Mountain Climbers",
-                "exerciseID": 1,
+                "exerciseID": 25,
                 "gif": "test",
                 "description": "Assume a pushup position, with your legs fully extended behind you. Bring one knee up to your chest, and then quickly replace it with the other, letting the first leg return to its original place. Continue alternating back and forth, being sure to not let your glutes and lower back rise."
             },
             {
                 "exercise": "High Knees",
-                "exerciseID": 2,
+                "exerciseID": 26,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
             },
             {
                 "exercise": "Side Shuffle to Burpee",
-                "exerciseID": 3,
+                "exerciseID": 27,
                 "gif": "test",
                 "description": "Here is write out of how to perform exercise"
             }
