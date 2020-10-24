@@ -1,26 +1,29 @@
 import React, {useState} from 'react'
-import "./style.css"
+// import {useLocation} from "react-router-dom";
+  
+import Container from "../SelectionContainer/SelectionContainer";
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
-
 import {
-  BsFillInfoCircleFill
-} from "react-icons/bs";
+    BsFillInfoCircleFill
+  } from "react-icons/bs";
 
 
-export default function Exercisecard(props) {
+export default function MainWorkout(props) {
     const [isOpen, setIsOpen] = useState(false);
-    
-    
+    // const location = useLocation();
     const toggle = () => setIsOpen(!isOpen);
-
-    function handleOnClick(){
-        console.log(props.exercise);
-        props.exerciseArray(props.exercise);
+    // console.log(location)
+    if (!props.exercise){
+        return <div>Empty</div>
     }
+    
+    
 
-return(
-    <div className="mr-2 ml-2">
-        {console.log(props.exercise)}
+    return(
+        <Container>
+            
+            <div className="mr-2 ml-2">
+                {console.log(props.exercise)}
                 <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center">
                     <div className="card" style={{width: 18 + "rem"}} key={props.exercise.exerciseID}>
                         <img src={process.env.PUBLIC_URL + props.exercise.gif} className="card-img-top" alt="gif of exercise"/>
@@ -32,7 +35,7 @@ return(
                                     <div className="form-group">
                                         <input type="hidden" name="weight" value={props.exercise} className="form-control" id="weight" placeholder="Weight" />
                                     </div>
-                                    <Button className="mr-1" color="primary" onClick={handleOnClick} style={{ marginBottom: '1rem' }}>Add To Workout</Button>
+                                    <Button className="mr-1" color="primary" style={{ marginBottom: '1rem' }}>Add To Workout</Button>
                                 </form>    
                             
                             <Button className="ml-1" color="primary" onClick={toggle} style={{ marginBottom: '1rem' }}><BsFillInfoCircleFill/></Button>
@@ -47,5 +50,6 @@ return(
                     </div> 
                 </div> 
             </div>
+        </Container>
     )
 }
