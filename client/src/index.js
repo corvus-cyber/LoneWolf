@@ -3,12 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter } from 'react-router-dom';
+import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";
 
 ReactDOM.render(
+  <BrowserRouter>
+  <Auth0ProviderWithHistory>
   <React.Fragment>
     <App />
-  </React.Fragment>,
+  </React.Fragment>
+  </Auth0ProviderWithHistory>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
