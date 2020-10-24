@@ -7,15 +7,16 @@ import Muscles from "./pages/Choosemuscles"
 import Workouts from "./pages/Createworkout"
 import Dashboard from "./pages/Datadashboard"
 import Stats from "./pages/Enterstats"
-// import Login from "./pages/Login"
+import { Auth0Provider } from "@auth0/auth0-react";
 
 function App() {
 
   return (
-    <Router basename='/'>
+    <Router>
+      <Auth0Provider>
       <div>
-        <Route exact path='/' component={Home} exact />
-        <Route exact path='/callback' component={Callback} exact />
+        <Route exact path='/' component={Home}/>
+        <Route exact path='/callback' component={Callback}/>
         {/* <Route exact path="/" component={Login} /> */}
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/stats" component={Stats} />
@@ -23,8 +24,8 @@ function App() {
         <Route exact path="/exercises" component={Exercises} />
         <Route exact path="/workouts" component={Workouts} />
       </div>
+      </Auth0Provider>
     </Router>
-
   );
 }
 

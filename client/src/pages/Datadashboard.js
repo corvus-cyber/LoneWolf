@@ -2,13 +2,29 @@ import Navbar from "../components/Navbar/Navbar"
 import Footer from "../components/Footer/Footer"
 import Wrapper from "../components/Wrapper/Wrapper"
 import StatsLink from "../components/Dashboardlinks/Dashboardlinks"
-import React from 'react';
+import React, {useEffect} from 'react';
 import PieChart from "../components/Datadashboard/PieChart";
 import WeightChart from "../components/Datadashboard/WeightChart";
 import RepsChart from "../components/Datadashboard/RepsChart";
 import TimeChart from "../components/Datadashboard/TimeChart";
+// import { useAuth0 } from "@auth0/auth0-react";
+import auth0Client from '../Auth';
+
 
 function Dashboard() {
+
+useEffect(() => {
+  if (!auth0Client.isAuthenticated()) {
+    auth0Client.signIn();
+}
+  return () => {
+  }
+}, []) 
+
+  // const { user } = useAuth0();
+  // const { name, picture, email } = user;  
+  // console.log(user);
+  console.log(auth0Client.getProfile())
 
   return (
     <div>
