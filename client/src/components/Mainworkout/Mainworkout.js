@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
+
 // import {useLocation} from "react-router-dom";
-  
+import "./style.css"
 import Container from "../SelectionContainer/SelectionContainer";
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
 import {
-    BsFillInfoCircleFill
+    BsFillInfoCircleFill,
+    
   } from "react-icons/bs";
 
 
@@ -19,9 +21,7 @@ export default function MainWorkout(props) {
     
     
 
-    return(
-        <Container>
-            
+    return(     
             <div className="mr-2 ml-2">
                 {console.log(props.exercise)}
                 <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center">
@@ -50,6 +50,5 @@ export default function MainWorkout(props) {
                     </div> 
                 </div> 
             </div>
-        </Container>
     )
 }
