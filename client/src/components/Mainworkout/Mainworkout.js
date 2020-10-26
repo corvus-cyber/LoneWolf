@@ -18,37 +18,39 @@ export default function MainWorkout(props) {
     if (!props.exercise){
         return <div>Empty</div>
     }
-    
+
+    function handleOnClick(){
+        console.log(props.exercise);
+        props.exerciseArray(props.exercise);
+    }
     
 
     return(     
-            <div className="mr-2 ml-2">
+            <div className="row exercise mb-2" key={props.exercise.exerciseID}>
                 {console.log(props.exercise)}
-                <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center">
-                    <div className="card" style={{width: 18 + "rem"}} key={props.exercise.exerciseID}>
-                        <img src={process.env.PUBLIC_URL + props.exercise.gif} className="card-img-top" alt="gif of exercise"/>
-                            <div className="card-head">
-                            <h5>{props.exercise.exercise}</h5>
-                            </div>
-                            <div className="justify-content-center text-center">
-                                <form className="form">
-                                    <div className="form-group">
-                                        <input type="hidden" name="weight" value={props.exercise} className="form-control" id="weight" placeholder="Weight" />
-                                    </div>
-                                    <Button className="mr-1" color="primary" style={{ marginBottom: '1rem' }}>Add To Workout</Button>
-                                </form>    
-                            
-                            <Button className="ml-1" color="primary" onClick={toggle} style={{ marginBottom: '1rem' }}><BsFillInfoCircleFill/></Button>
-                            <Collapse isOpen={isOpen}>
-                                <Card>
-                                <CardBody>
-                                {props.exercise.description}
-                                </CardBody>
-                                </Card>
-                            </Collapse>
-                            </div>
-                    </div> 
+                <div className="col-md-6 text-center justify-content-center">
+                    <img src={process.env.PUBLIC_URL + props.exercise.gif} className="img-fluid" alt="gif of exercise"/>
                 </div> 
-            </div>
+                <div className="col-md-2 mt-5 text-center"><h6>{props.exercise.exercise}</h6></div>
+
+                    <div className="justify-content-center text-center pt-2 pl-5">
+                        <form className="form">
+                            <div className="form-group">
+                                <input type="number" className="form-control" id={props.exercise.muscle + " sets"}  placeholder="Enter sets"/>
+                                <input type="number" className="form-control" id={props.exercise.muscle +" reps"}  placeholder="Enter reps"/>
+                                <input type="number" className="form-control" id={props.exercise.muscle +"time"} placeholder="Enter time (secs)"/>
+                            </div>
+                            <Button className="mr-1" onClick={handleOnClick} style={{backgroundColor:"#F4C430", color: "black",  marginBottom: '1rem' }}>Complete</Button>
+                        </form>    
+                    </div>
+                    <Button className="mr-2 ml-2 mt-2"  onClick={toggle} style={{ backgroundColor: "#367e3b",marginBottom: '1rem' }}><BsFillInfoCircleFill/></Button>
+                    <Collapse className="pr-2 pl-2 text-center" isOpen={isOpen}>
+                        <CardBody>
+                            {props.exercise.description}
+                        </CardBody>
+                    </Collapse>              
+            </div> 
+
+
     )
 }
