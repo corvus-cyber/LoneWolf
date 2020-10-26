@@ -3,3 +3,14 @@
     background-color: #F4C430; 
     border-color: #F4C430
 }
+
+.exercise{
+    border-color: black;
+    border-radius: 25px;
+    box-shadow: 0 0 5px;
+}
+
+.btn-information{
+    background-color: #367e3b;
+    border-color: #367e3b
+}

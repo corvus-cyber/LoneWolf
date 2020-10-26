@@ -37,11 +37,9 @@ return(
                             
                             <Button className="ml-1" color="primary" onClick={toggle} style={{ marginBottom: '1rem' }}><BsFillInfoCircleFill/></Button>
                             <Collapse isOpen={isOpen}>
-                                <Card>
                                 <CardBody>
                                 {props.exercise.description}
                                 </CardBody>
-                                </Card>
                             </Collapse>
                             </div>
                     </div> 

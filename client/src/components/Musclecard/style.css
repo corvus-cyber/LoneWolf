@@ -27,6 +27,13 @@ h5 {
     margin-right: auto;
 }
 
-.muscleBttns{
-    background-color: #f2eded;
+.btn-muscleBttns{
+    background-color: #367e3b;
+    border-color: #367e3b
+}
+
+.btn-routeToWorkout{
+    border-color: black;
+    border-radius: 25px;
+    box-shadow: 0 0 5px;
 }

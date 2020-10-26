@@ -2,9 +2,13 @@ import React, {Component} from "react";
 import data from "../../exercises.json";
 import { Link } from "react-router-dom";
 import Container from "../SelectionContainer/SelectionContainer";
-import MainWorkout from "../Mainworkout/Mainworkout"
 import "./style.css"
 import ExerciseCard from "./Exercisecard"
+import {
+  GiMuscleUp
+
+} from "react-icons/gi";
+
 
 class Muscles extends Component{
     state={
@@ -23,10 +27,10 @@ class Muscles extends Component{
       console.log(data)
         return data.map(muscles => 
         
-        <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center" key={muscles.nameID}>
+        <div className="col-md-4 mr-2 ml-2 mt-2 text-center justify-content-center" key={muscles.nameID}>
             <div className="btn-group-toggle" data-toggle="buttons">
-              <button key={muscles.nameID} type="button" style={{backgroundColor: "#367e3b", borderColor: "#367e3b"}} onClick={() => {displayMusclesandExercises(muscles.name)}} 
-              className="btn btn-primary btn-lg btn-block">{muscles.name}</button>
+              <button key={muscles.nameID} type="button" style={{}} onClick={() => {displayMusclesandExercises(muscles.name)}} 
+              className="btn-muscleBttns btn-lg btn-block"><h5>{muscles.name}</h5></button>
           </div>
         </div>  
       )
@@ -46,7 +50,7 @@ class Muscles extends Component{
       
     <div className="mt-5 pt-4 pb-4 justify-content-center">
       <div className="row justify-content-center">
-        <img className="img-fluid" id="muscleImage" stlye={{maxWidth: "20" + "%"}} src={process.env.PUBLIC_URL + "/assets/muscleGroups/None.png"}  alt="muscle groups"></img>
+        <img className="img-fluid" id="muscleImage" style={{maxWidth: "55" + "%"}} src={process.env.PUBLIC_URL + "/assets/muscleGroups/None.png"}  alt="muscle groups"></img>
       </div>
       <div className="row justify-content-center">
         <Form/>
@@ -61,12 +65,12 @@ class Muscles extends Component{
                     
             ))}
       </div>
-      <div className="row justify-content-center">
+      <div className="row justify-content-center mt-5">
         <li className="nav-item nav-link text-center">
             <Link
                 to= {{pathname: "/workouts",
                 state: {workoutExercises: this.state.workoutExercises }}}>
-                    <button type="submit" className="btn btn-primary btn-lg btn-block" disabled={this.state.workoutExercises.length<1} style={{backgroundColor: "#F4C430", borderColor: "#F4C430"}}>Build Workout</button>
+                    <button type="submit" className="btn btn-routeToWorkout btn-lg btn-block" disabled={this.state.workoutExercises.length<1} style={{backgroundColor: "#F4C430", borderColor: "#F4C430"}}><GiMuscleUp/> Build Workout<GiMuscleUp/></button>
             </Link>
         </li>
       </div>

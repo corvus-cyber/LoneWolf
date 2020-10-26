@@ -8,7 +8,7 @@ function Form(props){
     return(
     <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center">
         <div className="btn-group-toggle" data-toggle="buttons">
-            <button type="button" onClick={changeImg} class="btn btn-primary btn-lg btn-block">{props.name} </button>
+            <button type="button" onClick={changeImg} class="btn btn-muscleBttns btn-lg btn-block">{props.name} </button>
         </div>
     </div>
     )
