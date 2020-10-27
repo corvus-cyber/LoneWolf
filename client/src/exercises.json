@@ -8,7 +8,7 @@
                 "exercise": "Rotational Pushup",
                 "muscle": "Chest",
                 "exerciseID": 1,
-                "gif": "test",
+                "gif": "/assets/exercises/testing-gif.gif",
                 "description": "Assume a standard pushup positon, hands beneath your shoulders, either on your knees or feet. Lower yourself to the ground, being careful to not flare your elbows. As you come back up you will begin to twist to one side, rotating until one hand is barely touching the ground as it comes across your body."
                 
             },
@@ -66,21 +66,22 @@
                 "muscle": "Shoulders",
                 "exerciseID": 7,
                 "gif": "test",
-                "description": "Here is write out of how to perform exercise"
+                "description": "Assume a push-up position with your hands wider than shoulder width. Bend at the waist and lift your heels off the floor,  so your body forms a V-shape. Bend at your elbows to lower your head towards the floor. Then push back explosively to the start position. You can go to your knees for a easier version of this or put your feet on a bench to increase difficulty."
             },
             {
                 "exercise": "Handstand Pushup",
                 "muscle": "Shoulders",
                 "exerciseID": 8,
                 "gif": "test",
-                "description": "Here is write out of how to perform exercise"
+                "description": "Facing the wall, place hands 6 to 12 inches away from the wall, about shoulder-width apart, and kick up into a handstand. Engage your legs and core so that your body forms a straight line. Then slowly lower yourself till your head grazes the floor by bending your elbows at a 45-degree angle. Explode back to the top by pressing through the floor and straightening your arms."
             },
             {
                 "exercise": "Bodyweight Side-Lateral Raise",
                 "muscle": "Shoulders",
                 "exerciseID": 9,
                 "gif": "test",
-                "description": "Here is write out of how to perform exercise"
+                "description": "Assume a plank position with your forearms on the ground.  Begin by dropping down just a bit (collapsing on the forearm) and then reversing the motion and pushing up as you rotate your body away from the working shoulder."  
+                
             }
         ]
     },
@@ -90,25 +91,25 @@
         "image": "/assets/muscleGroups/Biceps.png",
         "exercises":[
             {
-                "exercise": "Inverted Bodyweight Curls",
+                "exercise": "Inverted Bicep Curls",
                 "muscle": "Biceps",
                 "exerciseID": 10,
                 "gif": "test",
-                "description": "Here is write out of how to perform exercise"
+                "description": "If you don't have access to a gym, you can set up for this by placing a broom handle or rod between two benches or chairs. Lie beneath the bar with your face right beneath it, with your legs either bent or straight out. Grab the bar in an underhand grip, and flexing your biceps and elbows, curl yourself up till your face almost touches, really focusing on contracting your biceps. Lower yourself back down and repeat."
             },
             {
                 "exercise": "Chin-ups",
                 "muscle": "Biceps",
                 "exerciseID": 11,
                 "gif": "test",
-                "description": "Here is write out of how to perform exercise"
+                "description": "Position yourself beneath a pull-up bar. Grab the bar with your hands towards you at shoulder width. Contract your shoulder blades together, and pull yourself up till your chin comes up over the bar. Be sure to lower yourself all the way back down before beginning to come back up. If not strong enough yet you can still perform by anchoring a resistance band to the bar and looping it through your feet."
             },
             {
                 "exercise": "Commando Pull-ups",
                 "muscle": "Biceps",
                 "exerciseID": 12,
                 "gif": "test",
-                "description": "Here is write out of how to perform exercise"
+                "description": "Stand with your body facing the end of the pull up bar and grab it with both palms facing in. As you pull up, keep your body perpendicular to the bar. Move your head to one side as you bring your shoulder as close to the bar as you can. Slowly lower yourself down. With each new  repetition, alternate with side of the bar you move your head.Switch hand positions (which hand is in front) each set."
             }
         ]
     },
@@ -122,21 +123,21 @@
                 "muscle": "Triceps",
                 "exerciseID": 13,
                 "gif": "test",
-                "description": "Here is write out of how to perform exercise"
+                "description": "Assume a traditional push-up position with your arms straight and your core engaged, hands beneath shoulders. Slowly bend your elbows to the floor to descend until your forearms are resting on the ground, then press through your palms to extend your arms back into the starting position. Be sure to focus on activating your triceps. You can also perform these on your knees if they are too difficult."
             },
             {
-                "exercise": "Bodyweight Tricep Extension",
+                "exercise": "Cobra Pushups",
                 "muscle": "Triceps",
                 "exerciseID": 14,
                 "gif": "test",
-                "description": "Here is write out of how to perform exercise"
+                "description": "Assume a traditional push-up position with your arms straight and your core engaged, hands beneath shoulders. lowering your hips toward the floor, scoop your chest forward as if you're trying to dive down and under a bar into an upward-facing dog pose, with thighs off the floor. Push back up to the starting push up position."
             },
             {
                 "exercise": "Chair Dips",
                 "muscle": "Triceps",
                 "exerciseID": 15,
                 "gif": "test",
-                "description": "Here is write out of how to perform exercise"
+                "description": "Positioning your back facing the chair or bench, place your hands on the edge of the bench while stretching your legs out in front of your, straight or bent. From here, you want to make sure that you open your chest and keep your shoulders back rather than letting them  fall forward as you start the exercise. Keeping your body close to the bench, slowly dip down until your elbows are at the same height as your shoulders. Slowly push back up, squeezing through the triceps. Do not lock the elbows out at the top of the exercise, and repeat."
             }
         ]
     },
@@ -150,21 +151,21 @@
                 "muscle": "Quadriceps",
                 "exerciseID": 16,
                 "gif": "test",
-                "description": "Here is write out of how to perform exercise"
+                "description": "Stand up with a box or chair behind you. Hold your arms out in front of you  for balance, and raise one foot off the floor in front of your body. Engaging your core, lower yourself down till your glutes touch the chair. Keeping your torso as upright as you can, push your body up to a standing position without putting down your lifted foot."
             },
             {
                 "exercise": "1 1/2 Prisoner Squats",
                 "muscle": "Quadriceps",
                 "exerciseID": 17,
                 "gif": "test",
-                "description": "Here is write out of how to perform exercise"
+                "description": "Stand with your legs slightly wider than hip-width apart, your pointing slightly out. Place both of your hands behind your head. Begin to bend from your hips and bend your knees, lowering down till your glutes are hovering above the ground. Begin to straighten back up, but when your thighs are parallel pause and then descend yet again. Aftwards you straighten back up all the way, completing one rep. "
             },
             {
                 "exercise": "Jump Squats",
                 "muscle": "Quadriceps",
                 "exerciseID": 18,
                 "gif": "test",
-                "description": "Here is write out of how to perform exercise"
+                "description": "Stand tall with your feet hip-width apart, toes pointing outwards. Hinge at the hips and lower down until your glutes are hovering over the floor. Then press your feet down to explode off the floor and jump as high as you can. Allow your knees to bend 45 degrees when you land, and then immediately drop back down into a squat, and jump again."
             }
         ]
     },
@@ -178,21 +179,21 @@
                 "muscle": "Hamstrings and Glutes",
                 "exerciseID": 19,
                 "gif": "test",
-                "description": "Here is write out of how to perform exercise"
+                "description": "Start by lying on your back with your feet on a chair or bench.  Then bend your knees, bringing both feet close to your hips and keeping your feet flat on the bench. Lift one leg in the air so that only one leg remains on the chair.  Press down through your heel to lift your hips up and into the air as high as possible."
             },
             {
                 "exercise": "Heel Touch Squats",
                 "muscle": "Hamstrings and Glutes",
                 "exerciseID": 20,
                 "gif": "test",
-                "description": "Here is write out of how to perform exercise"
+                "description": "Stand up with your legs and torso straight with your hands at your side. Lift one foot up so that it slightly hovers above the ground. Hinge your hips and lower your hands until they touch the heel of the planted foot while not bending your knees, allowing your hovering foot to move behind your body for balance. "
             },
             {
                 "exercise": "Plyometric Sprinter Lunge",
                 "muscle": "Hamstrings and Glutes",
                 "exerciseID": 21,
                 "gif": "test",
-                "description": "Here is write out of how to perform exercise"
+                "description": "Start in a squat position, with knee aligned with ankle, chest leaning out over thighs. While you lunge one one leg backwards bring your hands to the ground as if preparing to break into a sprint. From there explode off the ground, driving both legs up while switching your stance."
             }
         ]
     },
@@ -206,21 +207,21 @@
                 "muscle": "Abs",
                 "exerciseID": 22,
                 "gif": "test",
-                "description": "Here is write out of how to perform exercise"
+                "description": "Seated on the ground, lean back with hands behind you for support. Keeping your legs straight, move your legs in clockwise and counterclockwise circles, alternating direction with each repetition."
             },
             {
                 "exercise": "Frog Crunches",
                 "muscle": "Abs",
                 "exerciseID": 23,
                 "gif": "test",
-                "description": "Here is write out of how to perform exercise"
+                "description": "Start on your back with your straight out in front of you, palms together. Keeping your heels together and toes pointed out, curl up your upper body so that your hands make contact with your feet. Lower yourself back to the ground and repeat."
             },
             {
                 "exercise": "Elevated Side Plank Lifts",
                 "muscle": "Abs",
                 "exerciseID": 24,
                 "gif": "test",
-                "description": "Here is write out of how to perform exercise"
+                "description": "Lie on your left side propped up on your left elbow and forearm, shoulders stacked over your elbow, legs stacked on top of each other with feet on a bench or chair, the fingers on your right hand grazing the ground for stability; from there raise your hips so that your body forms a straight line from head to heels. From there while keeping your core braced and your glutes engaged, slowly lower your left hip until it hovers over the ground. Repeat until failure and then switch sides."
             }
         ]
     },
@@ -241,14 +242,14 @@
                 "muscle": "Conditioning",
                 "exerciseID": 26,
                 "gif": "test",
-                "description": "Here is write out of how to perform exercise"
+                "description": "Stand up straight and place your feet about hip-width apart. Staying on the balls of your feet the entire time, quickly drive your right knee towards your chest, while using your opposite hand to push through (much like a sprint); bring the same leg back to the ground and immediately bring the left knee up."
             },
             {
                 "exercise": "Side Shuffle to Burpee",
                 "muscle": "Conditioning",
                 "exerciseID": 27,
                 "gif": "test",
-                "description": "Here is write out of how to perform exercise"
+                "description": "Stand with your feet hip distance apart. Hinge forward at the hips, knees bent, looking forward, chest lifted, and neutral spine. Hold your hands in loose fists in front of your chest. Move right using small quick shuffle steps for a determined amount of time before kicking your feet back into a plank position, while keeping your arms extended. Immediately return your feet into squat position. Begin shuffling in the opposite direction as before and repeat until finished."
             }
         ]
     }

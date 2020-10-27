@@ -32,10 +32,10 @@ return(
                                     <div className="form-group">
                                         <input type="hidden" name="weight" value={props.exercise} className="form-control" id="weight" placeholder="Weight" />
                                     </div>
-                                    <Button className="mr-1" color="primary" onClick={handleOnClick} style={{ marginBottom: '1rem' }}>Add To Workout</Button>
+                                    <Button className="mr-1" onClick={handleOnClick} style={{backgroundColor: "#367e3b", marginBottom: '1rem' }}>Add To Workout</Button>
                                 </form>    
                             
-                            <Button className="ml-1" color="primary" onClick={toggle} style={{ marginBottom: '1rem' }}><BsFillInfoCircleFill/></Button>
+                            <Button className="ml-1"  onClick={toggle} style={{backgroundColor: "#367e3b", marginBottom: '1rem' }}><BsFillInfoCircleFill/></Button>
                             <Collapse isOpen={isOpen}>
                                 <CardBody>
                                 {props.exercise.description}
