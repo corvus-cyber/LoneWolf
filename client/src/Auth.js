@@ -17,6 +17,16 @@ class Auth {
     this.isAuthenticated = this.isAuthenticated.bind(this);
     this.signIn = this.signIn.bind(this);
     this.signOut = this.signOut.bind(this);
+
+  //   API.createNewUser({
+  //     name: "new user",
+  //     email: "newuser@email.com",
+  //     token: "very unique token"
+  //   })
+  //   .then(res => 
+  //     console.log(res)
+  //   )
+  //   .catch(err => console.log(err));
   }
 
   getProfile() {

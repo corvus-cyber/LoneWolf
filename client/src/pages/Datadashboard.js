@@ -7,7 +7,6 @@ import PieChart from "../components/Datadashboard/PieChart";
 import WeightChart from "../components/Datadashboard/WeightChart";
 import RepsChart from "../components/Datadashboard/RepsChart";
 import TimeChart from "../components/Datadashboard/TimeChart";
-// import { useAuth0 } from "@auth0/auth0-react";
 import auth0Client from '../Auth';
 
 
@@ -21,9 +20,7 @@ useEffect(() => {
   }
 }, []) 
 
-  // const { user } = useAuth0();
   // const { name, picture, email } = user;  
-  // console.log(user);
   console.log(auth0Client.getProfile())
 
   return (

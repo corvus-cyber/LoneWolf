@@ -1,7 +1,7 @@
-const router = require("express").Router();
-const statsRoutes = require("./stats");
+// const router = require("express").Router();
+// const statsRoutes = require("./stats");
 
-// stats routes
-router.use("/stats", statsRoutes);
+// // stats routes
+// router.use("/stats", statsRoutes);
 
-module.exports = router;
+// module.exports = router;

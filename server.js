@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const routes = require("./routes");
+const apiRoutes = require("./routes/api/stats");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.use(routes);
+app.use("/api", apiRoutes);
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/lonewolf");

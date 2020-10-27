@@ -1,15 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import API from "../utils/API";
 import Navbar from "../components/Navbar/Navbar"
 import Footer from "../components/Footer/Footer"
 import Wrapper from "../components/Wrapper/Wrapper"
 import SelectionContainer from "../components/SelectionContainer/SelectionContainer"
+import auth0Client from '../Auth';
 
 function Stats() {
+
+  let day = new Date().getDate();
+
+  useEffect(() => {
+    if (!auth0Client.isAuthenticated()) {
+      auth0Client.signIn();
+  }
+    return () => {
+    }
+  }, []) 
 
   const [formObject, setFormObject] = useState({
     weight: "",
     leanBodyMass: "",
+    token: "",
+    date: ""
   })
 
   function handleInputChange(event) {
@@ -19,16 +32,19 @@ function Stats() {
 
   function handleFormSubmit(event) {
     event.preventDefault();
+    if (formObject.weight || formObject.leanBodyMass) {
       API.saveStats({
-        weight: formObject.weight,
-        leanBodyMass: formObject.leanBodyMass,
+        weight: parseInt(formObject.weight),
+        leanBodyMass: parseInt(formObject.leanBodyMass),
+        token: auth0Client.getProfile().aud,
+        date: day
       })
         .then(() => setFormObject({
           weight: "",
           leanBodyMass: ""
         }))
-        .then(console.log(formObject))
         .catch(err => console.log(err));
+    }
   };
 
   return (
