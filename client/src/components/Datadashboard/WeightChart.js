@@ -1,12 +1,25 @@
-import React, { Component } from 'react';
+import React, {useEffect} from 'react';
 import "../../../node_modules/react-vis/dist/style.css"
 import { XYPlot, VerticalGridLines, HorizontalGridLines, LineSeries, XAxis, YAxis } from 'react-vis/dist';
-import "./chartStyle.css"
+import "./chartStyle.css";
+import API from "../../utils/API";
+import auth0Client from '../../Auth';
 
-export default class WeightChart extends Component {
-  render() {
+function WeightChart () {
+  useEffect(() => {
+    loadStats()
+  }, [])
+
+  function loadStats() {
+    API.getStats()
+      .then(res => 
+        {console.log(res)}
+      )
+      .catch(err => console.log(err));
+  }
+
     const weightData = [
-      { x: 0, y: 200, label: 'Psyduck'},
+      { x: 0, y: 200},
       { x: 7, y: 190 },
       { x: 14, y: 180 },
       { x: 21, y: 186 },
@@ -32,5 +45,6 @@ export default class WeightChart extends Component {
         </XYPlot>
       </div>
     );
-  }
 }
+
+export default WeightChart;

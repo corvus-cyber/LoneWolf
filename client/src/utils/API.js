@@ -2,9 +2,9 @@ import axios from "axios";
 
 export default {
 
-  // create a new user upon the first Auth0 authentification
-  createNewUser: function(user) {
-    return axios.post("api/stats", user);
+  // get weight and lean body mass stats
+  getStats: function (token) {
+    return axios.get("/api/stats");
   },
 
   // Saves new user weight and lean body mass to the database
