@@ -11,7 +11,7 @@ import {
 
 function Workout() {
   const location = useLocation();
-  if(!location.state || location.state.workoutExercises==[]){
+  if(!location.state || location.state.workoutExercises===[]){
     return (
       <div>
         <Navbar /> 

@@ -2,8 +2,8 @@ import React, {useState} from 'react'
 
 // import {useLocation} from "react-router-dom";
 import "./style.css"
-import Container from "../SelectionContainer/SelectionContainer";
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
+
+import { Collapse, Button, CardBody} from 'reactstrap';
 import {
     BsFillInfoCircleFill,
     
@@ -21,18 +21,19 @@ export default function MainWorkout(props) {
         return <div>Empty</div>
     } 
 
-    const handleNoShow=(e)=>{
-        // setOpen(true);
-        let retrieve=document.getElementById("yellow")
-        retrieve.style.display="none"
-        console.log(retrieve)
-    }
+    function handleInputChange(event) {
 
+    };
+
+    const handleFormSubmit=()=>{
+        console.log("hello");
+    };
 
 
     
 
-    return(     
+    return(
+        <div className={open ? "open" : null}> 
             <div className="row exercise mb-2" id={"yellow"} key={props.exercise.exerciseID}>
                 {console.log(props.exercise)}
                 <div className="col-md-6 text-center justify-content-center">
@@ -47,7 +48,7 @@ export default function MainWorkout(props) {
                                 <input type="number" className="form-control" id={props.exercise.muscle +" reps"}  placeholder="Enter reps"/>
                                 <input type="number" className="form-control" id={props.exercise.muscle +"time"} placeholder="Enter time (secs)"/>
                             </div>
-                            <Button className="mr-1" onClick={handleNoShow} style={{backgroundColor:"#F4C430", color: "black",  marginBottom: '1rem' }}>Complete</Button>
+                            <Button className="mr-1" onClick={() => {setOpen(!open); handleFormSubmit()}} style={{backgroundColor:"#F4C430", color: "black",  marginBottom: '1rem' }}>Complete</Button>
                         </form>    
                     </div>
                     <Button className="mr-2 ml-2 mt-2"  onClick={toggle} style={{ backgroundColor: "#367e3b",marginBottom: '1rem' }}><BsFillInfoCircleFill/></Button>
@@ -57,7 +58,6 @@ export default function MainWorkout(props) {
                         </CardBody>
                     </Collapse>              
             </div> 
-
-
+        </div>   
     )
 }

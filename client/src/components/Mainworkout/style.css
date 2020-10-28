@@ -14,3 +14,7 @@
     background-color: #367e3b;
     border-color: #367e3b
 }
+
+.open{
+    display: none
+}
