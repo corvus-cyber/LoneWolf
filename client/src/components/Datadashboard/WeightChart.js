@@ -3,12 +3,11 @@ import "../../../node_modules/react-vis/dist/style.css"
 import { XYPlot, VerticalGridLines, HorizontalGridLines, LineSeries, XAxis, YAxis } from 'react-vis/dist';
 import "./chartStyle.css";
 import API from "../../utils/API";
-import auth0Client from '../../Auth';
 
 function WeightChart () {
-  useEffect(() => {
-    loadStats()
-  }, [])
+  // useEffect(() => {
+  //   loadStats()
+  // }, [])
 
   function loadStats() {
     API.getStats()
@@ -17,6 +16,10 @@ function WeightChart () {
       )
       .catch(err => console.log(err));
   }
+
+  let token = localStorage.getItem("token");
+  console.log(token);
+
 
     const weightData = [
       { x: 0, y: 200},

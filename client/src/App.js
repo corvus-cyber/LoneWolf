@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import { ProtectedRoute } from "./ProtectedRoute";
 import Callback from './Callback';
 import Home from './Home';
 import Exercises from "./pages/Chooseexercises"
@@ -14,12 +15,11 @@ function App() {
      
       <div>
         <Route exact path='/' component={Home}/>
-        <Route exact path='/callback' component={Callback}/>
-        <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/stats" component={Stats} />
-        <Route exact path="/build" component={Muscles} />
-        <Route exact path="/exercises" component={Exercises} />
-        <Route exact path="/workouts" component={Workouts} />
+        <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+        <ProtectedRoute exact path="/stats" component={Stats} />
+        <ProtectedRoute exact path="/build" component={Muscles} />
+        <ProtectedRoute exact path="/exercises" component={Exercises} />
+        <ProtectedRoute exact path="/workouts" component={Workouts} />
       </div>
       
     </Router>

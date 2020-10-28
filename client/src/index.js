@@ -4,21 +4,21 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter } from 'react-router-dom';
 import { Auth0Provider } from '@auth0/auth0-react';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Auth0Provider
-      domain="dev-i9pv14xc.us.auth0.com"
-      clientId="'avn3Nb54qAqLyEOXUMpRFVdFPxxopLFW"
-      redirectUri={window.location.origin}
-    >
-      <React.Fragment>
-        <App />
-      </React.Fragment>
-    </Auth0Provider>
-  </BrowserRouter>,
+  <Auth0Provider
+    domain="dev-i9pv14xc.us.auth0.com"
+    // audience="https://dev-i9pv14xc.us.auth0.com/userinfo"
+    clientId="avn3Nb54qAqLyEOXUMpRFVdFPxxopLFW"
+    redirectUri= {window.location.origin}
+    // responseType="id_token"
+    // scope="openid profile"
+  >
+    <React.Fragment>
+      <App />
+    </React.Fragment>
+  </Auth0Provider>,
   document.getElementById('root')
 );
 

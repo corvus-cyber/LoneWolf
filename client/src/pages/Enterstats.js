@@ -4,19 +4,23 @@ import Navbar from "../components/Navbar/Navbar"
 import Footer from "../components/Footer/Footer"
 import Wrapper from "../components/Wrapper/Wrapper"
 import SelectionContainer from "../components/SelectionContainer/SelectionContainer"
-import auth0Client from '../Auth';
+// import auth0Client from '../Auth';
+import { useAuth0 } from '@auth0/auth0-react';
+
 
 function Stats() {
-
+  const {loginWithRedirect, isAuthenticated, user} = useAuth0();
   let day = new Date().getDate();
 
-  useEffect(() => {
-    if (!auth0Client.isAuthenticated()) {
-      auth0Client.signIn();
-  }
-    return () => {
-    }
-  }, []) 
+  console.log(user);
+
+  // useEffect(() => {
+  //   if (!isAuthenticated) {
+  //    loginWithRedirect();
+  // }
+  //   return () => {
+  //   }
+  // }, []) 
 
   const [formObject, setFormObject] = useState({
     weight: "",
@@ -36,7 +40,7 @@ function Stats() {
       API.saveStats({
         weight: parseInt(formObject.weight),
         leanBodyMass: parseInt(formObject.leanBodyMass),
-        token: auth0Client.getProfile().aud,
+        token: user,
         date: day
       })
         .then(() => setFormObject({

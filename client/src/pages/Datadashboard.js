@@ -8,21 +8,26 @@ import WeightChart from "../components/Datadashboard/WeightChart";
 import RepsChart from "../components/Datadashboard/RepsChart";
 import TimeChart from "../components/Datadashboard/TimeChart";
 import auth0Client from '../Auth';
+import { useAuth0 } from '@auth0/auth0-react';
 
 
 function Dashboard() {
+  const {loginWithRedirect, isAuthenticated, user} = useAuth0();
+  console.log(user);
 
-useEffect(() => {
-  if (!auth0Client.isAuthenticated()) {
-    auth0Client.signIn();
-}
-  return () => {
-  }
-}, []) 
+  console.log(isAuthenticated)
 
-  // const { name, picture, email } = user;  
-  console.log(auth0Client.getProfile())
 
+// useEffect(() => {
+//   if (!auth0Client.isAuthenticated()) {
+//     auth0Client.signIn();
+// }
+// console.log(auth0Client.getProfile())
+// localStorage.setItem("token", auth0Client.getProfile().aud)
+
+//   return () => {
+//   }
+// }, []) 
   return (
     <div>
       <Navbar />
