@@ -13,7 +13,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 function Dashboard() {
   const {loginWithRedirect, isAuthenticated, user} = useAuth0();
-  console.log(user);
+  console.log(user.sub);
 
   console.log(isAuthenticated)
 
