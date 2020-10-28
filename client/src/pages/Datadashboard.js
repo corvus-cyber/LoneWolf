@@ -29,9 +29,7 @@ useEffect(() => {
   return (
     <div>
       <Navbar />
-      <Wrapper>
-        <StatsLink />
-        <div className="container">
+      <Wrapper>      
           <div className="row justify-content-center">
             <PieChart />
             <WeightChart />
@@ -42,7 +40,7 @@ useEffect(() => {
           <div className="row justify-content-center">
             <TimeChart />
           </div>
-        </div>
+          <StatsLink />
       </Wrapper>
       <Footer />
     </div>

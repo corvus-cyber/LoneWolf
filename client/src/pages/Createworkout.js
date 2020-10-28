@@ -34,6 +34,7 @@ function Workout() {
       </div>
     )
   }
+  
   const workoutExercises = location.state.workoutExercises || []; 
   console.log(workoutExercises)
     return (
