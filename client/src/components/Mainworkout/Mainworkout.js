@@ -1,19 +1,19 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 // import {useLocation} from "react-router-dom";
 import "./style.css"
 
 import { Collapse, Button, CardBody} from 'reactstrap';
-import {
-    BsFillInfoCircleFill,
-    
-  } from "react-icons/bs";
+import {BsFillInfoCircleFill} from "react-icons/bs";
+import Modal from "../Modal/Modal"
 
 
 export default function MainWorkout(props) {
     const [open, setOpen] = useState(false);
-
     const [isOpen, setIsOpen] = useState(false);
+    const [modal, setModal] = useState(false);
+    useEffect(()=>{console.log("hello", modal)},[modal])
+
     // const location = useLocation();
     const toggle = () => setIsOpen(!isOpen);
     // console.log(location)
@@ -29,6 +29,13 @@ export default function MainWorkout(props) {
         console.log("hello");
     };
 
+    const toggleModal=(e, gif)=>{
+        e.preventDefault();
+        console.log(e.target)
+        // console.log(gif)
+        setModal(!modal);
+    }
+
 
     
 
@@ -37,7 +44,8 @@ export default function MainWorkout(props) {
             <div className="row exercise mb-2" id={"yellow"} key={props.exercise.exerciseID}>
                 {console.log(props.exercise)}
                 <div className="col-md-6 text-center justify-content-center">
-                    <img src={process.env.PUBLIC_URL + props.exercise.gif} className="img-fluid" alt="gif of exercise"/>
+                    <img src={process.env.PUBLIC_URL + props.exercise.gif} onClick={(e)=>toggleModal(e, props.exercise.gif)} className="img-fluid" alt="gif of exercise"/>
+                        {modal ? (<Modal toggleModal={toggleModal}><img src={process.env.PUBLIC_URL + props.exercise.gif} className="img-fluid" alt="gif of exercise"/></Modal>):(<></>)}
                 </div> 
                 <div className="col-md-2 mt-5 text-center"><h6>{props.exercise.exercise}</h6></div>
 
