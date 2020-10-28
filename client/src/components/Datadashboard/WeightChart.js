@@ -20,9 +20,9 @@ export default class WeightChart extends Component {
       { x: 28, y: 170 }
     ];
     return (
-      <div className="chart col-lg-4 col-md-4 col-sm-8 m-5">
+      <div className="chart col-lg-4 col-md-4 col-sm-8 m-5 text-center">
         <p>Weight and Lean Body Mass Chart</p>
-        <XYPlot height={300} width={300} xDomain={[0, 30]} yDomain={[70, 300]}>
+        <XYPlot height={300} width={300} xDomain={[0, 120]} yDomain={[70, 300]}>
           <VerticalGridLines />
           <HorizontalGridLines />
           <XAxis title="dates"/>

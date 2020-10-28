@@ -72,11 +72,11 @@ export default class TimeChart extends Component {
     const myPalette = ["red", "blue", "#03fce7", "green", "orange", "purple", "black", "pink", "#8af542"]
     
     return (
-      <div className="chart col-md-8 col-sm-8 m-5">
+      <div className="chart col-lg-4 col-md-4 col-sm-8 m-5 text-center">
         <p>Cumulative Exercise Time Chart (Week Total)</p>
 
         {/* plug in the x and y range here */}
-        <XYPlot height={300} width={700} xDomain={[0, 30]} yDomain={[0, 20]}
+        <XYPlot height={300} width={300} xDomain={[0, 30]} yDomain={[0, 20]}
           colorType="category"
           colorDomain={[0, 1, 2, 3, 4, 5, 6, 7, 8]}
           colorRange={myPalette}>
