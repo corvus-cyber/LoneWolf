@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { ProtectedRoute } from "./ProtectedRoute";
-import Callback from './Callback';
 import Home from './Home';
 import Exercises from "./pages/Chooseexercises"
 import Muscles from "./pages/Choosemuscles"

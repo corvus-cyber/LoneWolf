@@ -1,26 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import API from "../utils/API";
 import Navbar from "../components/Navbar/Navbar"
 import Footer from "../components/Footer/Footer"
 import Wrapper from "../components/Wrapper/Wrapper"
 import SelectionContainer from "../components/SelectionContainer/SelectionContainer"
-// import auth0Client from '../Auth';
 import { useAuth0 } from '@auth0/auth0-react';
 
 
 function Stats() {
-  const {loginWithRedirect, isAuthenticated, user} = useAuth0();
+  const {user} = useAuth0();
   let day = new Date().getDate();
 
   console.log(user);
-
-  // useEffect(() => {
-  //   if (!isAuthenticated) {
-  //    loginWithRedirect();
-  // }
-  //   return () => {
-  //   }
-  // }, []) 
 
   const [formObject, setFormObject] = useState({
     weight: "",

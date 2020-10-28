@@ -1,7 +1,6 @@
-import React, { Component, useEffect } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './index.css';
-// import auth0Client from './Auth';
 import { useAuth0 } from '@auth0/auth0-react';
 import {Link} from "react-router-dom";
 
@@ -12,14 +11,6 @@ function Home(props) {
     console.log(user);
 
     console.log(isAuthenticated)
-
-    // useEffect(() => {
-    //     if (!isAuthenticated) {
-    //      loginWithRedirect();
-    //   }
-    //     return () => {
-    //     }
-    //   }, []) 
 
     const signOut = () => {
         logout();
