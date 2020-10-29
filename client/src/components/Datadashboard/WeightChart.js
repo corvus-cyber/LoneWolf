@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import "../../../node_modules/react-vis/dist/style.css"
 import { XYPlot, VerticalGridLines, HorizontalGridLines, LineSeries, XAxis, YAxis } from 'react-vis/dist';
 import "./chartStyle.css";
@@ -7,6 +7,8 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 
 function WeightChart() {
+  const [weightData, setWeightData] = useState();
+
   useEffect(() => {
     loadStats()
   }, [])
@@ -29,16 +31,15 @@ function WeightChart() {
         //save weight information into loginUserWeightArray
         loginUserStats.forEach(data => {
           const coordinate =
-          { "x": data.weight, "y": data.date }
+          { "x": data.date, "y": data.weight }
           loginUserWeight.push(coordinate)
         });
         console.log(loginUserWeight)
         //save lean body mass information into loginUserLeanBodyMass Array
         loginUserStats.forEach(data => loginUserLeanBodyMass.push(data.leanBodyMass));
-      }).then(() => { let weightData = loginUserWeight})
+      }).then(() => { setWeightData(loginUserWeight)})
       .catch(err => console.log(err));
   }
-
 
   const LeanBodyMassdata = [
     { x: 0, y: 161 },
@@ -47,6 +48,7 @@ function WeightChart() {
     { x: 21, y: 168 },
     { x: 28, y: 170 }
   ];
+
   return (
     <div className="chart col-lg-4 col-md-4 col-sm-8 m-5">
       <p>Weight and Lean Body Mass Chart</p>
