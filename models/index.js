@@ -1,3 +1,3 @@
 module.exports = {
-  Stats: require("./userstats")
+  Stats: require("./stats")
 };

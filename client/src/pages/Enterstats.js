@@ -4,12 +4,20 @@ import Navbar from "../components/Navbar/Navbar"
 import Footer from "../components/Footer/Footer"
 import Wrapper from "../components/Wrapper/Wrapper"
 import SelectionContainer from "../components/SelectionContainer/SelectionContainer"
+import { useAuth0 } from '@auth0/auth0-react';
+
 
 function Stats() {
+  const {user} = useAuth0();
+  let day = new Date().getDate();
+
+  console.log(user);
 
   const [formObject, setFormObject] = useState({
     weight: "",
     leanBodyMass: "",
+    token: "",
+    date: ""
   })
 
   function handleInputChange(event) {
@@ -19,16 +27,19 @@ function Stats() {
 
   function handleFormSubmit(event) {
     event.preventDefault();
+    if (formObject.weight || formObject.leanBodyMass) {
       API.saveStats({
-        weight: formObject.weight,
-        leanBodyMass: formObject.leanBodyMass,
+        weight: parseInt(formObject.weight),
+        leanBodyMass: parseInt(formObject.leanBodyMass),
+        token: user.sub,
+        date: day
       })
         .then(() => setFormObject({
           weight: "",
           leanBodyMass: ""
         }))
-        .then(console.log(formObject))
         .catch(err => console.log(err));
+    }
   };
 
   return (
