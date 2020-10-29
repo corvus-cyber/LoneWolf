@@ -8,6 +8,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 function WeightChart() {
   const [weightData, setWeightData] = useState();
+  const [leanBodyMassData, setLeanBodyMassData] = useState();
 
   useEffect(() => {
     loadStats()
@@ -28,26 +29,26 @@ function WeightChart() {
         statsData = res.data;
         //grab only the stats of the logged-in user
         let loginUserStats = statsData.filter(data => data.token === currentUserToken);
-        //save weight information into loginUserWeightArray
+        //save weight information into loginUserWeight Array
         loginUserStats.forEach(data => {
           const coordinate =
           { "x": data.date, "y": data.weight }
           loginUserWeight.push(coordinate)
         });
+         //save lean body mass information into loginUserLeanBodyMass Array 
+         loginUserStats.forEach(data => {
+          const coordinate =
+          { "x": data.date, "y": data.leanBodyMass }
+          loginUserLeanBodyMass.push(coordinate)
+        });
         console.log(loginUserWeight)
-        //save lean body mass information into loginUserLeanBodyMass Array
-        loginUserStats.forEach(data => loginUserLeanBodyMass.push(data.leanBodyMass));
-      }).then(() => { setWeightData(loginUserWeight)})
+        console.log(loginUserLeanBodyMass)
+      }).then(() => { 
+        setWeightData(loginUserWeight);
+        setLeanBodyMassData(loginUserLeanBodyMass)
+      })
       .catch(err => console.log(err));
   }
-
-  const LeanBodyMassdata = [
-    { x: 0, y: 161 },
-    { x: 7, y: 162 },
-    { x: 14, y: 166 },
-    { x: 21, y: 168 },
-    { x: 28, y: 170 }
-  ];
 
   return (
     <div className="chart col-lg-4 col-md-4 col-sm-8 m-5">
@@ -58,7 +59,7 @@ function WeightChart() {
         <XAxis title="dates" />
         <YAxis title="lbs" />
         <LineSeries data={weightData} stroke="red" />
-        <LineSeries data={LeanBodyMassdata} />
+        <LineSeries data={leanBodyMassData} />
       </XYPlot>
     </div>
   );
