@@ -39,7 +39,7 @@ function WeightChart() {
       .catch(err => console.log(err));
   }
 
-  let weightData = [];
+  let weightData = loginUserWeight;
 
   const LeanBodyMassdata = [
     { x: 0, y: 161 },
