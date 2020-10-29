@@ -1,7 +1,7 @@
 const db = require("../models");
 
 module.exports = {  
-    findWeightStats: function(req, res){
+    getWeightStats: function(req, res){
       db.Stats
       .find({})
       .then(dbModel => res.json(dbModel))
