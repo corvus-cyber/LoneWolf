@@ -70,7 +70,7 @@ class Muscles extends Component{
             <Link
                 to= {{pathname: "/workouts",
                 state: {workoutExercises: this.state.workoutExercises }}}>
-                    <button type="submit" className="btn btn-routeToWorkout btn-lg btn-block" disabled={this.state.workoutExercises.length<1} style={{backgroundColor: "#F4C430", borderColor: "#F4C430"}}><GiMuscleUp/> Build Workout<GiMuscleUp/></button>
+                    <button type="submit" className="btn btn-routeToWorkout btn-lg btn-block" disabled={this.state.workoutExercises.length<1} style={{backgroundColor: "#F4C430", borderColor: "#F4C430"}}><GiMuscleUp/> View Workout<GiMuscleUp/></button>
             </Link>
         </li>
       </div>

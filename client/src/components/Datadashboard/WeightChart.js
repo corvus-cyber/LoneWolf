@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "../../../node_modules/react-vis/dist/style.css"
 import { XYPlot, VerticalGridLines, HorizontalGridLines, LineSeries, XAxis, YAxis } from 'react-vis/dist';
+
 import "./chartStyle.css";
 import API from "../../utils/API";
 import { useAuth0 } from '@auth0/auth0-react';
