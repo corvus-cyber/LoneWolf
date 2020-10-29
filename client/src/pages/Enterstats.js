@@ -31,7 +31,7 @@ function Stats() {
       API.saveStats({
         weight: parseInt(formObject.weight),
         leanBodyMass: parseInt(formObject.leanBodyMass),
-        token: user,
+        token: user.sub,
         date: day
       })
         .then(() => setFormObject({

@@ -12,8 +12,8 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 function Dashboard() {
   const {isAuthenticated, user} = useAuth0();
-  console.log(user.sub);
-
+  
+  console.log(user);
   console.log(isAuthenticated)
  
   return (
