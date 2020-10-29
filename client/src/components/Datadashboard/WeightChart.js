@@ -35,11 +35,10 @@ function WeightChart() {
         console.log(loginUserWeight)
         //save lean body mass information into loginUserLeanBodyMass Array
         loginUserStats.forEach(data => loginUserLeanBodyMass.push(data.leanBodyMass));
-      })
+      }).then(() => { let weightData = loginUserWeight})
       .catch(err => console.log(err));
   }
 
-  let weightData = loginUserWeight;
 
   const LeanBodyMassdata = [
     { x: 0, y: 161 },
