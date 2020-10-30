@@ -164,7 +164,7 @@
                 "exercise": "Jump Squats",
                 "muscle": "Quadriceps",
                 "exerciseID": 18,
-                "gif": "test",
+                "gif": "/assets/exercises/jumpsquat.gif",
                 "description": "Stand tall with your feet hip-width apart, toes pointing outwards. Hinge at the hips and lower down until your glutes are hovering over the floor. Then press your feet down to explode off the floor and jump as high as you can. Allow your knees to bend 45 degrees when you land, and then immediately drop back down into a squat, and jump again."
             }
         ]
@@ -185,7 +185,7 @@
                 "exercise": "Heel Touch Squats",
                 "muscle": "Hamstrings and Glutes",
                 "exerciseID": 20,
-                "gif": "test",
+                "gif": "/assets/exercises/heeltouch.gif",
                 "description": "Stand up with your legs and torso straight with your hands at your side. Lift one foot up so that it slightly hovers above the ground. Hinge your hips and lower your hands until they touch the heel of the planted foot while not bending your knees, allowing your hovering foot to move behind your body for balance. "
             },
             {
