@@ -5,6 +5,8 @@ import Footer from "../components/Footer/Footer"
 import Wrapper from "../components/Wrapper/Wrapper"
 import SelectionContainer from "../components/SelectionContainer/SelectionContainer"
 import { useAuth0 } from '@auth0/auth0-react';
+import "../components/Wrapper/login.css"
+
 
 
 function Stats() {
@@ -52,7 +54,7 @@ function Stats() {
             <label for="inputWeight" className="sr-only">Weight</label>
             <input onChange={handleInputChange} name="weight" value={formObject.weight} className="form-control" id="weight" placeholder="Enter Weight (Lbs)" />
           </div>
-          <button onClick={handleFormSubmit} type="submit" className="btn btn-primary mb-2">Record</button>
+          <button onClick={handleFormSubmit} type="submit" className="btn-enterStats btn-sm mb-2">Record</button>
         </form>
         </div>
         <div className="row justify-content-md-center">
@@ -61,7 +63,7 @@ function Stats() {
             <label for="inputLeanBodyMass" className="sr-only">Lean Body Mass</label>
             <input onChange={handleInputChange} name="leanBodyMass" value={formObject.leanBodyMass} className="form-control" id="leanBodyMass" placeholder="Enter Lean Body Mass (Lbs)" />
           </div>
-          <button onClick={handleFormSubmit} type="submit" className="btn btn-primary mb-2">Record</button>
+          <button onClick={handleFormSubmit} type="submit" className="btn-enterStats btn-sm mb-2">Record</button>
         </form>
         </div>
         </SelectionContainer>
