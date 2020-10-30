@@ -94,14 +94,14 @@
                 "exercise": "Inverted Bicep Curls",
                 "muscle": "Biceps",
                 "exerciseID": 10,
-                "gif": "test",
+                "gif": "/assets/exercises/invertedbicep.gif,"
                 "description": "If you don't have access to a gym, you can set up for this by placing a broom handle or rod between two benches or chairs. Lie beneath the bar with your face right beneath it, with your legs either bent or straight out. Grab the bar in an underhand grip, and flexing your biceps and elbows, curl yourself up till your face almost touches, really focusing on contracting your biceps. Lower yourself back down and repeat."
             },
             {
                 "exercise": "Chin-ups",
                 "muscle": "Biceps",
                 "exerciseID": 11,
-                "gif": "test",
+                "gif": "/assets/exercises/chinup.gif",
                 "description": "Position yourself beneath a pull-up bar. Grab the bar with your hands towards you at shoulder width. Contract your shoulder blades together, and pull yourself up till your chin comes up over the bar. Be sure to lower yourself all the way back down before beginning to come back up. If not strong enough yet you can still perform by anchoring a resistance band to the bar and looping it through your feet."
             },
             {
