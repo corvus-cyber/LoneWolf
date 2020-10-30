@@ -5,7 +5,7 @@ const statsSchema = new Schema({
   weight: { type: Number},
   leanBodyMass: { type: Number},
   token: {type: String},
-  date: {type: Number}
+  date: {type: Date}
 });
 
 const Stats = mongoose.model("Stats", statsSchema);

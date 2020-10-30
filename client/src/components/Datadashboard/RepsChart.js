@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import "../../../node_modules/react-vis/dist/style.css"
 import { XYPlot, VerticalGridLines, HorizontalGridLines, LineSeries, XAxis, YAxis } from 'react-vis/dist';
-import "./chartStyle.css"
+import "./chartStyle.css";
+import API from "../../utils/API";
+import { useAuth0 } from '@auth0/auth0-react';
 
-export default class RepsChart extends Component {
-  render() {
+function RepsChart() {
+ 
     const chest = [
       { x: 0, y: 1 },
       { x: 7, y: 1 },
@@ -66,9 +68,9 @@ export default class RepsChart extends Component {
     
     return (
       <div className="chart col-lg-4 col-md-4 col-sm-8 m-5 text-center">
-        <p>Cumulative Exercise Reps Chart (Week Total)</p>
+        <p>Cumulative Exercise Reps Chart</p>
         {/* plug in the x and y range here */}
-        <XYPlot height={300} width={300} xDomain={[0, 30]} yDomain={[0, 20]}
+        <XYPlot height={300} width={300} xDomain={[0, 100]} yDomain={[0,100]}
           colorType="category"
           colorDomain={[0, 1, 2, 3, 4, 5, 6, 7]}
           colorRange={myPalette}>
@@ -85,10 +87,11 @@ export default class RepsChart extends Component {
           <LineSeries data={hamstringsAndGlutes} color={6} />
           <LineSeries data={abdominals} color={7} />
 
-          <XAxis title="dates" />
+          <XAxis title="days" />
           <YAxis title="reps" />
         </XYPlot>
       </div>
     );
-  }
 }
+
+export default RepsChart;

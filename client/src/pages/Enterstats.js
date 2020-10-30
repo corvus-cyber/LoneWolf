@@ -11,15 +11,14 @@ import "../components/Wrapper/login.css"
 
 function Stats() {
   const {user} = useAuth0();
-  let day = new Date().getDate();
 
-  console.log(user);
+  // console.log(user);
 
   const [formObject, setFormObject] = useState({
-    weight: "",
-    leanBodyMass: "",
+    weight: null,
+    leanBodyMass: null,
     token: "",
-    date: ""
+    date: null
   })
 
   function handleInputChange(event) {
@@ -34,7 +33,7 @@ function Stats() {
         weight: parseInt(formObject.weight),
         leanBodyMass: parseInt(formObject.leanBodyMass),
         token: user.sub,
-        date: day
+        date: new Date()
       })
         .then(() => setFormObject({
           weight: "",

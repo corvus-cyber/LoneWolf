@@ -1,8 +1,8 @@
 const db = require("../models");
 
 module.exports = {  
-    getWeightStats: function(req, res){
-      db.Stats
+    getRepsAndTimeStats: function(req, res){
+      db.RepsAndTime
       .find({})
       .sort({ date: 1 })
       .then(dbModel => res.json(dbModel))
@@ -10,7 +10,7 @@ module.exports = {
     },
 
     create: function(req, res) {
-      db.Stats
+      db.RepsAndTime
         .create(req.body)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
