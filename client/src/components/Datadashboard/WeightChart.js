@@ -65,10 +65,10 @@ function WeightChart() {
   return (
     <div className="chart col-lg-4 col-md-4 col-sm-8 m-5">
       <p>Weight and Lean Body Mass Chart</p>
-      <XYPlot height={300} width={300} xDomain={[0, 30]} yDomain={[70, 300]}>
+      <XYPlot height={300} width={300} xDomain={[0, 100]} yDomain={[70, 300]}>
         <VerticalGridLines />
         <HorizontalGridLines />
-        <XAxis title="dates" />
+        <XAxis title="days" />
         <YAxis title="lbs" />
         <LineSeries data={weightData} stroke="red" />
         <LineSeries data={leanBodyMassData} />
