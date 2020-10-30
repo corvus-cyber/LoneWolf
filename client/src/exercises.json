@@ -234,14 +234,14 @@
                 "exercise": "Mountain Climbers",
                 "muscle": "Conditioning",
                 "exerciseID": 25,
-                "gif": "test",
+                "gif": "/assets/exercises/mountainclimbers.gif",
                 "description": "Assume a pushup position, with your legs fully extended behind you. Bring one knee up to your chest, and then quickly replace it with the other, letting the first leg return to its original place. Continue alternating back and forth, being sure to not let your glutes and lower back rise."
             },
             {
                 "exercise": "High Knees",
                 "muscle": "Conditioning",
                 "exerciseID": 26,
-                "gif": "test",
+                "gif": "/assets/exercises/highknees.gif",
                 "description": "Stand up straight and place your feet about hip-width apart. Staying on the balls of your feet the entire time, quickly drive your right knee towards your chest, while using your opposite hand to push through (much like a sprint); bring the same leg back to the ground and immediately bring the left knee up."
             },
             {
