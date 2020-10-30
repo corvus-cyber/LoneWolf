@@ -16,7 +16,7 @@
                 "exercise": "Decline Pushup",
                 "muscle": "Chest",
                 "exerciseID": 2,
-                "gif": "test",
+                "gif": "/assets/exercises/declinepushup.gif",
                 "description": "Assume a standard pushup position, the difference being that you will place either your knees or feet on a chair or bench. From there you will lower yourself to the ground, making sure to keep your elbows from flaring. After your chest touches the ground you will begin to push yourself back up, being sure to keep from looking up."
             },
             {
@@ -122,21 +122,21 @@
                 "exercise": "Sphinx Pushups",
                 "muscle": "Triceps",
                 "exerciseID": 13,
-                "gif": "test",
+                "gif": "/assets/exercises/sphinx.gif",
                 "description": "Assume a traditional push-up position with your arms straight and your core engaged, hands beneath shoulders. Slowly bend your elbows to the floor to descend until your forearms are resting on the ground, then press through your palms to extend your arms back into the starting position. Be sure to focus on activating your triceps. You can also perform these on your knees if they are too difficult."
             },
             {
                 "exercise": "Cobra Pushups",
                 "muscle": "Triceps",
                 "exerciseID": 14,
-                "gif": "test",
+                "gif": "/assets/exercises/.gif",
                 "description": "Assume a traditional push-up position with your arms straight and your core engaged, hands beneath shoulders. lowering your hips toward the floor, scoop your chest forward as if you're trying to dive down and under a bar into an upward-facing dog pose, with thighs off the floor. Push back up to the starting push up position."
             },
             {
                 "exercise": "Chair Dips",
                 "muscle": "Triceps",
                 "exerciseID": 15,
-                "gif": "test",
+                "gif": "/assets/exercises/chairdip.gif",
                 "description": "Positioning your back facing the chair or bench, place your hands on the edge of the bench while stretching your legs out in front of your, straight or bent. From here, you want to make sure that you open your chest and keep your shoulders back rather than letting them  fall forward as you start the exercise. Keeping your body close to the bench, slowly dip down until your elbows are at the same height as your shoulders. Slowly push back up, squeezing through the triceps. Do not lock the elbows out at the top of the exercise, and repeat."
             }
         ]
