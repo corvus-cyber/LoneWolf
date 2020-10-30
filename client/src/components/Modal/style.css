@@ -1,5 +1,5 @@
 #customModal{
-    background-color: #d9dcd68a;
+    background-color: #d9dcd6c6;
     position: fixed;
     top: 0;
     left: 0;
@@ -10,10 +10,12 @@
 
 .innerContent{
     position: absolute;
-    width: 75vw;
-    height: 75vh;
-    top: 12.5%;
-    left: 12.5%;
+    width: 98vw;
+    height: 50vh;
+    top: 25%;
+    left: 1%;
     background-color: black;
-    color: #ffffff
+    color: #ffffff;
+    box-shadow: 0 0 20px; 
+    border-radius: 15px;
 }
