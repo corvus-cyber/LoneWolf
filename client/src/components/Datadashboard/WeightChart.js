@@ -30,22 +30,29 @@ function WeightChart() {
         //grab only the stats of the logged-in user
         let loginUserStats = statsData.filter(data => data.token === currentUserToken);
         console.log(loginUserStats)
+        let firstDate = new Date(loginUserStats[0].date).getTime();
+
+        function determineXCoordinate(data){
+          return (new Date(data.date).getTime() - firstDate)/ (1000 * 3600 * 24)
+        }
+
+
         //save weight information into loginUserWeight Array
         loginUserStats.filter(data => data.weight)
         .forEach(data => {
           const coordinate =
-          { "x": data.date, "y": data.weight }
+          { "x": determineXCoordinate(data), "y": data.weight }
           loginUserWeight.push(coordinate)
         });
          //save lean body mass information into loginUserLeanBodyMass Array 
          loginUserStats.filter( data => data.leanBodyMass)
           .forEach(data => {
           const coordinate =
-          { "x": data.date, "y": data.leanBodyMass }
+          { "x": determineXCoordinate(data), "y": data.leanBodyMass }
           loginUserLeanBodyMass.push(coordinate)
         });
       }).then(() => { 
-
+        
         if (loginUserWeight.length === 0) {
           setWeightData([{x: 0, y: 0}])
         } else if (loginUserWeight.length > 0) {

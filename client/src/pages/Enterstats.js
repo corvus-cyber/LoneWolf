@@ -33,7 +33,7 @@ function Stats() {
         weight: parseInt(formObject.weight),
         leanBodyMass: parseInt(formObject.leanBodyMass),
         token: user.sub,
-        date: new Date("<YYYY-mm-dd>")
+        date: new Date()
       })
         .then(() => setFormObject({
           weight: "",
