@@ -9,7 +9,6 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 function Stats() {
   const {user} = useAuth0();
-  let day = new Date().getDate();
 
   // console.log(user);
 
@@ -32,7 +31,7 @@ function Stats() {
         weight: parseInt(formObject.weight),
         leanBodyMass: parseInt(formObject.leanBodyMass),
         token: user.sub,
-        date: parseInt(day)
+        date: new Date("<YYYY-mm-dd>")
       })
         .then(() => setFormObject({
           weight: "",
