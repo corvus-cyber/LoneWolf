@@ -30,7 +30,11 @@ function WeightChart() {
         //grab only the stats of the logged-in user
         let loginUserStats = statsData.filter(data => data.token === currentUserToken);
         console.log(loginUserStats)
-        let firstDate = new Date(loginUserStats[0].date).getTime();
+
+        let firstDate;
+        if (loginUserStats[0]){
+          firstDate = new Date(loginUserStats[0].date).getTime();
+        }
 
         function determineXCoordinate(data){
           return (new Date(data.date).getTime() - firstDate)/ (1000 * 3600 * 24)
