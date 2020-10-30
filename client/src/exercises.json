@@ -206,14 +206,14 @@
                 "exercise": "Alternating Seated Ab Circles",
                 "muscle": "Abs",
                 "exerciseID": 22,
-                "gif": "test",
+                "gif": "/assets/exercises/abcircles.gif",
                 "description": "Seated on the ground, lean back with hands behind you for support. Keeping your legs straight, move your legs in clockwise and counterclockwise circles, alternating direction with each repetition."
             },
             {
                 "exercise": "Frog Crunches",
                 "muscle": "Abs",
                 "exerciseID": 23,
-                "gif": "test",
+                "gif": "/assets/exercises/frog.gif",
                 "description": "Start on your back with your straight out in front of you, palms together. Keeping your heels together and toes pointed out, curl up your upper body so that your hands make contact with your feet. Lower yourself back to the ground and repeat."
             },
             {
