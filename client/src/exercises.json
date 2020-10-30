@@ -65,7 +65,7 @@
                 "exercise": "Pike Press",
                 "muscle": "Shoulders",
                 "exerciseID": 7,
-                "gif": "test",
+                "gif": "/assets/exercises/pike.gif",
                 "description": "Assume a push-up position with your hands wider than shoulder width. Bend at the waist and lift your heels off the floor,  so your body forms a V-shape. Bend at your elbows to lower your head towards the floor. Then push back explosively to the start position. You can go to your knees for a easier version of this or put your feet on a bench to increase difficulty."
             },
             {
@@ -129,7 +129,7 @@
                 "exercise": "Cobra Pushups",
                 "muscle": "Triceps",
                 "exerciseID": 14,
-                "gif": "/assets/exercises/.gif",
+                "gif": "/assets/exercises/cobra.gif",
                 "description": "Assume a traditional push-up position with your arms straight and your core engaged, hands beneath shoulders. lowering your hips toward the floor, scoop your chest forward as if you're trying to dive down and under a bar into an upward-facing dog pose, with thighs off the floor. Push back up to the starting push up position."
             },
             {
