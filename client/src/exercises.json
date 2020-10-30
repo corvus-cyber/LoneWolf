@@ -72,7 +72,7 @@
                 "exercise": "Handstand Pushup",
                 "muscle": "Shoulders",
                 "exerciseID": 8,
-                "gif": "test",
+                "gif": "/assets/exercises/handstand.gif",
                 "description": "Facing the wall, place hands 6 to 12 inches away from the wall, about shoulder-width apart, and kick up into a handstand. Engage your legs and core so that your body forms a straight line. Then slowly lower yourself till your head grazes the floor by bending your elbows at a 45-degree angle. Explode back to the top by pressing through the floor and straightening your arms."
             },
             {
@@ -94,7 +94,7 @@
                 "exercise": "Inverted Bicep Curls",
                 "muscle": "Biceps",
                 "exerciseID": 10,
-                "gif": "/assets/exercises/invertedbicep.gif,",
+                "gif": "/assets/exercises/invertedbicep.gif",
                 "description": "If you don't have access to a gym, you can set up for this by placing a broom handle or rod between two benches or chairs. Lie beneath the bar with your face right beneath it, with your legs either bent or straight out. Grab the bar in an underhand grip, and flexing your biceps and elbows, curl yourself up till your face almost touches, really focusing on contracting your biceps. Lower yourself back down and repeat."
             },
             {
@@ -108,7 +108,7 @@
                 "exercise": "Commando Pull-ups",
                 "muscle": "Biceps",
                 "exerciseID": 12,
-                "gif": "test",
+                "gif": "/assets/exercises/commando.gif",
                 "description": "Stand with your body facing the end of the pull up bar and grab it with both palms facing in. As you pull up, keep your body perpendicular to the bar. Move your head to one side as you bring your shoulder as close to the bar as you can. Slowly lower yourself down. With each new  repetition, alternate with side of the bar you move your head.Switch hand positions (which hand is in front) each set."
             }
         ]
