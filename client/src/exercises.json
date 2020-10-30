@@ -157,7 +157,7 @@
                 "exercise": "1 1/2 Prisoner Squats",
                 "muscle": "Quadriceps",
                 "exerciseID": 17,
-                "gif": "test",
+                "gif": "/assets/exercises/prisoner.gif",
                 "description": "Stand with your legs slightly wider than hip-width apart, your pointing slightly out. Place both of your hands behind your head. Begin to bend from your hips and bend your knees, lowering down till your glutes are hovering above the ground. Begin to straighten back up, but when your thighs are parallel pause and then descend yet again. Aftwards you straighten back up all the way, completing one rep. "
             },
             {
@@ -178,7 +178,7 @@
                 "exercise": "Single Leg Hip Bucks",
                 "muscle": "Hamstrings and Glutes",
                 "exerciseID": 19,
-                "gif": "test",
+                "gif": "/assets/exercises/hipbucks.gif",
                 "description": "Start by lying on your back with your feet on a chair or bench.  Then bend your knees, bringing both feet close to your hips and keeping your feet flat on the bench. Lift one leg in the air so that only one leg remains on the chair.  Press down through your heel to lift your hips up and into the air as high as possible."
             },
             {
