@@ -8,7 +8,7 @@
                 "exercise": "Rotational Pushup",
                 "muscle": "Chest",
                 "exerciseID": 1,
-                "gif": "/assets/exercises/testing-gif.gif",
+                "gif": "/assets/exercises/rotationalpushup.gif",
                 "description": "Assume a standard pushup positon, hands beneath your shoulders, either on your knees or feet. Lower yourself to the ground, being careful to not flare your elbows. As you come back up you will begin to twist to one side, rotating until one hand is barely touching the ground as it comes across your body."
                 
             },
@@ -23,7 +23,7 @@
                 "exercise": "Clapping Pushup",
                 "muscle": "Chest",
                 "exerciseID": 3,
-                "gif": "test",
+                "gif": "/assets/exercises/clappingpushup.gif",
                 "description": "An explosive exercise, you will lower yourself to the ground, either on your knees or feet. As you come back up you will do so explosively, pushing through your hands into the ground. If done properly this should propel your torso high enough that your hands will temporarily leave the ground. While airborne clap your hands together and then bring them back to their original position."
             }
         ]
