@@ -192,7 +192,7 @@
                 "exercise": "Plyometric Sprinter Lunge",
                 "muscle": "Hamstrings and Glutes",
                 "exerciseID": 21,
-                "gif": "test",
+                "gif": "/assets/exercises/sprinter.gif",
                 "description": "Start in a squat position, with knee aligned with ankle, chest leaning out over thighs. While you lunge one one leg backwards bring your hands to the ground as if preparing to break into a sprint. From there explode off the ground, driving both legs up while switching your stance."
             }
         ]
@@ -220,7 +220,7 @@
                 "exercise": "Elevated Side Plank Lifts",
                 "muscle": "Abs",
                 "exerciseID": 24,
-                "gif": "test",
+                "gif": "/assets/exercises/sideplank.gif",
                 "description": "Lie on your left side propped up on your left elbow and forearm, shoulders stacked over your elbow, legs stacked on top of each other with feet on a bench or chair, the fingers on your right hand grazing the ground for stability; from there raise your hips so that your body forms a straight line from head to heels. From there while keeping your core braced and your glutes engaged, slowly lower your left hip until it hovers over the ground. Repeat until failure and then switch sides."
             }
         ]
