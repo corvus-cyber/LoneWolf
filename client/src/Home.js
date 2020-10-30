@@ -21,19 +21,31 @@ function Home(props) {
     return (
         <div className="App" >
             <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                {!isAuthenticated && (
-                    <button onClick={loginWithRedirect}>Log in</button>
-                )}
-                {
-                    isAuthenticated &&
-                    <div>
-                        <label className="mr-2 text-white">{user.name}</label>
-                    <Link to="/dashboard"><button className="btn btn-dark">dashboard</button></Link>
-                        <br />
-                        <button className="btn btn-dark" onClick={() => { signOut() }}>Sign Out</button>
+                <div className="row justify-content-center">
+                    <img src={process.env.PUBLIC_URL + "/assets/logo/Blacklogo.png"} className="App-logo" alt="logo" />
+
+                </div>
+                <div className="row justify-content-center">
+                    <div classnName="col-md-4 justify-content-center">
+                    {!isAuthenticated && (
+                        <button onClick={loginWithRedirect}>Log in</button>
+                        )}
                     </div>
-                }
+                    <div classnName="col-md-4 justify-content-center">
+                        {
+                        isAuthenticated &&
+                        <div>
+                            <label className="mr-2 text-white">{user.name}</label>
+                        <Link to="/dashboard"><button className="btn btn-dark">Dashboard</button></Link>
+                            
+                            <button className="btn btn-dark" onClick={() => { signOut() }}>Sign Out</button>
+                        </div>
+                        }     
+                    </div>
+                </div>
+                
+                
+
 
             </header>
         </div>
