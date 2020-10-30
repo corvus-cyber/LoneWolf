@@ -8,7 +8,12 @@ export default {
   },
 
   // Saves new user weight and lean body mass to the database
-  saveStats: function(stats) {
+  saveStats: function (stats) {
     return axios.post("api/stats", stats);
+  },
+
+  // Saves reps and time of exercises to the database
+  saveRepsAndTime: function (data) {
+    return axios.post("api/repsandtime", data);
   }
 };

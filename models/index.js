@@ -1,3 +1,4 @@
 module.exports = {
-  Stats: require("./stats")
+  Stats: require("./stats"),
+  RepsAndTime: require("./repsAndTime")
 };

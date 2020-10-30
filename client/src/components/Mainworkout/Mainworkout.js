@@ -5,7 +5,9 @@ import "./style.css"
 
 import { Collapse, Button, CardBody} from 'reactstrap';
 import {BsFillInfoCircleFill} from "react-icons/bs";
-import Modal from "../Modal/Modal"
+import Modal from "../Modal/Modal";
+import { useAuth0 } from '@auth0/auth0-react';
+import API from ".././../utils/API";
 
 
 export default function MainWorkout(props) {
@@ -13,6 +15,18 @@ export default function MainWorkout(props) {
     const [isOpen, setIsOpen] = useState(false);
     const [modal, setModal] = useState(false);
     useEffect(()=>{console.log("hello", modal)},[modal])
+
+    const {user} = useAuth0();
+
+    //object model for workout submission
+    const [formObject, setFormObject] = useState({
+        token: "",
+        date: null,
+        sets: null,
+        reps: null,
+        time: null,
+        muscleGroup: ""
+      })
 
     // const location = useLocation();
     const toggle = () => setIsOpen(!isOpen);
@@ -22,11 +36,29 @@ export default function MainWorkout(props) {
     } 
 
     function handleInputChange(event) {
-        
+        const { name, value } = event.target;
+        setFormObject({...formObject, [name]: value})
     };
 
-    const handleFormSubmit=()=>{
-        console.log("hello");
+    function handleFormSubmit() {
+        if (formObject.sets || formObject.reps || formObject.time) {
+         let muscleGroupName = props.exercise.muscle;
+        console.log(muscleGroupName)
+          API.saveRepsAndTime({
+            token: user.sub,
+            date: new Date(),
+            sets: parseInt(formObject.sets),
+            reps: parseInt(formObject.reps * formObject.sets),
+            time: parseInt(formObject.time),
+            muscleGroup: muscleGroupName
+          })
+            .then(() => setFormObject({
+              sets: "",
+              reps: "",
+              time: ""
+            }))
+            .catch(err => console.log(err));
+        }
     };
 
     const toggleModal=(e, gif)=>{
@@ -42,7 +74,7 @@ export default function MainWorkout(props) {
     return(
         <div className={open ? "open" : null}> 
             <div className="row exercise mb-2" id={"yellow"} key={props.exercise.exerciseID}>
-                {console.log(props.exercise)}
+                {/* {console.log(props.exercise)} */}
                 <div className="col-md-6 text-center justify-content-center">
                     <img src={process.env.PUBLIC_URL + props.exercise.gif} onClick={(e)=>toggleModal(e, props.exercise.gif)} className="customFluid mt-1 mb-1" alt="gif of exercise"/>
                         {modal ? (<Modal toggleModal={toggleModal}><img src={process.env.PUBLIC_URL + props.exercise.gif} className="img-fluid  pt-5 mt-5 mb-5 pb-5" alt="gif of exercise"/></Modal>):(<></>)}
@@ -52,9 +84,9 @@ export default function MainWorkout(props) {
                     <div className="justify-content-center text-center pt-2 pl-5">
                         <form className="form">
                             <div className="form-group">
-                                <input type="number" className="form-control" id={props.exercise.muscle + " sets"}  placeholder="Enter sets" required/>
-                                <input type="number" className="form-control" id={props.exercise.muscle +" reps"}  placeholder="Enter reps"/>
-                                <input type="number" className="form-control" id={props.exercise.muscle +"time"} placeholder="Enter time (secs)"/>
+                                <input onChange={handleInputChange} type="number" className="form-control" id={props.exercise.muscle + " sets"}  placeholder="Enter sets" name="sets" value={formObject.sets} required/>
+                                <input onChange={handleInputChange} type="number" className="form-control" id={props.exercise.muscle + " reps"}  placeholder="Enter reps" name="reps"value={formObject.reps}/>
+                                <input onChange={handleInputChange} type="number" className="form-control" id={props.exercise.muscle + " time"} placeholder="Enter time (secs)"name="time"value={formObject.time}/>
                             </div>
                             <Button className="mr-1" onClick={() => {setOpen(!open); handleFormSubmit()}} style={{backgroundColor:"#F4C430", color: "black",  marginBottom: '1rem' }}>Complete</Button>
                         </form>    
