@@ -79,7 +79,7 @@
                 "exercise": "Bodyweight Side-Lateral Raise",
                 "muscle": "Shoulders",
                 "exerciseID": 9,
-                "gif": "test",
+                "gif": "/assets/exercises/side-lateral.gif",
                 "description": "Assume a plank position with your forearms on the ground.  Begin by dropping down just a bit (collapsing on the forearm) and then reversing the motion and pushing up as you rotate your body away from the working shoulder."  
                 
             }
@@ -150,7 +150,7 @@
                 "exercise": "Single Leg Box/Chair Squat",
                 "muscle": "Quadriceps",
                 "exerciseID": 16,
-                "gif": "test",
+                "gif": "/assets/exercises/boxsquat.gif",
                 "description": "Stand up with a box or chair behind you. Hold your arms out in front of you  for balance, and raise one foot off the floor in front of your body. Engaging your core, lower yourself down till your glutes touch the chair. Keeping your torso as upright as you can, push your body up to a standing position without putting down your lifted foot."
             },
             {
