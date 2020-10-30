@@ -37,7 +37,7 @@
                 "exercise": "Inverted Row",
                 "muscle": "Back",
                 "exerciseID": 4,
-                "gif": "test",
+                "gif": "/assets/exercises/invertedrow.gif",
                 "description": "If you don't have access to a gym, you can set up for this by placing a broom handle or rod between two benches or chairs. Lie beneath the bar with your shoulders parallel to it, with your legs either bent or straight out. Grab the bar, and pull yourself up till your chest almost touches, squeezing your shoulder blades together. Lower yourself back down and repeat."
             },
             {
@@ -51,7 +51,7 @@
                 "exercise": "Around the World Pull-up",
                 "muscle": "Back",
                 "exerciseID": 6,
-                "gif": "test",
+                "gif": "/assets/exercises/aroundtheworld.gif",
                 "description": "An exercise that will target one side of the back at the time, you will assume the same position as the standard pull-up. As you come up though, you will not do so in a straight line. Instead you'll pull yourself up towards one of your hands, come over the top, and then lower yourself back down on the other side. Pause for a moment, then pull yourself up the opposite way this time."
             }
         ]
