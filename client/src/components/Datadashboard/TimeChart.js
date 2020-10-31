@@ -4,6 +4,7 @@ import { XYPlot, VerticalGridLines, HorizontalGridLines, LineSeries, XAxis, YAxi
 import "./chartStyle.css";
 import API from "../../utils/API";
 import { useAuth0 } from '@auth0/auth0-react';
+import DiscreteColorLegend from 'react-vis/dist/legends/discrete-color-legend';
 
 
 function TimeChart () {
@@ -17,6 +18,18 @@ function TimeChart () {
   const [hamstringsAndGlutes, setHamstringAndGlutes] = useState([{x: 0, y: 0}]);
   const [abdominals, setAbdominals] = useState([{x: 0, y: 0}]);
   const [conditioning, setConditioning] = useState([{x: 0, y: 0}]);
+
+  const ITEMS = [
+    'Chest',
+    'Back',
+    'Shoulders',
+    'Biceps',
+    'Triceps',
+    "Quadriceps",
+    "Hamstrings And Glutes",
+    "Abdominals",
+    "Conditioning"
+  ];
 
   useEffect(() => {
     loadStats()
@@ -56,6 +69,7 @@ function TimeChart () {
     const myPalette = ["red", "blue", "#03fce7", "green", "orange", "purple", "black", "pink", "#8af542"]
     
     return (
+      <div className="row">
       <div className="chart col-lg-4 col-md-4 col-sm-8 m-5 text-center">
         <p>Cumulative Exercise Time Chart</p>
 
@@ -82,6 +96,10 @@ function TimeChart () {
           <XAxis title="days" />
           <YAxis title="secs" />
         </XYPlot>
+      </div>
+      <div className="chart col-lg-4 col-md-4 col-sm-3 mt-5">
+      <DiscreteColorLegend colors={myPalette} height={400} width={300} items={ITEMS} />
+    </div>
       </div>
     );
   
