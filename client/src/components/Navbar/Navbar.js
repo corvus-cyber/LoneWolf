@@ -16,7 +16,7 @@ export default class Navbar extends Component {
     render(){
         const show = (this.state.menu) ? "show" : "" ;
     return (
-        <nav className="navbar navbar-expand-lg navbar-light absolute-top">
+        <nav className="navbar navbar-expand-lg navbar-dark absolute-top">
             <div className="navbar-brand">
                 <img className="logo" src={process.env.PUBLIC_URL + "/White-logo.png"} alt="LoneWolf logo"/>
             </div>
