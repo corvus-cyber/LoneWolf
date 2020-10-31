@@ -6,8 +6,8 @@ const repsAndTimeSchema = new Schema({
   date: {type: Date},
   sets: { type: Number},
   reps: { type: Number},
-  time: {Type: Number},
-  muscleGroup: {Type: String}
+  time: {type: Number},
+  muscleGroup: {type: String}
 });
 
 const RepsAndTime = mongoose.model("RepsAndTime", repsAndTimeSchema);

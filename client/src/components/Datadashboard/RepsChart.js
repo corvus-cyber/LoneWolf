@@ -15,6 +15,7 @@ function RepsChart() {
   const [quadriceps, setQuadriceps] = useState([{ x: 0, y: 0 }]);
   const [hamstringsAndGlutes, setHamstringAndGlutes] = useState([{ x: 0, y: 0 }]);
   const [abdominals, setAbdominals] = useState([{ x: 0, y: 0 }]);
+  const [conditioning, setConditioning] = useState([{ x: 0, y: 0 }]);
 
   const ITEMS = [
     'Chest',
@@ -24,7 +25,8 @@ function RepsChart() {
     'Triceps',
     "Quadriceps",
     "Hamstrings And Glutes",
-    "Abdominals"
+    "Abdominals",
+    "Conditioning"
   ];
 
   useEffect(() => {
@@ -61,7 +63,7 @@ function RepsChart() {
       .catch(err => console.log(err));
   }
   //plug in the colors of the Line Series here:
-  const myPalette = ["red", "blue", "#03fce7", "green", "orange", "purple", "black", "pink"]
+  const myPalette = ["red", "blue", "#03fce7", "green", "orange", "purple", "black", "pink", "red"]
 
   return (
     <div className="row">
@@ -70,7 +72,7 @@ function RepsChart() {
       {/* plug in the x and y range here */}
       <FlexibleWidthXYPlot height={300} xDomain={[0, 100]} yDomain={[0, 500]}
         colorType="category"
-        colorDomain={[0, 1, 2, 3, 4, 5, 6, 7]}
+        colorDomain={[0, 1, 2, 3, 4, 5, 6, 7, 8]}
         colorRange={myPalette}>
         <VerticalGridLines />
         <HorizontalGridLines />
@@ -84,13 +86,14 @@ function RepsChart() {
         <LineSeries data={quadriceps} color={5} />
         <LineSeries data={hamstringsAndGlutes} color={6} />
         <LineSeries data={abdominals} color={7} />
+        <LineSeries data={conditioning} color={8} />
 
         <XAxis title="days" />
         <YAxis title="reps" />
       </FlexibleWidthXYPlot>
     </div>
     <div className="chart col-sm-3 mt-5">
-      <DiscreteColorLegend colors={myPalette} height={300} width={300} items={ITEMS} />
+      <DiscreteColorLegend colors={myPalette} height={400} width={200} items={ITEMS} />
     </div>
     </div>
     );
