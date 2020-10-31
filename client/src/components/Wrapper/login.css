@@ -9,3 +9,16 @@
   border-color: #367e3b;
   color: #ffffff
 }
+
+.navbar-light .navbar-text .link{
+  color: white
+}
+ 
+.navbar.NavbarColor {
+   background-color: black;
+ }
+
+.Homelogo{
+  max-width: 5%;
+  height: auto
+}
