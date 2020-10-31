@@ -7,8 +7,9 @@ router.route("/stats")
   .post(statsController.create)
   .get(statsController.getWeightStats)
 
-
+  // Matches with "/api/repsandtime"
 router.route("/repsandtime")
-.post(repsAndTimeController.create)
+  .post(repsAndTimeController.create)
+  .get(repsAndTimeController.getRepsAndTimeStats)
 
 module.exports = router;

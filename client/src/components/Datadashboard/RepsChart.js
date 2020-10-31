@@ -6,63 +6,48 @@ import API from "../../utils/API";
 import { useAuth0 } from '@auth0/auth0-react';
 
 function RepsChart() {
- 
-    const chest = [
-      { x: 0, y: 1 },
-      { x: 7, y: 1 },
-      { x: 14, y: 2 },
-      { x: 21, y: 2 },
-      { x: 28, y: 3 }
-    ];
-    const back = [
-      { x: 0, y: 2 },
-      { x: 7, y: 2 },
-      { x: 14, y: 3 },
-      { x: 21, y: 3 },
-      { x: 28, y: 4 }
-    ];
-    const shoulders = [
-      { x: 0, y: 2 },
-      { x: 7, y: 3 },
-      { x: 14, y: 4 },
-      { x: 21, y: 5 },
-      { x: 28, y: 6 }
-    ];
-    const biceps = [
-      { x: 0, y: 5 },
-      { x: 7, y: 6 },
-      { x: 14, y: 7 },
-      { x: 21, y: 8 },
-      { x: 28, y: 9 }
-    ];
-    const triceps = [
-      { x: 0, y: 9 },
-      { x: 7, y: 10 },
-      { x: 14, y: 11 },
-      { x: 21, y: 12 },
-      { x: 28, y: 13 }
-    ];
-    const quadriceps = [
-      { x: 0, y: 8 },
-      { x: 7, y: 5 },
-      { x: 14, y: 8 },
-      { x: 21, y: 8 },
-      { x: 28, y: 9 }
-    ];
-    const hamstringsAndGlutes = [
-      { x: 0, y: 8 },
-      { x: 7, y: 5 },
-      { x: 14, y: 10 },
-      { x: 21, y: 12 },
-      { x: 28, y: 13 }
-    ];
-    const abdominals = [
-      { x: 0, y: 10 },
-      { x: 7, y: 5 },
-      { x: 14, y: 19 },
-      { x: 21, y: 12 },
-      { x: 28, y: 16 }
-    ]
+  const [chest, setChest] = useState([{x: 0, y: 0}]);
+  const [back, setBack] = useState([{x: 0, y: 0}]);
+  const [shoulders, setShoulders] = useState([{x: 0, y: 0}]);
+  const [biceps, setBiceps] = useState([{x: 0, y: 0}]);
+  const [triceps, setTriceps] = useState([{x: 0, y: 0}]);
+  const [quadriceps, setQuadriceps] = useState([{x: 0, y: 0}]);
+  const [hamstringsAndGlutes, setHamstringAndGlutes] = useState([{x: 0, y: 0}]);
+  const [abdominals, setAbdominals] = useState([{x: 0, y: 0}]);
+
+  useEffect(() => {
+    loadStats()
+  }, [])
+
+  const { user } = useAuth0()
+  let currentUserToken = user.sub;
+
+  function loadStats() {
+    let statsData = [];
+  
+    API.getRepsAndTime()
+      .then(res => {
+        //all user stats
+        statsData = res.data;
+        //grab only the stats of the logged-in user
+        let loginUserStats = statsData.filter(data => data.token === currentUserToken);
+        let firstDate;
+        console.log(loginUserStats);
+        if (loginUserStats[0]){
+          firstDate = new Date(loginUserStats[0].date).getTime();
+        }
+
+        function determineXCoordinate(data){
+          return (new Date(data.date).getTime() - firstDate)/ (1000 * 3600 * 24)
+        }
+
+      }).then(() => { 
+        console.log(statsData);
+
+      })
+
+      .catch(err => console.log(err));
+  }
     //plug in the colors of the Line Series here:
     const myPalette = ["red", "blue", "#03fce7", "green", "orange", "purple", "black", "pink"]
     
@@ -70,7 +55,7 @@ function RepsChart() {
       <div className="chart col-lg-4 col-md-4 col-sm-8 m-5 text-center">
         <p>Cumulative Exercise Reps Chart</p>
         {/* plug in the x and y range here */}
-        <XYPlot height={300} width={300} xDomain={[0, 100]} yDomain={[0,100]}
+        <XYPlot height={300} width={300} xDomain={[0, 100]} yDomain={[0,500]}
           colorType="category"
           colorDomain={[0, 1, 2, 3, 4, 5, 6, 7]}
           colorRange={myPalette}>

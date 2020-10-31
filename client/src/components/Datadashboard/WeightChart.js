@@ -29,7 +29,7 @@ function WeightChart() {
         statsData = res.data;
         //grab only the stats of the logged-in user
         let loginUserStats = statsData.filter(data => data.token === currentUserToken);
-        console.log(loginUserStats)
+        // console.log(loginUserStats)
 
         let firstDate;
         if (loginUserStats[0]){
