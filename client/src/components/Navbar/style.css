@@ -1,24 +1,25 @@
 .navbar {
     
-    background-color: #ffffff;
+    background-color: black;
     border-bottom-style: solid;
     border-bottom-width: 15px;
     border-bottom-color: #355e3b;
+    color: white;
 } 
 
 .logo{
-    max-width: 10%;    
+    max-width: 23%;    
     height: auto;
 }
 
-
+a.nav-link.active{
+   color: white 
+} 
 
 .navbar-toggler-icon {
     color: black;
 }
 
-
-.navbar-light .navbar-nav .nav-link {
-    font-size: large;
-    color: black
+.nav-item.nav-link{
+    color: white
 }
