@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "../../../node_modules/react-vis/dist/style.css"
-import { XYPlot, VerticalGridLines, HorizontalGridLines, LineSeries, XAxis, YAxis } from 'react-vis/dist';
+import { VerticalGridLines, HorizontalGridLines, LineSeries, XAxis, YAxis, FlexibleWidthXYPlot } from 'react-vis/dist';
 import "./chartStyle.css";
 import API from "../../utils/API";
 import { useAuth0 } from '@auth0/auth0-react';
@@ -65,10 +65,10 @@ function RepsChart() {
 
   return (
     <div className="row">
-    <div className="chart col-lg-4 col-md-4 col-sm-8 m-5 text-center">
+    <div className="chart col-sm-7 m-5 text-center">
       <p>Cumulative Exercise Reps Chart</p>
       {/* plug in the x and y range here */}
-      <XYPlot height={300} width={300} xDomain={[0, 100]} yDomain={[0, 500]}
+      <FlexibleWidthXYPlot height={300} xDomain={[0, 100]} yDomain={[0, 500]}
         colorType="category"
         colorDomain={[0, 1, 2, 3, 4, 5, 6, 7]}
         colorRange={myPalette}>
@@ -87,9 +87,9 @@ function RepsChart() {
 
         <XAxis title="days" />
         <YAxis title="reps" />
-      </XYPlot>
+      </FlexibleWidthXYPlot>
     </div>
-    <div className="chart col-lg-4 col-md-4 col-sm-3 mt-5">
+    <div className="chart col-sm-3 mt-5">
       <DiscreteColorLegend colors={myPalette} height={300} width={300} items={ITEMS} />
     </div>
     </div>
