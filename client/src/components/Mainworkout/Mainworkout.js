@@ -48,8 +48,8 @@ export default function MainWorkout(props) {
             token: user.sub,
             date: new Date(),
             sets: parseInt(formObject.sets),
-            reps: parseInt(formObject.reps * formObject.sets),
-            time: parseInt(formObject.time),
+            reps: parseInt(formObject.sets * formObject.reps),
+            time: parseInt(formObject.time * formObject.sets),
             muscleGroup: muscleGroupName
           })
             .then(() => setFormObject({
