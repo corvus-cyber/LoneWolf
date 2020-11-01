@@ -83,13 +83,16 @@ function WeightChart() {
   const myPalette = ["green", "pink"]
 
   return (
+    <div className="row">
     <div className="chart col-lg-4 col-md-4 col-sm-8 m-5">
       <p>Weight and Lean Body Mass Chart</p>
       <DiscreteColorLegend className="mb-4" orientation="horizontal" colors={myPalette} width={300} items={ITEMS} />
-      <XYPlot animation height={300} width={300} xDomain={lastDrawLocation && [
+      <XYPlot animation height={300} width={300} 
+      xDomain={lastDrawLocation && [
                 lastDrawLocation.left,
                 lastDrawLocation.right
-              ]} yDomain={lastDrawLocation && [
+              ]} 
+      yDomain={lastDrawLocation && [
                 lastDrawLocation.bottom,
                 lastDrawLocation.top
               ]}
@@ -121,6 +124,7 @@ function WeightChart() {
         >
           Reset Zoom
         </button>
+    </div>
     </div>
   );
 }

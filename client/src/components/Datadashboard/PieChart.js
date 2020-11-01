@@ -96,9 +96,11 @@ function PieChart() {
 
 
     return (
-        <div className="chart col-lg-4 col-md-4 col-sm-8 m-5 text-center">
-            <p>Muscle Balance History</p>
+        <div className="row">
+        <div className="chart col-lg-4 col-md-4 col-sm-8 text-center">
+            <p>Muscle Balance History This Week</p>
             <RadialChart data={myData} width={300} height={300} padAngle={0.05} />
+        </div>
         </div>
     );
 }

@@ -6,3 +6,11 @@
 .rv-xy-plot__series--label-text {
     font-size: 15px;
 }
+
+.row {
+    justify-content: center;
+}
+
+.chart {
+    text-align: center;
+}
