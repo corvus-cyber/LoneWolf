@@ -33,7 +33,7 @@ function PieChart() {
                 //grab only the stats of the logged-in user
                 let loginUserStats = statsData.filter(data => data.token === currentUserToken);
                 let firstDate;
-                console.log(loginUserStats);
+                // console.log(loginUserStats);
                 if (loginUserStats[0]) {
                     firstDate = new Date(loginUserStats[0].date).getTime();
                 }
@@ -43,7 +43,7 @@ function PieChart() {
                 }
 
             }).then(() => {
-                console.log(statsData);
+                // console.log(statsData);
 
             })
 

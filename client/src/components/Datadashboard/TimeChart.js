@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "../../../node_modules/react-vis/dist/style.css"
-import { FlexibleWidthXYPlot, VerticalGridLines, HorizontalGridLines, LineSeries, XAxis, YAxis, Highlight } from 'react-vis/dist';
+import { FlexibleWidthXYPlot, LineSeries, XAxis, YAxis, Highlight } from 'react-vis/dist';
 import "./chartStyle.css";
 import API from "../../utils/API";
 import { useAuth0 } from '@auth0/auth0-react';
@@ -50,7 +50,7 @@ function TimeChart() {
         //grab only the stats of the logged-in user
         let loginUserStats = statsData.filter(data => data.token === currentUserToken);
         let firstDate;
-        console.log(loginUserStats);
+        // console.log(loginUserStats);
         if (loginUserStats[0]) {
           firstDate = new Date(loginUserStats[0].date).getTime();
         }
@@ -60,7 +60,7 @@ function TimeChart() {
         }
 
       }).then(() => {
-        console.log(statsData);
+        // console.log(statsData);
 
       })
 
@@ -93,8 +93,6 @@ function TimeChart() {
           colorType="category"
           colorDomain={[0, 1, 2, 3, 4, 5, 6, 7, 8]}
           colorRange={myPalette}>
-          <VerticalGridLines />
-          <HorizontalGridLines />
 
           {/* colors are according to index numbers within the myPalette array */}
           <LineSeries data={chest} color={0} />

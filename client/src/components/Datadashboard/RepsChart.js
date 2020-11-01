@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "../../../node_modules/react-vis/dist/style.css"
-import { VerticalGridLines, HorizontalGridLines, LineSeries, XAxis, YAxis, FlexibleWidthXYPlot, Highlight } from 'react-vis/dist';
+import {LineSeries, XAxis, YAxis, FlexibleWidthXYPlot, Highlight } from 'react-vis/dist';
 import "./chartStyle.css";
 import API from "../../utils/API";
 import { useAuth0 } from '@auth0/auth0-react';
@@ -40,6 +40,15 @@ function RepsChart() {
 
   function loadStats() {
     let statsData = [];
+    let chestCoord = [];
+    let backCoord = [];
+    let shouldersCoord = [];
+    let bicepsCoord = [];
+    let tricepsCoord = [];
+    let quadricepsCoord = [];
+    let hamstringsAndGlutesCoord = [];
+    let abdominalsCoord = [];
+    let conditioningCoord = [];
 
     API.getRepsAndTime()
       .then(res => {
@@ -47,25 +56,81 @@ function RepsChart() {
         statsData = res.data;
         //grab only the stats of the logged-in user
         let loginUserStats = statsData.filter(data => data.token === currentUserToken);
+
+        //if user has data saved, find date of first workout
         let firstDate;
-        console.log(loginUserStats);
         if (loginUserStats[0]) {
           firstDate = new Date(loginUserStats[0].date).getTime();
         }
 
         function determineXCoordinate(data) {
-          return (new Date(data.date).getTime() - firstDate) / (1000 * 3600 * 24)
+          return (Math.ceil((new Date(data.date).getTime() - firstDate) / (1000 * 3600 * 24)))
         }
 
+        //generate the arrays of different muscle groups
+        loginUserStats.filter(data => {
+          switch (data.muscleGroup) {
+            case "Chest":
+              chestCoord.push({ "x": determineXCoordinate(data), "y": data.reps });
+              break;
+            case "Back":
+              backCoord.push({ "x": determineXCoordinate(data), "y": data.reps });
+              break;
+            case "Shoulders":
+              shouldersCoord.push({ "x": determineXCoordinate(data), "y": data.reps });
+              break;
+            case "Triceps":
+              tricepsCoord.push({ "x": determineXCoordinate(data), "y": data.reps });
+              break;
+            case "Biceps":
+              bicepsCoord.push({ "x": determineXCoordinate(data), "y": data.reps });
+              break;
+            case "Quadriceps":
+              quadricepsCoord.push({ "x": determineXCoordinate(data), "y": data.reps });
+              break;
+            case "Hamstrings and Glutes":
+              hamstringsAndGlutesCoord.push({ "x": determineXCoordinate(data), "y": data.reps });
+              break;
+            case "Abs":
+              abdominalsCoord.push({ "x": determineXCoordinate(data), "y": data.reps });
+              break;
+            case "Conditioning":
+              conditioningCoord.push({ "x": determineXCoordinate(data), "y": data.reps });
+            }
+        })
       }).then(() => {
-        console.log(statsData);
-
-      })
-
+        if (abdominalsCoord.length > 0) {
+          setAbdominals(abdominalsCoord)
+        };
+        if (backCoord.length > 0) {
+          setBack(backCoord);
+        };
+        if (chestCoord.length > 0) {
+          setChest(chestCoord)
+        };
+        if (shouldersCoord.length > 0) {
+          setShoulders(shouldersCoord);
+        };
+        if (tricepsCoord.length > 0) {
+          setTriceps(tricepsCoord)
+        };
+        if (bicepsCoord.length > 0) {
+          setBiceps(bicepsCoord)
+        };
+        if (quadricepsCoord.length > 0) {
+          setQuadriceps(quadricepsCoord)
+        };
+        if (hamstringsAndGlutesCoord.length > 0) {
+          setHamstringAndGlutes(hamstringsAndGlutesCoord)
+        };
+        if (conditioningCoord.length > 0) {
+          setConditioning(conditioningCoord)
+        }
+    })
       .catch(err => console.log(err));
   }
   //plug in the colors of the Line Series here:
-  const myPalette = ["red", "blue", "#03fce7", "green", "orange", "purple", "black", "pink", "red"]
+  const myPalette = ["red", "blue", "#03fce7", "green", "orange", "purple", "blue", "pink", "#e9b7ed"]
 
   return (
     <div className="row">
@@ -77,20 +142,18 @@ function RepsChart() {
       </div>
       <div className="chart col-sm-9">
         {/* plug in the x and y range here */}
-        <FlexibleWidthXYPlot height={300} 
-        xDomain={lastDrawLocation && [
-                lastDrawLocation.left,
-                lastDrawLocation.right
-              ]} 
-        yDomain={lastDrawLocation && [
-                lastDrawLocation.bottom,
-                lastDrawLocation.top
-              ]} 
+        <FlexibleWidthXYPlot height={300}
+          xDomain={lastDrawLocation && [
+            lastDrawLocation.left,
+            lastDrawLocation.right
+          ]}
+          yDomain={lastDrawLocation && [
+            lastDrawLocation.bottom,
+            lastDrawLocation.top
+          ]}
           colorType="category"
           colorDomain={[0, 1, 2, 3, 4, 5, 6, 7, 8]}
           colorRange={myPalette}>
-          <VerticalGridLines />
-          <HorizontalGridLines />
 
           {/* colors are according to index numbers within the myPalette array */}
           <LineSeries data={chest} color={0} />
@@ -103,17 +166,17 @@ function RepsChart() {
           <LineSeries data={abdominals} color={7} />
           <LineSeries data={conditioning} color={8} />
           <Highlight
-              onBrushEnd={area => setLastDrawLocation(area)}
-              onDrag={area => {
-                  setLastDrawLocation({
-                    bottom: lastDrawLocation.bottom + (area.top - area.bottom),
-                    left: lastDrawLocation.left - (area.right - area.left),
-                    right: lastDrawLocation.right - (area.right - area.left),
-                    top: lastDrawLocation.top + (area.top - area.bottom)
-                  })
-                
-              }}
-            />
+            onBrushEnd={area => setLastDrawLocation(area)}
+            onDrag={area => {
+              setLastDrawLocation({
+                bottom: lastDrawLocation.bottom + (area.top - area.bottom),
+                left: lastDrawLocation.left - (area.right - area.left),
+                right: lastDrawLocation.right - (area.right - area.left),
+                top: lastDrawLocation.top + (area.top - area.bottom)
+              })
+
+            }}
+          />
           <XAxis title="days" />
           <YAxis title="reps" />
         </FlexibleWidthXYPlot>

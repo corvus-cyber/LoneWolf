@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "../../../node_modules/react-vis/dist/style.css"
-import { FlexibleWidthXYPlot, VerticalGridLines, HorizontalGridLines, LineSeries, XAxis, YAxis, Highlight } from 'react-vis/dist';
+import { FlexibleWidthXYPlot, LineSeries, XAxis, YAxis, Highlight } from 'react-vis/dist';
 import "./chartStyle.css";
 import API from "../../utils/API";
 import { useAuth0 } from '@auth0/auth0-react';
@@ -37,7 +37,6 @@ function WeightChart() {
         statsData = res.data;
         //grab only the stats of the logged-in user
         let loginUserStats = statsData.filter(data => data.token === currentUserToken);
-        // console.log(loginUserStats)
 
         let firstDate;
         if (loginUserStats[0]) {
@@ -45,7 +44,7 @@ function WeightChart() {
         }
 
         function determineXCoordinate(data) {
-          return (new Date(data.date).getTime() - firstDate) / (1000 * 3600 * 24)
+          return (Math.ceil((new Date(data.date).getTime() - firstDate) / (1000 * 3600 * 24)))
         }
 
 
@@ -54,7 +53,7 @@ function WeightChart() {
           .forEach(data => {
             const coordinate =
               { "x": determineXCoordinate(data), "y": data.weight }
-            loginUserWeight.push(coordinate)
+            loginUserWeight.push(coordinate);
           });
         //save lean body mass information into loginUserLeanBodyMass Array 
         loginUserStats.filter(data => data.leanBodyMass)
@@ -103,8 +102,6 @@ function WeightChart() {
           colorType="category"
           colorDomain={[0, 1, 2, 3, 4, 5, 6, 7]}
           colorRange={myPalette}>
-          <VerticalGridLines />
-          <HorizontalGridLines />
           <XAxis title="days" />
           <YAxis title="lbs" />
           <LineSeries data={weightData} color={0} />
