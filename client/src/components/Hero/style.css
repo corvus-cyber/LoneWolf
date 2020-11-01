@@ -1,0 +1,49 @@
+.hero {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .hero::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .hero * {
+    position: relative;
+  }
+  
+  .hero h1, .hero h2 {
+    color: white;
+
+  }
+  
+  .hero h1 {
+    font-size: 50px;
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .float-left .green{
+    color: #17ac21;
+  }
+
+  .pitch{
+      color: white;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+  }
+
+  .pitch-highlight{
+    border-left: 2px solid #17ac21;
+  }
+
+  .pitchFont{
+    font-family: 'Orbitron', sans-serif;
+  }
