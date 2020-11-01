@@ -70,7 +70,7 @@ function RepsChart() {
   return (
     <div className="row">
       <div className="chart col-sm-10">
-        <p>Cumulative Exercise Reps Chart</p>
+        <p className="chart-title">Cumulative Exercise Reps Chart</p>
       </div>
       <div className="chart col-sm-11 mb-4">
         <DiscreteColorLegend orientation="horizontal" colors={myPalette} items={ITEMS} />

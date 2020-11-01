@@ -14,3 +14,20 @@
 .chart {
     text-align: center;
 }
+
+.chart-title {
+    color: white;
+}
+
+.time-chart, .weight-chart {
+    margin-top: 80px;
+    margin-bottom: 90px;
+}
+
+.rv-discrete-color-legend-item {
+    color: white;
+}
+
+.rv-radial-chart {
+    margin: auto;
+}

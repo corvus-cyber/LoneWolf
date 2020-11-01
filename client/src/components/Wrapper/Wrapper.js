@@ -15,7 +15,7 @@ function Wrapper(props) {
     return <div>Oops... {error.message}</div>;
   }
 
-  return <main className="container justify-content-center mt-5">{props.children}</main>;
+  return <main className="container wrapper justify-content-center mt-5">{props.children}</main>;
 }
 
 export default Wrapper;
