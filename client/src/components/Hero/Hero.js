@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import backgroundImage from "./hero.png"
+import backgroundImage from "./Plainhero.png"
 
 function Hero(props) {
   return (
