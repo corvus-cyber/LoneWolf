@@ -7,14 +7,9 @@ import PieChart from "../components/Datadashboard/PieChart";
 import WeightChart from "../components/Datadashboard/WeightChart";
 import RepsChart from "../components/Datadashboard/RepsChart";
 import TimeChart from "../components/Datadashboard/TimeChart";
-import { useAuth0 } from '@auth0/auth0-react';
 
 
 function Dashboard() {
-  const {isAuthenticated, user} = useAuth0();
-  
-  // console.log(user);
-  // console.log(isAuthenticated)
  
   return (
     <div>

@@ -37,20 +37,19 @@ export default function MainWorkout(props) {
 
     function handleInputChange(event) {
         const { name, value } = event.target;
+        console.log(event.target.value)
         setFormObject({...formObject, [name]: value})
     };
 
     function handleFormSubmit() {
         if (formObject.sets || formObject.reps || formObject.time) {
-         let muscleGroupName = props.exercise.muscle;
-        console.log(muscleGroupName)
           API.saveRepsAndTime({
             token: user.sub,
             date: new Date(),
             sets: parseInt(formObject.sets),
-            reps: parseInt(formObject.reps * formObject.sets),
-            time: parseInt(formObject.time),
-            muscleGroup: muscleGroupName
+            reps: parseInt(formObject.sets * formObject.reps),
+            time: parseInt(formObject.time * formObject.sets),
+            muscleGroup: props.exercise.muscle
           })
             .then(() => setFormObject({
               sets: "",
