@@ -15,7 +15,7 @@ import Hero from "./components/Hero/Hero"
 
 function Home(props) {
     const { loginWithRedirect, isAuthenticated, user, logout } = useAuth0();
-    console.log(user);
+    console.log("here is the user", user);
 
     console.log(isAuthenticated)
 
@@ -27,6 +27,7 @@ function Home(props) {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
+
 
 
     return (
@@ -55,7 +56,8 @@ function Home(props) {
                     <Link to="/build">Build Workout</Link>}
                 </NavbarText>
                 <NavbarText>
-                    <button className="btn-dashboardBttns btn-sm mr-2 ml-2" onClick={() => { signOut()}}>Sign Out</button>
+                    {isAuthenticated && 
+                    <button className="btn-dashboardBttns btn-sm mr-2 ml-2" onClick={() => { signOut()}}>Sign Out</button>}
                 </NavbarText>   
             </Nav>
             </Collapse>
@@ -66,12 +68,10 @@ function Home(props) {
             <div className="col-md-8">
                 <img src={process.env.PUBLIC_URL + "/assets/images/Musclecircle.png"} className="muscleCircle" />
             </div>
-            {/* <div className="row"> */}
                 <div className="col-md-4 mb-5 align-self-end">
                     <h3 className="white">Choose How You Build</h3>
                     <h6 className="white">Pick which muscle group you want to work on, select an exercise and then get to work!</h6>
                 </div>
-            {/* </div> */}
         </div>    
         <div className="row">
             <div className="col-md-4 mt-5">

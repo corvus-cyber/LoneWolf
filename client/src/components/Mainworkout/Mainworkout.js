@@ -79,7 +79,7 @@ export default function MainWorkout(props) {
                     <img src={process.env.PUBLIC_URL + props.exercise.gif} onClick={(e)=>toggleModal(e, props.exercise.gif)} className="customFluid mt-1 mb-1" alt="gif of exercise"/>
                         {modal ? (<Modal toggleModal={toggleModal}><img src={process.env.PUBLIC_URL + props.exercise.gif} className="img-fluid  pt-5 mt-5 mb-5 pb-5" alt="gif of exercise"/></Modal>):(<></>)}
                 </div> 
-                <div className="col-md-2 mt-5 text-center"><h6>{props.exercise.exercise}</h6></div>
+                <div className="col-md-2 mt-5 text-center"><h5>{props.exercise.exercise}</h5></div>
 
                     <div className="justify-content-center text-center pt-2 pl-5">
                         <form className="form">
