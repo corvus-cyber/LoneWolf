@@ -42,6 +42,15 @@ function TimeChart() {
 
   function loadStats() {
     let statsData = [];
+    let chestCoord = [];
+    let backCoord = [];
+    let shouldersCoord = [];
+    let bicepsCoord = [];
+    let tricepsCoord = [];
+    let quadricepsCoord = [];
+    let hamstringsAndGlutesCoord = [];
+    let abdominalsCoord = [];
+    let conditioningCoord = [];
 
     API.getRepsAndTime()
       .then(res => {
@@ -59,27 +68,82 @@ function TimeChart() {
           return (new Date(data.date).getTime() - firstDate) / (1000 * 3600 * 24)
         }
 
+        //generate the arrays of different muscle groups
+        loginUserStats.filter(data => {
+          switch (data.muscleGroup) {
+            case "Chest":
+              chestCoord.push({ "x": determineXCoordinate(data), "y": data.time });
+              break;
+            case "Back":
+              backCoord.push({ "x": determineXCoordinate(data), "y": data.time });
+              break;
+            case "Shoulders":
+              shouldersCoord.push({ "x": determineXCoordinate(data), "y": data.time });
+              break;
+            case "Triceps":
+              tricepsCoord.push({ "x": determineXCoordinate(data), "y": data.time });
+              break;
+            case "Biceps":
+              bicepsCoord.push({ "x": determineXCoordinate(data), "y": data.time });
+              break;
+            case "Quadriceps":
+              quadricepsCoord.push({ "x": determineXCoordinate(data), "y": data.time });
+              break;
+            case "Hamstrings and Glutes":
+              hamstringsAndGlutesCoord.push({ "x": determineXCoordinate(data), "y": data.time });
+              break;
+            case "Abs":
+              abdominalsCoord.push({ "x": determineXCoordinate(data), "y": data.time });
+              break;
+            case "Conditioning":
+              conditioningCoord.push({ "x": determineXCoordinate(data), "y": data.time });
+          }
+        })
       }).then(() => {
-        // console.log(statsData);
-
+        if (abdominalsCoord.length > 0) {
+          setAbdominals(abdominalsCoord)
+        };
+        if (backCoord.length > 0) {
+          setBack(backCoord);
+        };
+        if (chestCoord.length > 0) {
+          setChest(chestCoord)
+        };
+        if (shouldersCoord.length > 0) {
+          setShoulders(shouldersCoord);
+        };
+        if (tricepsCoord.length > 0) {
+          setTriceps(tricepsCoord)
+        };
+        if (bicepsCoord.length > 0) {
+          setBiceps(bicepsCoord)
+        };
+        if (quadricepsCoord.length > 0) {
+          setQuadriceps(quadricepsCoord)
+        };
+        if (hamstringsAndGlutesCoord.length > 0) {
+          setHamstringAndGlutes(hamstringsAndGlutesCoord)
+        };
+        if (conditioningCoord.length > 0) {
+          setConditioning(conditioningCoord)
+        }
       })
-
       .catch(err => console.log(err));
   }
 
   //plug in the colors of the Line Series here:
-  const myPalette = ["red", "blue", "#03fce7", "green", "orange", "purple", "black", "pink", "#8af542"]
+  const myPalette = ["red", "blue", "#03fce7", "green", "orange", "purple", "white", "pink", "#8af542"]
 
   return (
     <div className="row time-chart">
       <div className="chart col-sm-10">
         <p className="chart-title">Cumulative Exercise Time Chart</p>
-        </div>
-        <div className="chart col-sm-11 mb-4">
-          <DiscreteColorLegend orientation="horizontal" colors={myPalette} items={ITEMS} />
-        </div>
+      </div>
+      <div className="chart col-sm-11 mb-4">
+        <DiscreteColorLegend orientation="horizontal" colors={myPalette} items={ITEMS} />
+      </div>
 
-        <div className="chart col-sm-9">
+      <div className="chart col-sm-9">
         {/* plug in the x and y range here */}
         <FlexibleWidthXYPlot height={300}
           xDomain={lastDrawLocation && [
