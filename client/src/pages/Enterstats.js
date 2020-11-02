@@ -3,7 +3,7 @@ import API from "../utils/API";
 import Navbar from "../components/Navbar/Navbar"
 import Footer from "../components/Footer/Footer"
 import Wrapper from "../components/Wrapper/Wrapper"
-import SelectionContainer from "../components/SelectionContainer/SelectionContainer"
+import StatsContainer from "../components/StatsContainer/StatsContainer"
 import { useAuth0 } from '@auth0/auth0-react';
 import "../components/Wrapper/login.css"
 
@@ -47,7 +47,7 @@ function Stats() {
     <div>
       <Navbar />
       <Wrapper>
-      <SelectionContainer>
+      <StatsContainer>
         <div className="row justify-content-md-center">
         <form className="form-inline mt-5 mb-2">
           <div className="form-group mx-sm-3 mb-2">
@@ -66,7 +66,7 @@ function Stats() {
           <button onClick={handleFormSubmit} type="submit" className="btn-enterStats btn-sm mb-2">Record</button>
         </form>
         </div>
-        </SelectionContainer>
+        </StatsContainer>
       </Wrapper>
       <Footer />
     </div>
