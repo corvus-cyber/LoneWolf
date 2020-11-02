@@ -4,11 +4,6 @@ import { Link } from "react-router-dom";
 import Container from "../SelectionContainer/SelectionContainer";
 import "./style.css"
 import ExerciseCard from "./Exercisecard"
-import {
-  GiMuscleUp
-
-} from "react-icons/gi";
-
 
 class Muscles extends Component{
     state={
@@ -50,7 +45,7 @@ class Muscles extends Component{
       
     <div className="mt-5 pt-4 pb-4 justify-content-center">
       <div className="row justify-content-center">
-        <img className="img-fluid" id="muscleImage" style={{maxWidth: "55" + "%"}} src={process.env.PUBLIC_URL + "/assets/muscleGroups/None.png"}  alt="muscle groups"></img>
+        <img className="muscleGroupImg" id="muscleImage" src={process.env.PUBLIC_URL + "/assets/muscleGroups/None.png"}  alt="muscle groups"></img>
       </div>
       <div className="row justify-content-center">
         <Form/>
@@ -70,7 +65,7 @@ class Muscles extends Component{
             <Link
                 to= {{pathname: "/workouts",
                 state: {workoutExercises: this.state.workoutExercises }}}>
-                    <button type="submit" className="btn btn-routeToWorkout btn-lg btn-block" disabled={this.state.workoutExercises.length<1} style={{backgroundColor: "#F4C430", borderColor: "#F4C430"}}><GiMuscleUp/> View Workout<GiMuscleUp/></button>
+                    <button type="submit" className="btn btn-routeToWorkout btn-lg btn-block" disabled={this.state.workoutExercises.length<1} style={{backgroundColor: "#F4C430", borderColor: "#F4C430"}}> View Workout</button>
             </Link>
         </li>
       </div>

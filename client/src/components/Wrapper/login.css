@@ -19,6 +19,21 @@
  }
 
 .Homelogo{
-  max-width: 5%;
+  max-width: 30%;
   height: auto
+}
+
+.muscleCircle{
+  max-width: 70%;
+  height: auto
+}
+
+.white{
+  color: white;
+  font-family: 'Orbitron', sans-serif
+}
+
+.hitFloor{
+  max-width: 70%;
+  height: auto;
 }
