@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "../../../node_modules/react-vis/dist/style.css"
-import {LineSeries, XAxis, YAxis, FlexibleWidthXYPlot, Highlight } from 'react-vis/dist';
+import {LineSeries, XAxis, YAxis, FlexibleWidthXYPlot, Highlight, MarkSeries, Hint } from 'react-vis/dist';
 import "./chartStyle.css";
 import API from "../../utils/API";
 import { useAuth0 } from '@auth0/auth0-react';
@@ -18,6 +18,7 @@ function RepsChart() {
   const [conditioning, setConditioning] = useState([{ x: 0, y: 0 }]);
 
   const [lastDrawLocation, setLastDrawLocation] = useState(null);
+  const [hoverCoord, setHoverCoord] = useState({});
 
   const ITEMS = [
     'Chest',
@@ -133,9 +134,10 @@ function RepsChart() {
   const myPalette = ["red", "blue", "#03fce7", "green", "orange", "purple", "blue", "pink", "#e9b7ed"]
 
   return (
-    <div className="row">
+
+    <div className="row reps-chart">
       <div className="chart col-sm-10">
-        <p className="chart-title">Cumulative Exercise Reps Chart</p>
+        <p className="chart-title">Exercise Reps by Muscle Group</p>
       </div>
       <div className="chart col-sm-11 mb-4">
         <DiscreteColorLegend orientation="horizontal" colors={myPalette} items={ITEMS} />
@@ -158,7 +160,8 @@ function RepsChart() {
           {/* colors are according to index numbers within the myPalette array */}
           <LineSeries data={chest} color={0} />
           <LineSeries data={back} color={1} />
-          <LineSeries data={shoulders} color={2} />
+          <LineSeries      onValueMouseOver={() => setHoverCoord(shoulders.x)}
+          onValueMouseOut={() => setHoverCoord(null)} data={shoulders} color={2} />
           <LineSeries data={biceps} color={3} />
           <LineSeries data={triceps} color={4} />
           <LineSeries data={quadriceps} color={5} />
@@ -179,9 +182,10 @@ function RepsChart() {
           />
           <XAxis title="days" />
           <YAxis title="reps" />
+        {hoverCoord ? <Hint value={hoverCoord} /> : null}
         </FlexibleWidthXYPlot>
         <button
-          className="showcase-button"
+          className="showcase-button btn btn-sm"
           onClick={() => setLastDrawLocation(null)}
         >
           Reset Zoom

@@ -65,9 +65,13 @@ function TimeChart() {
         }
 
         function determineXCoordinate(data) {
-          return (new Date(data.date).getTime() - firstDate) / (1000 * 3600 * 24)
+          return (
+            Math.ceil((new Date(data.date).getTime() - firstDate) / (1000 * 3600 * 24))
+          )
         }
 
+        
+        console.log(new Date(loginUserStats[0].date))
         //generate the arrays of different muscle groups
         loginUserStats.filter(data => {
           switch (data.muscleGroup) {
@@ -137,7 +141,7 @@ function TimeChart() {
   return (
     <div className="row time-chart">
       <div className="chart col-sm-10">
-        <p className="chart-title">Cumulative Exercise Time Chart</p>
+        <p className="chart-title">Exercise Time by Muscle Group</p>
       </div>
       <div className="chart col-sm-11 mb-4">
         <DiscreteColorLegend orientation="horizontal" colors={myPalette} items={ITEMS} />
@@ -187,7 +191,7 @@ function TimeChart() {
           <YAxis title="secs" />
         </FlexibleWidthXYPlot>
         <button
-          className="showcase-button"
+          className="showcase-button btn btn-sm"
           onClick={() => setLastDrawLocation(null)}
         >
           Reset Zoom

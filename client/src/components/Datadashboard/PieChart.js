@@ -7,14 +7,14 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 function PieChart() {
 
-    const [chest, setChest] = useState([{ x: 0, y: 0 }]);
-    const [back, setBack] = useState([{ x: 0, y: 0 }]);
-    const [shoulders, setShoulders] = useState([{ x: 0, y: 0 }]);
-    const [biceps, setBiceps] = useState([{ x: 0, y: 0 }]);
-    const [triceps, setTriceps] = useState([{ x: 0, y: 0 }]);
-    const [quadriceps, setQuadriceps] = useState([{ x: 0, y: 0 }]);
-    const [hamstringsAndGlutes, setHamstringAndGlutes] = useState([{ x: 0, y: 0 }]);
-    const [abdominals, setAbdominals] = useState([{ x: 0, y: 0 }]);
+    const [chest, setChest] = useState();
+    const [back, setBack] = useState();
+    const [shoulders, setShoulders] = useState();
+    const [biceps, setBiceps] = useState();
+    const [triceps, setTriceps] = useState();
+    const [quadriceps, setQuadriceps] = useState();
+    const [hamstringsAndGlutes, setHamstringAndGlutes] = useState();
+    const [abdominals, setAbdominals] = useState();
 
     useEffect(() => {
         loadStats()
@@ -32,15 +32,17 @@ function PieChart() {
                 statsData = res.data;
                 //grab only the stats of the logged-in user
                 let loginUserStats = statsData.filter(data => data.token === currentUserToken);
-                let firstDate;
+                let currentDay = new Date().getDay();
+                let currentWeekData;
                 // console.log(loginUserStats);
-                if (loginUserStats[0]) {
-                    firstDate = new Date(loginUserStats[0].date).getTime();
-                }
+                //condense data to current weeks 
 
-                function determineXCoordinate(data) {
-                    return (new Date(data.date).getTime() - firstDate) / (1000 * 3600 * 24)
-                }
+                let timePassed = (new Date().getTime() - new Date("Fri Oct 30 2020 00:00:00 GMT-0600").getTime()) / (1000 * 3600 * 24);
+                console.log(timePassed);
+
+                // function determineXCoordinate(data) {
+                //     return (new Date(data.date).getTime() - firstDate) / (1000 * 3600 * 24)
+                // }
 
             }).then(() => {
                 // console.log(statsData);

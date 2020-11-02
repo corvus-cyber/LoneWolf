@@ -84,10 +84,10 @@ function WeightChart() {
   return (
     <div className="row weight-chart">
       <div className="chart col-sm-10">
-        <p className="chart-title" >Weight and Lean Body Mass Chart</p>
+        <p className="chart-title" >Weight and Lean Body Mass</p>
       </div>
-      <div className="chart col-sm-4 mb-4">
-        <DiscreteColorLegend className="mb-4" orientation="horizontal" colors={myPalette} width={300} items={ITEMS} />
+      <div className="chart col-sm-3 mb-4 mx-4">
+        <DiscreteColorLegend  orientation="horizontal" colors={myPalette} width={300} items={ITEMS} />
       </div>
       <div className="chart col-sm-9">
         <FlexibleWidthXYPlot animation height={300}
@@ -120,7 +120,7 @@ function WeightChart() {
           />
         </FlexibleWidthXYPlot>
         <button
-          className="showcase-button"
+          className="showcase-button btn btn-sm"
           onClick={() => setLastDrawLocation(null)}
         >
           Reset Zoom

@@ -20,9 +20,13 @@
     font-family: "Orbitron";
 }
 
-.time-chart, .weight-chart {
-    margin-top: 80px;
+.time-chart, .weight-chart, .reps-chart{
+    margin-top: 110px;
     margin-bottom: 90px;
+}
+
+.pie-chart {
+    margin-top: 100px;
 }
 
 .rv-discrete-color-legend-item {
@@ -31,4 +35,10 @@
 
 .rv-radial-chart {
     margin: auto;
+}
+
+.showcase-button {
+    background-color: #367e3b!important;
+    color: white!important;
+    margin-top: -50px;
 }
