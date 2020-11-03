@@ -18,14 +18,14 @@ function PieChart() {
 
     const [label, setLabel] = useState("");
 
-    let chestReps = [];
-    let backReps = [];
-    let shouldersReps = [];
-    let bicepsReps = [];
-    let tricepsReps = [];
-    let quadricepsReps = [];
-    let hamstringsAndGlutesReps = [];
-    let abdominalsReps = [];
+    let chestSets = [];
+    let backSets = [];
+    let shouldersSets = [];
+    let bicepsSets = [];
+    let tricepsSets = [];
+    let quadricepsSets = [];
+    let hamstringsAndGlutesSets = [];
+    let abdominalsSets = [];
 
     useEffect(() => {
         loadStats()
@@ -78,116 +78,116 @@ function PieChart() {
                 currentWeekData.filter(data => {
                     switch (data.muscleGroup) {
                         case "Chest":
-                            chestReps.push(data.totalReps)
+                            chestSets.push(data.sets)
                             break;
                         case "Back":
-                            backReps.push(data.totalReps)
+                            backSets.push(data.sets)
                             break;
                         case "Shoulders":
-                            shouldersReps.push(data.totalReps)
+                            shouldersSets.push(data.sets)
                             break;
                         case "Triceps":
-                            tricepsReps.push(data.totalReps)
+                            tricepsSets.push(data.sets)
                             break;
                         case "Biceps":
-                            bicepsReps.push(data.totalReps)
+                            bicepsSets.push(data.sets)
                             break;
                         case "Quadriceps":
-                            quadricepsReps.push(data.totalReps)
+                            quadricepsSets.push(data.sets)
                             break;
                         case "Hamstrings and Glutes":
-                            hamstringsAndGlutesReps.push(data.totalReps)
+                            hamstringsAndGlutesSets.push(data.sets)
                             break;
                         case "Abs":
-                            abdominalsReps.push(data.totalReps)
+                            abdominalsSets.push(data.sets)
                     }
                 })
 
             }).then(() => {
-                let totalRepsSum;
-                function determineReps(array) {
-                    totalRepsSum = array.reduce(function (a, b) {
+                let totalSetsSum;
+                function determineSets(array) {
+                    totalSetsSum = array.reduce(function (a, b) {
                         return a + b;
                     }, 0);
                 }
                 
-                if (abdominalsReps.length > 0) {
-                    determineReps(abdominalsReps);
-                    setAbdominals(totalRepsSum);
+                if (abdominalsSets.length > 0) {
+                    determineSets(abdominalsSets);
+                    setAbdominals(totalSetsSum);
                   };
-                  if (backReps.length > 0) {
-                    determineReps(backReps);
-                    setBack(totalRepsSum);
+                  if (backSets.length > 0) {
+                    determineSets(backSets);
+                    setBack(totalSetsSum);
                   };
-                  if (chestReps.length > 0) {
-                    determineReps(chestReps);
-                    setChest(totalRepsSum);
+                  if (chestSets.length > 0) {
+                    determineSets(chestSets);
+                    setChest(totalSetsSum);
                   };
-                  if (shouldersReps.length > 0) {
-                    determineReps(shouldersReps);
-                    setShoulders(totalRepsSum);
+                  if (shouldersSets.length > 0) {
+                    determineSets(shouldersSets);
+                    setShoulders(totalSetsSum);
                   };
-                  if (tricepsReps.length > 0) {
-                    determineReps(tricepsReps);
-                    setTriceps(totalRepsSum);
+                  if (tricepsSets.length > 0) {
+                    determineSets(tricepsSets);
+                    setTriceps(totalSetsSum);
                   };
-                  if (bicepsReps.length > 0) {
-                    determineReps(bicepsReps);
-                    setBiceps(totalRepsSum);
+                  if (bicepsSets.length > 0) {
+                    determineSets(bicepsSets);
+                    setBiceps(totalSetsSum);
                   };
-                  if (quadricepsReps.length > 0) {
-                    determineReps(quadricepsReps);
-                    setQuadriceps(totalRepsSum);
+                  if (quadricepsSets.length > 0) {
+                    determineSets(quadricepsSets);
+                    setQuadriceps(totalSetsSum);
                   };
-                  if (hamstringsAndGlutesReps.length > 0) {
-                    determineReps(hamstringsAndGlutesReps);
-                    setHamstringAndGlutes(totalRepsSum)
+                  if (hamstringsAndGlutesSets.length > 0) {
+                    determineSets(hamstringsAndGlutesSets);
+                    setHamstringAndGlutes(totalSetsSum)
                   };
             })
             .catch(err => console.log(err));
     }
 
-    const totalRepsAll = chest + back + shoulders + triceps + biceps + quadriceps + hamstringsAndGlutes + abdominals
+    const totalSetsAll = chest + back + shoulders + triceps + biceps + quadriceps + hamstringsAndGlutes + abdominals
     
     const myData = [
         {
-            angle: chest/totalRepsAll * 360,
+            angle: chest/totalSetsAll * 360,
             innerRadius: 0.7,
             label: "Chest"
         },
         {
-            angle: back/totalRepsAll * 360,
+            angle: back/totalSetsAll * 360,
             innerRadius: 0.7,
             label: "Back"
         },
         {
-            angle: shoulders/totalRepsAll * 360,
+            angle: shoulders/totalSetsAll * 360,
             innerRadius: 0.7,
             label: "Shoulders"
         },
         {
-            angle: triceps/totalRepsAll * 360,
+            angle: triceps/totalSetsAll * 360,
             innerRadius: 0.7,
             label: "Triceps"
 
         },
         {
-            angle: biceps/totalRepsAll * 360,
+            angle: biceps/totalSetsAll * 360,
             innerRadius: 0.7,
             label: "Biceps"
         },
         {
-            angle: quadriceps/totalRepsAll * 360,
+            angle: quadriceps/totalSetsAll * 360,
             innerRadius: 0.7,
             label: "Quadriceps"
         },
         {
-            angle: hamstringsAndGlutes/totalRepsAll * 360,
+            angle: hamstringsAndGlutes/totalSetsAll * 360,
             innerRadius: 0.7,
             label: "Hamstrings and Glutes"
         },
         {
-            angle: abdominals/totalRepsAll * 360,
+            angle: abdominals/totalSetsAll * 360,
             innerRadius: 0.7,
             label: "Abs"
         }
