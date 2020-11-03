@@ -186,6 +186,7 @@ function PieChart() {
         }
     ];
 
+    // if (chest == 0 && back == 0 && shoulders == 0 && triceps !== 0 && biceps !== 0 && quadriceps !== 0 && hamstringsAndGlutes !== 0 && abdominals !== 0){}}
 
     return (
         <div className="row pie-chart">
