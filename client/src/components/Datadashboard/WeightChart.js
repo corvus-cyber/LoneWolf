@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "../../../node_modules/react-vis/dist/style.css"
-import { XYPlot, VerticalGridLines, HorizontalGridLines, LineSeries, XAxis, YAxis, Highlight } from 'react-vis/dist';
+import { FlexibleWidthXYPlot, LineSeries, XAxis, YAxis, Highlight } from 'react-vis/dist';
 import "./chartStyle.css";
 import API from "../../utils/API";
 import { useAuth0 } from '@auth0/auth0-react';
@@ -37,7 +37,6 @@ function WeightChart() {
         statsData = res.data;
         //grab only the stats of the logged-in user
         let loginUserStats = statsData.filter(data => data.token === currentUserToken);
-        // console.log(loginUserStats)
 
         let firstDate;
         if (loginUserStats[0]) {
@@ -45,7 +44,7 @@ function WeightChart() {
         }
 
         function determineXCoordinate(data) {
-          return (new Date(data.date).getTime() - firstDate) / (1000 * 3600 * 24)
+          return (Math.ceil((new Date(data.date).getTime() - firstDate) / (1000 * 3600 * 24)))
         }
 
 
@@ -54,7 +53,7 @@ function WeightChart() {
           .forEach(data => {
             const coordinate =
               { "x": determineXCoordinate(data), "y": data.weight }
-            loginUserWeight.push(coordinate)
+            loginUserWeight.push(coordinate);
           });
         //save lean body mass information into loginUserLeanBodyMass Array 
         loginUserStats.filter(data => data.leanBodyMass)
@@ -83,44 +82,50 @@ function WeightChart() {
   const myPalette = ["green", "pink"]
 
   return (
-    <div className="chart col-lg-4 col-md-4 col-sm-8 m-5">
-      <p>Weight and Lean Body Mass Chart</p>
-      <DiscreteColorLegend className="mb-4" orientation="horizontal" colors={myPalette} width={300} items={ITEMS} />
-      <XYPlot animation height={300} width={300} xDomain={lastDrawLocation && [
-                lastDrawLocation.left,
-                lastDrawLocation.right
-              ]} yDomain={lastDrawLocation && [
-                lastDrawLocation.bottom,
-                lastDrawLocation.top
-              ]}
-      colorType="category"
-      colorDomain={[0, 1, 2, 3, 4, 5, 6, 7]}
-      colorRange={myPalette}>
-        <VerticalGridLines />
-        <HorizontalGridLines />
-        <XAxis title="days" />
-        <YAxis title="lbs" />
-        <LineSeries data={weightData} color={0}/>
-        <LineSeries data={leanBodyMassData} color={1}/>
-        <Highlight
-              onBrushEnd={area => setLastDrawLocation(area)}
-              onDrag={area => {
-                  setLastDrawLocation({
-                    bottom: lastDrawLocation.bottom + (area.top - area.bottom),
-                    left: lastDrawLocation.left - (area.right - area.left),
-                    right: lastDrawLocation.right - (area.right - area.left),
-                    top: lastDrawLocation.top + (area.top - area.bottom)
-                  })
-                
-              }}
-            />
-      </XYPlot>
-      <button
-          className="showcase-button"
+    <div className="row weight-chart">
+      <div className="chart col-sm-10">
+        <p className="chart-title" >Weight and Lean Body Mass</p>
+      </div>
+      <div className="chart col-sm-3 mb-4 mx-4">
+        <DiscreteColorLegend  orientation="horizontal" colors={myPalette} width={300} items={ITEMS} />
+      </div>
+      <div className="chart col-sm-9">
+        <FlexibleWidthXYPlot animation height={300}
+          xDomain={lastDrawLocation && [
+            lastDrawLocation.left,
+            lastDrawLocation.right
+          ]}
+          yDomain={lastDrawLocation && [
+            lastDrawLocation.bottom,
+            lastDrawLocation.top
+          ]}
+          colorType="category"
+          colorDomain={[0, 1, 2, 3, 4, 5, 6, 7]}
+          colorRange={myPalette}>
+          <XAxis title="days" />
+          <YAxis title="lbs" />
+          <LineSeries data={weightData} color={0} />
+          <LineSeries data={leanBodyMassData} color={1} />
+          <Highlight
+            onBrushEnd={area => setLastDrawLocation(area)}
+            onDrag={area => {
+              setLastDrawLocation({
+                bottom: lastDrawLocation.bottom + (area.top - area.bottom),
+                left: lastDrawLocation.left - (area.right - area.left),
+                right: lastDrawLocation.right - (area.right - area.left),
+                top: lastDrawLocation.top + (area.top - area.bottom)
+              })
+
+            }}
+          />
+        </FlexibleWidthXYPlot>
+        <button
+          className="showcase-button btn btn-sm"
           onClick={() => setLastDrawLocation(null)}
         >
           Reset Zoom
         </button>
+      </div>
     </div>
   );
 }

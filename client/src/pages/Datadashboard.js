@@ -15,16 +15,10 @@ function Dashboard() {
     <div>
       <Navbar />
       <Wrapper>      
-          <div className="row justify-content-center">
             <PieChart />
             <WeightChart />
-          </div>
-          <div className="row justify-content-center">
             <RepsChart />
-          </div>
-          <div className="row justify-content-center">
             <TimeChart />
-          </div>
           <StatsLink />
       </Wrapper>
       <Footer />
