@@ -34,10 +34,6 @@ function PieChart() {
     const { user } = useAuth0()
     let currentUserToken = user.sub;
 
-    function showLabel(event){
-        console.log(event.target)
-    }
-
     function loadStats() {
         let statsData = [];
 
@@ -49,6 +45,12 @@ function PieChart() {
                 let loginUserStats = statsData.filter(data => data.token === currentUserToken);
                 let currentDay = new Date().getDay();
                 let currentWeekData = [];
+
+                if (loginUserStats.length === 0){
+                    setLabel("Add workouts to see your muscle balance.");
+                    document.getElementsByClassName("rv-radial-chart")[0].style.display = "none";
+                }
+
                 function calculateTimePassed(date) {
                     return (new Date().getTime() - new Date(date).getTime()) / (1000 * 3600 * 24);
                 }
@@ -108,7 +110,6 @@ function PieChart() {
                         return a + b;
                     }, 0);
                 }
-
                 
                 if (abdominalsReps.length > 0) {
                     determineReps(abdominalsReps);
@@ -191,8 +192,6 @@ function PieChart() {
             label: "Abs"
         }
     ];
-
-    // if (chest == 0 && back == 0 && shoulders == 0 && triceps !== 0 && biceps !== 0 && quadriceps !== 0 && hamstringsAndGlutes !== 0 && abdominals !== 0){}}
 
     return (
         <div className="row pie-chart">
