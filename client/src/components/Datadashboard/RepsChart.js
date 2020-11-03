@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import "../../../node_modules/react-vis/dist/style.css"
-import {LineSeries, XAxis, YAxis, FlexibleWidthXYPlot, Highlight, MarkSeries, Hint } from 'react-vis/dist';
+import { LineSeries, XAxis, YAxis, FlexibleWidthXYPlot, Highlight, MarkSeries, Hint } from 'react-vis/dist';
 import "./chartStyle.css";
 import API from "../../utils/API";
 import { useAuth0 } from '@auth0/auth0-react';
 import DiscreteColorLegend from 'react-vis/dist/legends/discrete-color-legend';
+import _ from "lodash";
 
 function RepsChart() {
   const [chest, setChest] = useState([{ x: 0, y: 0 }]);
@@ -41,6 +42,16 @@ function RepsChart() {
 
   function loadStats() {
     let statsData = [];
+    let chestData = [];
+    let backData = [];
+    let shouldersData = [];
+    let bicepsData = [];
+    let tricepsData = [];
+    let quadricepsData = [];
+    let hamstringsAndGlutesData = [];
+    let abdominalsData = [];
+    let conditioningData = [];
+
     let chestCoord = [];
     let backCoord = [];
     let shouldersCoord = [];
@@ -68,37 +79,98 @@ function RepsChart() {
           return (Math.ceil((new Date(data.date).getTime() - firstDate) / (1000 * 3600 * 24)))
         }
 
-        //generate the arrays of different muscle groups
-        loginUserStats.filter(data => {
-          switch (data.muscleGroup) {
-            case "Chest":
-              chestCoord.push({ "x": determineXCoordinate(data), "y": data.reps });
-              break;
-            case "Back":
-              backCoord.push({ "x": determineXCoordinate(data), "y": data.reps });
-              break;
-            case "Shoulders":
-              shouldersCoord.push({ "x": determineXCoordinate(data), "y": data.reps });
-              break;
-            case "Triceps":
-              tricepsCoord.push({ "x": determineXCoordinate(data), "y": data.reps });
-              break;
-            case "Biceps":
-              bicepsCoord.push({ "x": determineXCoordinate(data), "y": data.reps });
-              break;
-            case "Quadriceps":
-              quadricepsCoord.push({ "x": determineXCoordinate(data), "y": data.reps });
-              break;
-            case "Hamstrings and Glutes":
-              hamstringsAndGlutesCoord.push({ "x": determineXCoordinate(data), "y": data.reps });
-              break;
-            case "Abs":
-              abdominalsCoord.push({ "x": determineXCoordinate(data), "y": data.reps });
-              break;
-            case "Conditioning":
-              conditioningCoord.push({ "x": determineXCoordinate(data), "y": data.reps });
+        let final = [];
+
+        function aggregateData(rawData, muscleGroup) {
+          final = [];
+          // array for aggreated muscleGroup and date
+          //array of one object per date per mu.scle group
+          let evenTime = rawData.map(data => {
+            let evenTimeArray = data;
+            evenTimeArray.date = new Date(data.date).toISOString().substring(0, 10);
+            return evenTimeArray;
+          })
+          let grouped = _.groupBy(evenTime, "date");
+          // console.log("grouped: " + JSON.stringify(grouped));
+          // return an array of keys in Object grouped (dates)
+          let keys = Object.keys(grouped);
+
+          for (let i = 0; i < keys.length; i++) {
+            let item = grouped[keys[i]];
+            //item has exercises sorted by dates, but includes all muscle groups
+            let sortedDateAndGroup = item.filter(data => data.muscleGroup === muscleGroup)
+            if (sortedDateAndGroup.length !== 0) {
+              let total = 0;
+              for (let x = 0; x < sortedDateAndGroup.length; x++) {
+                if (sortedDateAndGroup[x].reps) {
+                  total += sortedDateAndGroup[x].reps;
+                }
+              }
+              let object = {
+                date: sortedDateAndGroup[0].date,
+                reps: total,
+                muscleGroup: sortedDateAndGroup[0].muscleGroup
+              }
+              final.push(object);
             }
-        })
+          }
+          return final;
+        }
+
+        backData = aggregateData(loginUserStats, "Back");
+        chestData = aggregateData(loginUserStats, "Chest");
+        shouldersData = aggregateData(loginUserStats, "Shoulders");
+        tricepsData = aggregateData(loginUserStats, "Triceps");
+        bicepsData = aggregateData(loginUserStats, "Biceps");
+        quadricepsData = aggregateData(loginUserStats, "Quadriceps");
+        hamstringsAndGlutesData = aggregateData(loginUserStats, "Hamstrings And Glutes");
+        abdominalsData = aggregateData(loginUserStats, "Abs");
+        conditioningData = aggregateData(loginUserStats, "Conditioning");
+
+        function generateCoords(array){
+          array.forEach( data => {
+            let coord = { "x": determineXCoordinate(data), "y": data.reps };
+            switch (data.muscleGroup) {
+              case "Back":
+                backCoord.push(coord);
+                break;
+              case "Chest":
+                chestCoord.push(coord);
+                break;
+              case "Shoulders":
+                shouldersCoord.push(coord);
+                break;
+              case "Triceps":
+                tricepsCoord.push(coord);
+                break;
+              case "Biceps":
+                bicepsCoord.push(coord);
+                break;
+              case "Quadriceps":
+                quadricepsCoord.push(coord);
+                break;
+              case "Hamstrings and Glutes":
+                hamstringsAndGlutesCoord.push(coord);
+                break;
+              case "Abs":
+                abdominalsCoord.push(coord);
+                break;
+              case "Conditioning":
+                conditioningCoord.push(coord);
+            }
+          })
+        }
+
+        generateCoords(chestData);
+        generateCoords(backData);
+        generateCoords(shouldersData);
+        generateCoords(bicepsData);
+        generateCoords(tricepsData);
+        generateCoords(quadricepsData);
+        generateCoords(hamstringsAndGlutesData);
+        generateCoords(abdominalsData);
+        generateCoords(conditioningData);
+
       }).then(() => {
         if (abdominalsCoord.length > 0) {
           setAbdominals(abdominalsCoord)
@@ -127,7 +199,7 @@ function RepsChart() {
         if (conditioningCoord.length > 0) {
           setConditioning(conditioningCoord)
         }
-    })
+      })
       .catch(err => console.log(err));
   }
   //plug in the colors of the Line Series here:
@@ -160,8 +232,8 @@ function RepsChart() {
           {/* colors are according to index numbers within the myPalette array */}
           <LineSeries data={chest} color={0} />
           <LineSeries data={back} color={1} />
-          <LineSeries      onValueMouseOver={() => setHoverCoord(shoulders.x)}
-          onValueMouseOut={() => setHoverCoord(null)} data={shoulders} color={2} />
+          <LineSeries onValueMouseOver={() => setHoverCoord(shoulders.x)}
+            onValueMouseOut={() => setHoverCoord(null)} data={shoulders} color={2} />
           <LineSeries data={biceps} color={3} />
           <LineSeries data={triceps} color={4} />
           <LineSeries data={quadriceps} color={5} />
@@ -182,7 +254,7 @@ function RepsChart() {
           />
           <XAxis title="days" />
           <YAxis title="reps" />
-        {hoverCoord ? <Hint value={hoverCoord} /> : null}
+          {hoverCoord ? <Hint value={hoverCoord} /> : null}
         </FlexibleWidthXYPlot>
         <button
           className="showcase-button btn btn-sm"
