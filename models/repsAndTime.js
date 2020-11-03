@@ -6,7 +6,9 @@ const repsAndTimeSchema = new Schema({
   date: {type: Date},
   sets: { type: Number},
   reps: { type: Number},
+  totalReps: { type: Number},
   time: {type: Number},
+  totalTime: { type: Number},
   muscleGroup: {type: String}
 });
 

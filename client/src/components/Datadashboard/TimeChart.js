@@ -104,13 +104,13 @@ function TimeChart() {
             if (sortedDateAndGroup.length !== 0) {
               let total = 0;
               for (let x = 0; x < sortedDateAndGroup.length; x++) {
-                if (sortedDateAndGroup[x].time) {
-                  total += sortedDateAndGroup[x].time;
+                if (sortedDateAndGroup[x].totalTime) {
+                  total += sortedDateAndGroup[x].totalTime;
                 }
               }
               let object = {
                 date: sortedDateAndGroup[0].date,
-                time: total,
+                totalTime: total,
                 muscleGroup: sortedDateAndGroup[0].muscleGroup
               }
               final.push(object);
@@ -133,7 +133,7 @@ function TimeChart() {
         
         function generateCoords(array){
           array.forEach( data => {
-            let coord = { "x": determineXCoordinate(data), "y": data.time };
+            let coord = { "x": determineXCoordinate(data), "y": data.totalTime };
             switch (data.muscleGroup) {
               case "Back":
                 backCoord.push(coord);

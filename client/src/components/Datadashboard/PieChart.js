@@ -71,70 +71,70 @@ function PieChart() {
                 currentWeekData.filter(data => {
                     switch (data.muscleGroup) {
                         case "Chest":
-                            chestReps.push(data.reps)
+                            chestReps.push(data.totalReps)
                             break;
                         case "Back":
-                            backReps.push(data.reps)
+                            backReps.push(data.totalReps)
                             break;
                         case "Shoulders":
-                            shouldersReps.push(data.reps)
+                            shouldersReps.push(data.totalReps)
                             break;
                         case "Triceps":
-                            tricepsReps.push(data.reps)
+                            tricepsReps.push(data.totalReps)
                             break;
                         case "Biceps":
-                            bicepsReps.push(data.reps)
+                            bicepsReps.push(data.totalReps)
                             break;
                         case "Quadriceps":
-                            quadricepsReps.push(data.reps)
+                            quadricepsReps.push(data.totalReps)
                             break;
                         case "Hamstrings and Glutes":
-                            hamstringsAndGlutesReps.push(data.reps)
+                            hamstringsAndGlutesReps.push(data.totalReps)
                             break;
                         case "Abs":
-                            abdominalsReps.push(data.reps)
+                            abdominalsReps.push(data.totalReps)
                     }
                 })
 
             }).then(() => {
-                let totalReps;
+                let totalRepsSum;
                 function determineReps(array) {
-                    totalReps = array.reduce(function (a, b) {
+                    totalRepsSum = array.reduce(function (a, b) {
                         return a + b;
                     }, 0);
                 }
                 
                 if (abdominalsReps.length > 0) {
                     determineReps(abdominalsReps);
-                    setAbdominals(totalReps);
+                    setAbdominals(totalRepsSum);
                   };
                   if (backReps.length > 0) {
                     determineReps(backReps);
-                    setBack(totalReps);
+                    setBack(totalRepsSum);
                   };
                   if (chestReps.length > 0) {
                     determineReps(chestReps);
-                    setChest(totalReps);
+                    setChest(totalRepsSum);
                   };
                   if (shouldersReps.length > 0) {
                     determineReps(shouldersReps);
-                    setShoulders(totalReps);
+                    setShoulders(totalRepsSum);
                   };
                   if (tricepsReps.length > 0) {
                     determineReps(tricepsReps);
-                    setTriceps(totalReps);
+                    setTriceps(totalRepsSum);
                   };
                   if (bicepsReps.length > 0) {
                     determineReps(bicepsReps);
-                    setBiceps(totalReps);
+                    setBiceps(totalRepsSum);
                   };
                   if (quadricepsReps.length > 0) {
                     determineReps(quadricepsReps);
-                    setQuadriceps(totalReps);
+                    setQuadriceps(totalRepsSum);
                   };
                   if (hamstringsAndGlutesReps.length > 0) {
                     determineReps(hamstringsAndGlutesReps);
-                    setHamstringAndGlutes(totalReps)
+                    setHamstringAndGlutes(totalRepsSum)
                   };
             })
             .catch(err => console.log(err));

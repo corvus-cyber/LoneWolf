@@ -102,13 +102,13 @@ function RepsChart() {
             if (sortedDateAndGroup.length !== 0) {
               let total = 0;
               for (let x = 0; x < sortedDateAndGroup.length; x++) {
-                if (sortedDateAndGroup[x].reps) {
-                  total += sortedDateAndGroup[x].reps;
+                if (sortedDateAndGroup[x].totalReps) {
+                  total += sortedDateAndGroup[x].totalReps;
                 }
               }
               let object = {
                 date: sortedDateAndGroup[0].date,
-                reps: total,
+                totalReps: total,
                 muscleGroup: sortedDateAndGroup[0].muscleGroup
               }
               final.push(object);
@@ -129,7 +129,7 @@ function RepsChart() {
 
         function generateCoords(array){
           array.forEach( data => {
-            let coord = { "x": determineXCoordinate(data), "y": data.reps };
+            let coord = { "x": determineXCoordinate(data), "y": data.totalReps };
             switch (data.muscleGroup) {
               case "Back":
                 backCoord.push(coord);
