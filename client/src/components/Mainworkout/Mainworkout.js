@@ -45,17 +45,19 @@ export default function MainWorkout(props) {
         if (formObject.sets || formObject.reps || formObject.time) {
           API.saveRepsAndTime({
             token: user.sub,
-            date: new Date(),
+            date: new Date().toISOString().substring(0,10),
             sets: parseInt(formObject.sets),
             reps: parseInt(formObject.sets * formObject.reps),
             time: parseInt(formObject.time * formObject.sets),
             muscleGroup: props.exercise.muscle
           })
-            .then(() => setFormObject({
+            .then(() => {
+                console.log(formObject)
+                setFormObject({
               sets: "",
               reps: "",
               time: ""
-            }))
+            })})
             .catch(err => console.log(err));
         }
     };

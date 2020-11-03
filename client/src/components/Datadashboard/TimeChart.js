@@ -70,8 +70,6 @@ function TimeChart() {
           )
         }
 
-        
-        console.log(new Date(loginUserStats[0].date))
         //generate the arrays of different muscle groups
         loginUserStats.filter(data => {
           switch (data.muscleGroup) {
