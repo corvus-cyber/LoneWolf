@@ -16,6 +16,8 @@ function PieChart() {
     const [hamstringsAndGlutes, setHamstringAndGlutes] = useState(0);
     const [abdominals, setAbdominals] = useState(0);
 
+    const [label, setLabel] = useState("");
+
     let chestReps = [];
     let backReps = [];
     let shouldersReps = [];
@@ -31,6 +33,10 @@ function PieChart() {
 
     const { user } = useAuth0()
     let currentUserToken = user.sub;
+
+    function showLabel(event){
+        console.log(event.target)
+    }
 
     function loadStats() {
         let statsData = [];
@@ -66,7 +72,6 @@ function PieChart() {
                     }
                 })
 
-                //   console.log(currentWeekData);
 
                 currentWeekData.filter(data => {
                     switch (data.muscleGroup) {
@@ -103,6 +108,7 @@ function PieChart() {
                         return a + b;
                     }, 0);
                 }
+
                 
                 if (abdominalsReps.length > 0) {
                     determineReps(abdominalsReps);
@@ -192,7 +198,12 @@ function PieChart() {
         <div className="row pie-chart">
             <div className="chart col-md-8 col-sm-8 text-center">
                 <p className="chart-title">Muscle Balance History This Week</p>
-                <RadialChart data={myData} width={300} height={300} padAngle={0.05} />
+                <RadialChart 
+                onValueClick={(event)=>{
+                    setLabel(event.label)
+                    }}
+                    data={myData} width={300} height={300} padAngle={0.05}/>
+                <p className="pie-chart-label">{label}</p>
             </div>
         </div>
     );

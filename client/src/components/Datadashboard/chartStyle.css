@@ -42,3 +42,12 @@
     color: white!important;
     margin-top: -50px;
 }
+
+.rv-xy-plot__series--label-text {
+    display: "none";
+}
+
+.pie-chart-label {
+    color: white;
+    font-size: 20px;
+}

@@ -37,7 +37,6 @@ export default function MainWorkout(props) {
 
     function handleInputChange(event) {
         const { name, value } = event.target;
-        console.log(event.target.value)
         setFormObject({...formObject, [name]: value})
     };
 

@@ -123,9 +123,10 @@ function RepsChart() {
         tricepsData = aggregateData(loginUserStats, "Triceps");
         bicepsData = aggregateData(loginUserStats, "Biceps");
         quadricepsData = aggregateData(loginUserStats, "Quadriceps");
-        hamstringsAndGlutesData = aggregateData(loginUserStats, "Hamstrings And Glutes");
+        hamstringsAndGlutesData = aggregateData(loginUserStats, "Hamstrings and Glutes");
         abdominalsData = aggregateData(loginUserStats, "Abs");
         conditioningData = aggregateData(loginUserStats, "Conditioning");
+
 
         function generateCoords(array){
           array.forEach( data => {
@@ -203,7 +204,7 @@ function RepsChart() {
       .catch(err => console.log(err));
   }
   //plug in the colors of the Line Series here:
-  const myPalette = ["red", "blue", "#03fce7", "green", "orange", "purple", "blue", "pink", "#e9b7ed"]
+  const myPalette = ["#de2a2a", "blue", "#03fce7", "#06cc21", "orange", "purple", "#e6f029", "pink", "#04592d"]
 
   return (
 
@@ -232,8 +233,7 @@ function RepsChart() {
           {/* colors are according to index numbers within the myPalette array */}
           <LineSeries data={chest} color={0} />
           <LineSeries data={back} color={1} />
-          <LineSeries onValueMouseOver={() => setHoverCoord(shoulders.x)}
-            onValueMouseOut={() => setHoverCoord(null)} data={shoulders} color={2} />
+          <LineSeries data={shoulders} color={2}/>
           <LineSeries data={biceps} color={3} />
           <LineSeries data={triceps} color={4} />
           <LineSeries data={quadriceps} color={5} />

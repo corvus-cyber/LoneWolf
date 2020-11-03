@@ -126,7 +126,7 @@ function TimeChart() {
         tricepsData = aggregateData(loginUserStats, "Triceps");
         bicepsData = aggregateData(loginUserStats, "Biceps");
         quadricepsData = aggregateData(loginUserStats, "Quadriceps");
-        hamstringsAndGlutesData = aggregateData(loginUserStats, "Hamstrings And Glutes");
+        hamstringsAndGlutesData = aggregateData(loginUserStats, "Hamstrings and Glutes");
         abdominalsData = aggregateData(loginUserStats, "Abs");
         conditioningData = aggregateData(loginUserStats, "Conditioning");
 
@@ -209,7 +209,7 @@ function TimeChart() {
   }
 
   //plug in the colors of the Line Series here:
-  const myPalette = ["red", "blue", "#03fce7", "green", "orange", "purple", "white", "pink", "#8af542"]
+  const myPalette = ["#de2a2a", "blue", "#03fce7", "#06cc21", "orange", "purple", "#e6f029", "pink", "#04592d"]
 
   return (
     <div className="row time-chart">
