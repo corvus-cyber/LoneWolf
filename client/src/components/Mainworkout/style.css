@@ -1,7 +1,13 @@
 .btn-return{
     color: black;
     background-color: #F4C430; 
-    border-color: #F4C430
+    border-color: #F4C430;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.emptyState{
+    font-family: 'Orbitron', sans-serif;
+    color: white
 }
 
 .exercise{
@@ -13,7 +19,9 @@
 
 .btn-information{
     background-color: #367e3b;
-    border-color: #367e3b
+    border-color: #367e3b;
+    color: white;
+    border-radius: 5px
 }
 
 .open{
@@ -23,4 +31,13 @@
 .customFluid{
     max-width: 70%;
     height: auto;
+}
+
+.complete{
+    color: black;
+    background-color: #F4C430; 
+    border-color: #F4C430;
+    font-family: 'Orbitron', sans-serif;
+    padding: 5%;
+    border-radius: 5px;
 }

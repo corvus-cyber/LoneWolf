@@ -7,12 +7,12 @@
 
 h3 {
     font-size: 30px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     color: black; 
 }
 
 h5 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Orbitron', sans-serif;
 }
 
 #card {
@@ -23,16 +23,16 @@ h5 {
     background-color: #F6F6F6;
 
 }
-.card-img-top {
-    width: 250px;
-    height: 250px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+
+.btnAdd{
+    font-family: 'Orbitron', sans-serif;
+    background-color: #367e3b;
+    border-color: #367e3b;
+    color: white
 }
 
 .muscleGroupImg{
-    max-width: 55%;
+    max-width: 60%;
     height: auto
 }
 
@@ -45,6 +45,9 @@ h5 {
 
 .btn-routeToWorkout{
     border-color: black;
+    background-color: #F4C430; 
+    border-color: #F4C430;
+    font-family: 'Orbitron', sans-serif;
     border-radius: 25px;
     box-shadow: 0 0 5px;
 }

@@ -18,13 +18,13 @@ function Workout() {
         <Wrapper>
           <div className="row justify-content-md-center">
             <div className="col-md-12 text-center mt-5 mb-5">
-              <h3>A Lone Wolf cannot hope to survive without fitness. Return to the Build Workout page to choose your exercises.</h3>
+              <h3 className="emptyState mt-5">A Lone Wolf cannot hope to survive without fitness. Return to the Build Workout page to choose your exercises.</h3>
             </div>
             <div className="col-md-6 text-center mt-5">
               <li className="nav-item nav-link text-center">
                 <Link
                     to="/build" className={window.location.pathname === "/build" || window.location.pathname === "/contact" ? "nav-link active" : "nav-link"}>
-                        <button type="submit" className="btn-return btn-lg btn-block" ><GiMuscleUp/> Build Workout <GiMuscleUp/></button>
+                        <button type="submit" className="btn-return btn-lg btn-block">Build Workout</button>
                 </Link>
               </li>
             </div>

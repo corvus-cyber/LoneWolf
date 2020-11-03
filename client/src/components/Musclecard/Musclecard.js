@@ -24,7 +24,7 @@ class Muscles extends Component{
         
         <div className="col-md-4 mr-2 ml-2 mt-2 text-center justify-content-center" key={muscles.nameID}>
             <div className="btn-group-toggle" data-toggle="buttons">
-              <button key={muscles.nameID} type="button" style={{}} onClick={() => {displayMusclesandExercises(muscles.name)}} 
+              <button key={muscles.nameID} type="button" onClick={() => {displayMusclesandExercises(muscles.name)}} 
               className="btn-muscleBttns btn-lg btn-block"><h5>{muscles.name}</h5></button>
           </div>
         </div>  
@@ -65,7 +65,7 @@ class Muscles extends Component{
             <Link
                 to= {{pathname: "/workouts",
                 state: {workoutExercises: this.state.workoutExercises }}}>
-                    <button type="submit" className="btn btn-routeToWorkout btn-lg btn-block" disabled={this.state.workoutExercises.length<1} style={{backgroundColor: "#F4C430", borderColor: "#F4C430"}}> View Workout</button>
+                    <button type="submit" className="btn-routeToWorkout btn-lg btn-block" disabled={this.state.workoutExercises.length<1}> View Workout</button>
             </Link>
         </li>
       </div>
