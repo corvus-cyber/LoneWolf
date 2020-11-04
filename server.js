@@ -15,7 +15,13 @@ if (process.env.NODE_ENV === "production") {
 app.use("/api", apiRoutes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/lonewolf");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/lonewolf",
+{
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreatIndex: true,
+  useFindAndModify: false
+});
 
 // Start the API server
 app.listen(PORT, () => {
