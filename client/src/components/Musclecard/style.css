@@ -56,3 +56,25 @@ h5{
     font-weight: bold;
     font-family: 'Orbitron', sans-serif;
 }
+
+
+@media (max-width: 480px) {
+    .muscleGroupImg {
+        max-width: 50%;
+        height: auto
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .muscleGroupImg {
+        max-width: 50%;
+        height: auto
+    }
+}
+
+@media (min-width: 1025px) {
+    .muscleGroupImg {
+        max-width: 50%;
+        height: auto
+    }
+}
