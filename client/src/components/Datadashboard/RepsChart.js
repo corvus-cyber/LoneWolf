@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "../../../node_modules/react-vis/dist/style.css"
-import { LineSeries, XAxis, YAxis, FlexibleWidthXYPlot, Highlight } from 'react-vis/dist';
+import { LineSeries, XAxis, YAxis, FlexibleWidthXYPlot, Highlight, Hint } from 'react-vis/dist';
 import "./chartStyle.css";
 import API from "../../utils/API";
 import { useAuth0 } from '@auth0/auth0-react';
@@ -19,7 +19,8 @@ function RepsChart() {
   const [conditioning, setConditioning] = useState([{ x: 0, y: 0 }]);
 
   const [lastDrawLocation, setLastDrawLocation] = useState(null);
-  const [hoverCoord, setHoverCoord] = useState({});
+
+  const [value, setValue] = useState(null);
 
   const ITEMS = [
     'Chest',
@@ -38,10 +39,8 @@ function RepsChart() {
   }, [])
 
   const { user } = useAuth0()
-  let currentUserToken = user.sub;
 
   function loadStats() {
-    let statsData = [];
     let chestData = [];
     let backData = [];
     let shouldersData = [];
@@ -62,12 +61,10 @@ function RepsChart() {
     let abdominalsCoord = [];
     let conditioningCoord = [];
 
-    API.getRepsAndTime()
+    API.getRepsAndTime(user.sub)
       .then(res => {
-        //all user stats
-        statsData = res.data;
         //grab only the stats of the logged-in user
-        let loginUserStats = statsData.filter(data => data.token === currentUserToken);
+        let loginUserStats = res.data;
 
         //if user has data saved, find date of first workout
         let firstDate;
@@ -205,9 +202,7 @@ function RepsChart() {
   }
   //plug in the colors of the Line Series here:
   const myPalette = ["#de2a2a", "blue", "#03fce7", "#06cc21", "orange", "purple", "#e6f029", "pink", "#04592d"]
-
   return (
-
     <div className="row reps-chart">
       <div className="chart col-sm-10">
         <p className="chart-title">Exercise Reps by Muscle Group</p>
@@ -231,7 +226,7 @@ function RepsChart() {
           colorRange={myPalette}>
 
           {/* colors are according to index numbers within the myPalette array */}
-          <LineSeries data={chest} color={0} />
+          <LineSeries onValueMouseOver={(value) => setValue({value})} data={chest} color={0} />
           <LineSeries data={back} color={1} />
           <LineSeries data={shoulders} color={2}/>
           <LineSeries data={biceps} color={3} />
@@ -254,6 +249,7 @@ function RepsChart() {
           />
           <XAxis title="days" />
           <YAxis title="reps" />
+          {value ? <Hint value={value} /> : null}
         </FlexibleWidthXYPlot>
         <button
           className="showcase-button btn btn-sm"

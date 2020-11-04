@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import "./style.css"
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
+import { Collapse, Button, CardBody } from 'reactstrap';
 import Modal from "../Modal/Modal";
 import {
   BsFillInfoCircleFill
