@@ -193,6 +193,8 @@ function PieChart() {
         }
     ];
 
+    const myPalette = ["#cf352d", "#2e5cdb", "#81ebe2", "#67d676", "#dea833", "#9e0fab", "#e6f029", "#d6b6cf", "#04592d"]
+
     return (
         <div className="row pie-chart">
             <div className="chart col-md-8 col-sm-8 text-center">
@@ -201,7 +203,8 @@ function PieChart() {
                 onValueClick={(event)=>{
                     setLabel(event.label)
                     }}
-                    data={myData} width={300} height={300} padAngle={0.05}/>
+                    data={myData} width={300} height={300} padAngle={0.05}
+                    ></RadialChart>
                 <p className="pie-chart-label">{label}</p>
             </div>
         </div>
