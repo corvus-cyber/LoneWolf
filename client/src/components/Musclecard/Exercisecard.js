@@ -27,7 +27,6 @@ export default function Exercisecard(props) {
 
 return(
     <div className="mr-2 ml-2">
-        {console.log(props.exercise)}
                 <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center">
                     <div className="card" id="card" style={{width: 18 + "rem"}} key={props.exercise.exerciseID}>
                         <img src={process.env.PUBLIC_URL + props.exercise.gif} onClick={(e)=>toggleModal(e, props.exercise.gif)} className="img-fluid" alt="gif of exercise"/>

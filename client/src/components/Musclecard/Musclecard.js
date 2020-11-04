@@ -19,7 +19,6 @@ class Muscles extends Component{
 
   render(){
      const Form = () =>{
-      console.log(data)
         return data.map(muscles => 
         
         <div className="col-md-4 mr-2 ml-2 mt-2 text-center justify-content-center" key={muscles.nameID}>

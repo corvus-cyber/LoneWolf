@@ -21,7 +21,6 @@ function Home(props) {
 
     const signOut = () => {
         logout();
-        props.history.replace('/');
     }
 
     const [isOpen, setIsOpen] = useState(false);
