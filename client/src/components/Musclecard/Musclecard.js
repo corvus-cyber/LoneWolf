@@ -42,7 +42,7 @@ class Muscles extends Component{
       
     <div className="mt-5 pt-4 pb-4 justify-content-center">
       <div className="row justify-content-center">
-        <img className="img-fluid" id="muscleImage" src={"https://corvus-cyber.github.io/LoneWolf/client/public" + "/assets/muscleGroups/None.png"}  alt="muscle groups"></img>
+        <img className="muscleGroupImg" id="muscleImage" src={"https://corvus-cyber.github.io/LoneWolf/client/public" + "/assets/muscleGroups/None.png"}  alt="muscle groups"></img>
       </div>
       <div className="row justify-content-center">
         <Form/>
