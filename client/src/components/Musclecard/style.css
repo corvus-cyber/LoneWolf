@@ -31,10 +31,10 @@ h5 {
     color: white
 }
 
-.muscleGroupImg{
+/* .muscleGroupImg{
     max-width: 50%;
     height: auto
-}
+} */
 
 .btn-muscleBttns{
     font-family: 'Orbitron', sans-serif;
@@ -60,8 +60,7 @@ h5{
 
 @media (max-width: 480px) {
     .muscleGroupImg {
-        max-width: 50%;
-        height: auto
+        max-width: 80%;
     }
 }
 
