@@ -19,7 +19,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/lonewolf",
 {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreatIndex: true,
+  useCreateIndex: true,
   useFindAndModify: false
 });
 
