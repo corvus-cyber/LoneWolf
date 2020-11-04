@@ -3,7 +3,7 @@ import React from 'react';
 
 function Form(props){
     function changeImg(){
-        document.getElementById("muscleImage").src=process.env.PUBLIC_URL +props.image
+        document.getElementById("muscleImage").src="https://corvus-cyber.github.io/LoneWolf/client/public" +props.image
     }
     return(
     <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center">

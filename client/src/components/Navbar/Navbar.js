@@ -27,7 +27,7 @@ function Header() {
     return (
         // <nav className="navbar navbar-expand-lg navbar-dark absolute-top">
         //     <div className="navbar-brand">
-        //         <img className="logo" src={process.env.PUBLIC_URL + "/assets/logo/Lonewolflogo.png"} alt="LoneWolf logo"/>
+        //         <img className="logo" src={"https://corvus-cyber.github.io/LoneWolf/client/public" + "/assets/logo/Lonewolflogo.png"} alt="LoneWolf logo"/>
         //     </div>
         //     <button className="navbar-toggler ml-auto" type="button" onClick={ this.toggleMenu }>
         //         <span className="navbar-toggler-icon"></span>
@@ -69,7 +69,7 @@ function Header() {
         
         // </nav>
         <Navbar className="NavbarColor" dark expand="md">
-            <img className="Homelogo" src={process.env.PUBLIC_URL + "/assets/logo/lonewolflogo.png"}></img>
+            <img className="Homelogo" src={"https://corvus-cyber.github.io/LoneWolf/client/public" + "/assets/logo/Lonewolflogo.png"}></img>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto" navbar>
