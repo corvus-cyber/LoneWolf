@@ -40,10 +40,10 @@ return(
                                     <div className="form-group">
                                         <input type="hidden" name="weight" value={props.exercise} className="form-control" id="weight" placeholder="Weight" />
                                     </div>
-                                    <Button className="mr-1" onClick={handleOnClick} style={{backgroundColor: "#367e3b", marginBottom: '1rem' }}>Add To Workout</Button>
+                                    <button type="button" className="btnAdd btn-sm mb-1" onClick={handleOnClick}>Add To Workout</button>
                                 </form>    
                             
-                            <Button className="ml-1"  onClick={toggle} style={{backgroundColor: "#367e3b", marginBottom: '1rem' }}><BsFillInfoCircleFill/></Button>
+                            <button type="button" className="btn-information mb-1 btn-sm"  onClick={toggle}><BsFillInfoCircleFill/></button>
                             <Collapse isOpen={isOpen}>
                                 <CardBody>
                                 {props.exercise.description}

@@ -33,7 +33,7 @@ function Login(){
             </form>
             <div className="row justify-content-center mt-5">
                 <Link to="/dashboard" className={window.location.pathname === "/dashboard" || window.location.pathname === "/about" ? "nav-link active" : "nav-link"}>
-                        <button type="submit" className="btn btn-primary calltoaction" style={{backgroundColor: "#F4C430", borderColor: "#F4C430"}}>New User</button>
+                        <button type="submit" className="calltoaction btn-sm" style={{backgroundColor: "#F4C430", borderColor: "#F4C430"}}>New User</button>
                 </Link>
             </div>
         </Wrapper>
