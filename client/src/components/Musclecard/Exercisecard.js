@@ -14,20 +14,16 @@ export default function Exercisecard(props) {
     const toggle = () => setIsOpen(!isOpen);
 
     function handleOnClick(){
-        console.log(props.exercise);
         props.exerciseArray(props.exercise);
     };
 
     const toggleModal=(e, gif)=>{
         e.preventDefault();
-        console.log(e.target)
-        // console.log(gif)
         setModal(!modal);
     }
 
 return(
     <div className="mr-2 ml-2">
-        {console.log(props.exercise)}
                 <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center">
                     <div className="card" id="card" style={{width: 18 + "rem"}} key={props.exercise.exerciseID}>
                         <img src={"https://corvus-cyber.github.io/LoneWolf/client/public" + props.exercise.gif} onClick={(e)=>toggleModal(e, props.exercise.gif)} className="img-fluid" alt="gif of exercise"/>

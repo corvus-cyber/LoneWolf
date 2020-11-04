@@ -15,9 +15,6 @@ import Hero from "./components/Hero/Hero"
 
 function Home(props) {
     const { loginWithRedirect, isAuthenticated, user, logout } = useAuth0();
-    console.log("here is the user", user);
-
-    console.log(isAuthenticated)
 
     const signOut = () => {
         logout();
