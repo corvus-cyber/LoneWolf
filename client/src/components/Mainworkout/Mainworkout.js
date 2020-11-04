@@ -30,7 +30,6 @@ export default function MainWorkout(props) {
 
     // const location = useLocation();
     const toggle = () => setIsOpen(!isOpen);
-    // console.log(location)
     if (!props.exercise){
         return <div>Empty</div>
     } 
@@ -53,7 +52,6 @@ export default function MainWorkout(props) {
             muscleGroup: props.exercise.muscle
           })
             .then(() => {
-                console.log(formObject)
                 setFormObject({
               sets: "",
               reps: "",
@@ -65,8 +63,6 @@ export default function MainWorkout(props) {
 
     const toggleModal=(e, gif)=>{
         e.preventDefault();
-        console.log(e.target)
-        // console.log(gif)
         setModal(!modal);
     }
 
@@ -76,7 +72,6 @@ export default function MainWorkout(props) {
     return(
         <div className={open ? "open" : null}> 
             <div className="row exercise mb-2 pb-2 pt-2" id={"yellow"} key={props.exercise.exerciseID}>
-                {/* {console.log(props.exercise)} */}
                 <div className="col-md-6 text-center justify-content-center">
                     <img src={"https://corvus-cyber.github.io/LoneWolf/client/public" + props.exercise.gif} onClick={(e)=>toggleModal(e, props.exercise.gif)} className="customFluid mt-1 mb-1" alt="gif of exercise"/>
                         {modal ? (<Modal toggleModal={toggleModal}><img src={"https://corvus-cyber.github.io/LoneWolf/client/public" + props.exercise.gif} className="img-fluid  pt-5 mt-5 mb-5 pb-5" alt="gif of exercise"/></Modal>):(<></>)}
