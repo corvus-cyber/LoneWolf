@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "../../../node_modules/react-vis/dist/style.css"
-import { LineSeries, XAxis, YAxis, FlexibleWidthXYPlot, Highlight, MarkSeries, Hint } from 'react-vis/dist';
+import { LineSeries, XAxis, YAxis, FlexibleWidthXYPlot, Highlight } from 'react-vis/dist';
 import "./chartStyle.css";
 import API from "../../utils/API";
 import { useAuth0 } from '@auth0/auth0-react';
@@ -254,7 +254,6 @@ function RepsChart() {
           />
           <XAxis title="days" />
           <YAxis title="reps" />
-          {hoverCoord ? <Hint value={hoverCoord} /> : null}
         </FlexibleWidthXYPlot>
         <button
           className="showcase-button btn btn-sm"
