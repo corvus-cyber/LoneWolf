@@ -32,7 +32,6 @@ function Workout() {
   }
   
   const workoutExercises = location.state.workoutExercises || []; 
-  console.log(workoutExercises)
     return (
       <div>
         <Navbar /> 

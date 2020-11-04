@@ -14,14 +14,11 @@ export default function Exercisecard(props) {
     const toggle = () => setIsOpen(!isOpen);
 
     function handleOnClick(){
-        console.log(props.exercise);
         props.exerciseArray(props.exercise);
     };
 
     const toggleModal=(e, gif)=>{
         e.preventDefault();
-        console.log(e.target)
-        // console.log(gif)
         setModal(!modal);
     }
 
@@ -29,8 +26,8 @@ return(
     <div className="mr-2 ml-2">
                 <div className="col-md-4 mr-2 ml-2 mt-5 text-center justify-content-center">
                     <div className="card" id="card" style={{width: 18 + "rem"}} key={props.exercise.exerciseID}>
-                        <img src={process.env.PUBLIC_URL + props.exercise.gif} onClick={(e)=>toggleModal(e, props.exercise.gif)} className="img-fluid" alt="gif of exercise"/>
-                            {modal ? (<Modal toggleModal={toggleModal}><img src={process.env.PUBLIC_URL + props.exercise.gif} className="img-fluid  pt-5 mt-5 mb-5 pb-5" alt="gif of exercise"/></Modal>):(<></>)}
+                        <img src={"https://corvus-cyber.github.io/LoneWolf/client/public" + props.exercise.gif} onClick={(e)=>toggleModal(e, props.exercise.gif)} className="img-fluid" alt="gif of exercise"/>
+                            {modal ? (<Modal toggleModal={toggleModal}><img src={"https://corvus-cyber.github.io/LoneWolf/client/public" + props.exercise.gif} className="img-fluid  pt-5 mt-5 mb-5 pb-5" alt="gif of exercise"/></Modal>):(<></>)}
                             <div className="card-head">
                             <h5>{props.exercise.exercise}</h5>
                             </div>

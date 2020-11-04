@@ -32,10 +32,8 @@ class Muscles extends Component{
 
 
     const displayMusclesandExercises = (name) =>{
-      console.log(name)
       let muscle = data.filter(muscle => { return name === muscle.name})[0]
-      console.log("appropriate muscle", muscle.exercises)
-      document.getElementById("muscleImage").src=process.env.PUBLIC_URL +muscle.image;
+      document.getElementById("muscleImage").src="https://corvus-cyber.github.io/LoneWolf/client/public" +muscle.image;
       this.setState({exercises: muscle.exercises})
     }
 
@@ -44,7 +42,7 @@ class Muscles extends Component{
       
     <div className="mt-5 pt-4 pb-4 justify-content-center">
       <div className="row justify-content-center">
-        <img className="muscleGroupImg" id="muscleImage" src={process.env.PUBLIC_URL + "/assets/muscleGroups/None.png"}  alt="muscle groups"></img>
+        <img className="muscleGroupImg" id="muscleImage" src={"https://corvus-cyber.github.io/LoneWolf/client/public" + "/assets/muscleGroups/None.png"}  alt="muscle groups"></img>
       </div>
       <div className="row justify-content-center">
         <Form/>

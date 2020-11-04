@@ -66,7 +66,6 @@ function TimeChart() {
         //grab only the stats of the logged-in user
         let loginUserStats = res.data;
         let firstDate;
-        // console.log(loginUserStats);
         if (loginUserStats[0]) {
           firstDate = new Date(loginUserStats[0].date).getTime();
         }

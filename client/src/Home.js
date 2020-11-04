@@ -15,9 +15,6 @@ import Hero from "./components/Hero/Hero"
 
 function Home(props) {
     const { loginWithRedirect, isAuthenticated, user, logout } = useAuth0();
-    console.log("here is the user", user);
-
-    console.log(isAuthenticated)
 
     const signOut = () => {
         logout();
@@ -32,7 +29,7 @@ function Home(props) {
     return (
         <div className="App" >
         <Navbar className="NavbarColor" dark expand="md">
-            <img className="Homelogo" src={process.env.PUBLIC_URL + "/assets/logo/lonewolflogo.png"}></img>
+            <img className="Homelogo" src={"https://corvus-cyber.github.io/LoneWolf/client/public" + "/assets/logo/Lonewolflogo.png"}></img>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -65,7 +62,7 @@ function Home(props) {
         <Wrapper>
         <div className="row">
             <div className="col-md-8">
-                <img src={process.env.PUBLIC_URL + "/assets/images/Musclecircle.png"} className="muscleCircle" />
+                <img src={"https://corvus-cyber.github.io/LoneWolf/client/public" + "/assets/images/Musclecircle.png"} className="muscleCircle" />
             </div>
                 <div className="col-md-4 mb-5 align-self-end">
                     <h3 className="white">Choose How You Build</h3>
@@ -78,7 +75,7 @@ function Home(props) {
                     <h6 className="white">And Hit The Floor!</h6>
             </div>
             <div className="col-md-8 align-self-end justify-content-end">
-                <img src={process.env.PUBLIC_URL + "/assets/images/droptheweights.png"} className="hitFloor justify-content-end float-right" />
+                <img src={"https://corvus-cyber.github.io/LoneWolf/client/public" + "/assets/images/droptheweights.png"} className="hitFloor justify-content-end float-right" />
 
             </div>
         </div>
