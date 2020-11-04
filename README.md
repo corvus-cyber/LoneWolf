@@ -35,6 +35,7 @@ When I am logged in, I want to be able to create a custom bodyweight workout so 
 ## Credits 
 - [Autho: which serves as the route through which our users log in](https://auth0.com/)
 - [ReactStrap: which allowed us to build react-friendly toggles and displays](https://reactstrap.github.io/)
+- [React-Vis: which allowed us to build our data dashboard so that users could track their progress](https://uber.github.io/react-vis/)
 
 ## Issues_And_Resolutions 
 
