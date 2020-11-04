@@ -58,16 +58,15 @@ h5{
 }
 
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
     .muscleGroupImg {
-        max-width: 80%;
+        max-width: 30%;
     }
 }
 
 @media (min-width: 481px) and (max-width: 1024px) {
     .muscleGroupImg {
         max-width: 50%;
-        height: auto
     }
 }
 
@@ -76,4 +75,4 @@ h5{
         max-width: 50%;
         height: auto
     }
-}
+} */
