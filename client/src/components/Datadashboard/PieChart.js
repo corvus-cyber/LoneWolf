@@ -32,17 +32,13 @@ function PieChart() {
     }, [])
 
     const { user } = useAuth0()
-    let currentUserToken = user.sub;
 
     function loadStats() {
-        let statsData = [];
 
-        API.getRepsAndTime()
+        API.getRepsAndTime(user.sub)
             .then(res => {
-                //all user stats
-                statsData = res.data;
                 //grab only the stats of the logged-in user
-                let loginUserStats = statsData.filter(data => data.token === currentUserToken);
+                let loginUserStats = res.data;
                 let currentDay = new Date().getDay();
                 let currentWeekData = [];
 

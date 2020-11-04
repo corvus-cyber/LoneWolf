@@ -13,8 +13,8 @@ export default {
   },
 
   // get reps and time data
-  getRepsAndTime: function () {
-    return axios.get("/api/repsandtime");
+  getRepsAndTime: function (userToken) {
+    return axios.get("/api/repsandtime", { params: { token: userToken} });
   },
 
   // Saves reps and time of exercises to the database
