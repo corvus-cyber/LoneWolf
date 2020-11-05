@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "../../../node_modules/react-vis/dist/style.css"
-import { LineSeries, XAxis, YAxis, FlexibleWidthXYPlot, Highlight, Crosshair } from 'react-vis/dist';
+import { LineSeries, XAxis, YAxis, FlexibleWidthXYPlot, Highlight } from 'react-vis/dist';
 import "./chartStyle.css";
 import API from "../../utils/API";
 import { useAuth0 } from '@auth0/auth0-react';
@@ -19,8 +19,6 @@ function RepsChart() {
   const [conditioning, setConditioning] = useState([{ x: 0, y: 0 }]);
 
   const [lastDrawLocation, setLastDrawLocation] = useState(null);
-
-  const [value, setValue] = useState([]);
 
   const ITEMS = [
     'Chest',
@@ -125,8 +123,8 @@ function RepsChart() {
         conditioningData = aggregateData(loginUserStats, "Conditioning");
 
 
-        function generateCoords(array){
-          array.forEach( data => {
+        function generateCoords(array) {
+          array.forEach(data => {
             let coord = { "x": determineXCoordinate(data), "y": data.totalReps };
             switch (data.muscleGroup) {
               case "Back":
@@ -178,7 +176,6 @@ function RepsChart() {
         };
         if (chestCoord.length > 0) {
           setChest(chestCoord);
-          console.log(chestCoord);
         };
         if (shouldersCoord.length > 0) {
           setShoulders(shouldersCoord);
@@ -201,8 +198,11 @@ function RepsChart() {
       })
       .catch(err => console.log(err));
   }
+
   //plug in the colors of the Line Series here:
   const myPalette = ["#de2a2a", "blue", "#03fce7", "#06cc21", "orange", "purple", "#e6f029", "pink", "#04592d"]
+  
+
   return (
     <div className="row reps-chart">
       <div className="chart col-sm-10">
@@ -227,12 +227,9 @@ function RepsChart() {
           colorRange={myPalette}>
 
           {/* colors are according to index numbers within the myPalette array */}
-          <LineSeries onNearestX={value => {
-            
-            setValue({value})}
-            } data={chest} color={0} />
+          <LineSeries data={chest} color={0} />
           <LineSeries data={back} color={1} />
-          <LineSeries data={shoulders} color={2}/>
+          <LineSeries data={shoulders} color={2} />
           <LineSeries data={biceps} color={3} />
           <LineSeries data={triceps} color={4} />
           <LineSeries data={quadriceps} color={5} />
@@ -253,13 +250,8 @@ function RepsChart() {
           />
           <XAxis title="days" />
           <YAxis title="reps" />
-          <Crosshair
-          values={value}/>
         </FlexibleWidthXYPlot>
-        <button
-          className="showcase-button btn btn-sm"
-          onClick={() => setLastDrawLocation(null)}
-        >
+        <button className="showcase-button btn btn-sm" onClick={() => setLastDrawLocation(null)}>
           Reset Zoom
         </button>
       </div>
