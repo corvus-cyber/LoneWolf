@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "../../../node_modules/react-vis/dist/style.css"
-import { LineMarkSeries, XAxis, YAxis, FlexibleWidthXYPlot, Highlight, Crosshair } from 'react-vis/dist';
+import { LineSeries, XAxis, YAxis, FlexibleWidthXYPlot, Highlight, Crosshair } from 'react-vis/dist';
 import "./chartStyle.css";
 import API from "../../utils/API";
 import { useAuth0 } from '@auth0/auth0-react';
@@ -177,7 +177,8 @@ function RepsChart() {
           setBack(backCoord);
         };
         if (chestCoord.length > 0) {
-          setChest(chestCoord)
+          setChest(chestCoord);
+          console.log(chestCoord);
         };
         if (shouldersCoord.length > 0) {
           setShoulders(shouldersCoord);
@@ -226,18 +227,18 @@ function RepsChart() {
           colorRange={myPalette}>
 
           {/* colors are according to index numbers within the myPalette array */}
-          <LineMarkSeries onNearestX={value => {
+          <LineSeries onNearestX={value => {
             
             setValue({value})}
             } data={chest} color={0} />
-          <LineMarkSeries data={back} color={1} />
-          <LineMarkSeries data={shoulders} color={2}/>
-          <LineMarkSeries data={biceps} color={3} />
-          <LineMarkSeries data={triceps} color={4} />
-          <LineMarkSeries data={quadriceps} color={5} />
-          <LineMarkSeries data={hamstringsAndGlutes} color={6} />
-          <LineMarkSeries data={abdominals} color={7} />
-          <LineMarkSeries data={conditioning} color={8} />
+          <LineSeries data={back} color={1} />
+          <LineSeries data={shoulders} color={2}/>
+          <LineSeries data={biceps} color={3} />
+          <LineSeries data={triceps} color={4} />
+          <LineSeries data={quadriceps} color={5} />
+          <LineSeries data={hamstringsAndGlutes} color={6} />
+          <LineSeries data={abdominals} color={7} />
+          <LineSeries data={conditioning} color={8} />
           <Highlight
             onBrushEnd={area => setLastDrawLocation(area)}
             onDrag={area => {

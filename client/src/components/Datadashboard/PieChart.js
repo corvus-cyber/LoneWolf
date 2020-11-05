@@ -189,7 +189,7 @@ function PieChart() {
         }
     ];
 
-    const myPalette = ["#cf352d", "#2e5cdb", "#81ebe2", "#67d676", "#dea833", "#9e0fab", "#e6f029", "#d6b6cf", "#04592d"]
+    // const myPalette = ["#cf352d", "#2e5cdb", "#81ebe2", "#67d676", "#dea833", "#9e0fab", "#e6f029", "#d6b6cf", "#04592d"]
 
     return (
         <div className="row pie-chart">
