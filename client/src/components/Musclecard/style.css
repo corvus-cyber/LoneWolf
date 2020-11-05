@@ -31,10 +31,10 @@ h5 {
     color: white
 }
 
-.muscleGroupImg{
-    max-width: 60%;
+/* .muscleGroupImg{
+    max-width: 50%;
     height: auto
-}
+} */
 
 .btn-muscleBttns{
     font-family: 'Orbitron', sans-serif;
@@ -55,4 +55,25 @@ h5 {
 h5{
     font-weight: bold;
     font-family: 'Orbitron', sans-serif;
+}
+
+
+@media (max-width: 480px) {
+    .muscleGroupImg {
+        max-width: 200px;
+        height: 200px
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .muscleGroupImg {
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 1025px) {
+    .muscleGroupImg {
+        max-width: 50%;
+        height: auto
+    }
 }
