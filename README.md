@@ -13,7 +13,7 @@
 10. [Screenshots](#Screenshots)
 
 ## Description 
-
+LoneWolfStrong is a workout application built using MERN (MongoDB, Express, React and NodeJs) technologies. It serves as a guideline for bodyweight exercises that everyone can do at home with a gif and description for every exercise. It allows the user to easily build a customized workout based on muscle groups, as well as to track their progress such as weight, lean body mass, reps and time on a dynamically generated graph dashboard. With this application, we hope to make exercising during the pandemic more accessible and less confusing.
 
 ## Elevator_Pitch
 Covid has had a variety of impacts on everyone. For some of us, the results can be seen by what is called the “covid-20”. You want to get back in shape, but with gyms being high risk infection areas and the cost of home-gym equipment skyrocketing, it can feel like your fitness goals are out of reach. LoneWolfStrong aims to fix this problem. A mobile-first website, we allow the user to create their own custom bodyweight program with guided walkthroughs. Our application lets the user track multiple facets of their fitness. First they can see which muscles they are targeting throughout their week, their long-term weight management goals and personal records, all from the comfort of their home.
@@ -30,27 +30,30 @@ When I am logged in, I want to be able to create a custom bodyweight workout so 
 2. Backend
     * [Dilan Li](https://github.com/DilanLi)
 
-
-
 ## Credits 
 - [Auth0: which serves as the route through which our users log in](https://auth0.com/)
 - [ReactStrap: which allowed us to build react-friendly toggles and displays](https://reactstrap.github.io/)
 - [React-Vis: which allowed us to build our data dashboard so that users could track their progress](https://uber.github.io/react-vis/)
 
 ## Issues_And_Resolutions 
-
+* It was difficult to find an identifier to show user-specific data on the dashboard, this was resolved by generating an unique id for each user upon registration of account 
+* Needed to filter the dashboard data by user, date and muscle groups, npm packages such as lodash helped with sorting. 
+* Due to the large amount of media files we have in this application, we exceeded the limit of 500MB when we deployed on heroku. This was resolved by hosting media files on github pages instead of within the app.
 
 ## Future_Development
 * Add preset workout options for people who just want to get started
 * Add more exercise options and allow the user to target specific areas of a desired muscle (mid or rear delt, upper or lower chest, etc.).
 * Add a way for the user to store and see progress pictures of themselves as an incentive to keep up the hard work. 
 * Improve the lighting on some of the gifs so that they’ll be easier for the user to watch 
+* Improve the manifest and service worker so that the app creates an icon/link on users’ phone screens
+* Allow users to edit and delete their dashboard data
 
 
 ## Wireframe:
 ![Img of the wireframe](./client/public/assets/images/wireframe.png)
 
 ## Link: 
+https://lonewolfstrong.herokuapp.com/
 
 ## Screenshots: 
 ![Img of the home](./client/public/assets/screenshots/home.png)
