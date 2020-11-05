@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "../../../node_modules/react-vis/dist/style.css"
-import { LineSeries, XAxis, YAxis, FlexibleWidthXYPlot, Highlight, Hint } from 'react-vis/dist';
+import { LineSeries, XAxis, YAxis, FlexibleWidthXYPlot, Highlight, Crosshair } from 'react-vis/dist';
 import "./chartStyle.css";
 import API from "../../utils/API";
 import { useAuth0 } from '@auth0/auth0-react';
@@ -20,7 +20,7 @@ function RepsChart() {
 
   const [lastDrawLocation, setLastDrawLocation] = useState(null);
 
-  const [value, setValue] = useState(null);
+  const [value, setValue] = useState([]);
 
   const ITEMS = [
     'Chest',
@@ -177,7 +177,8 @@ function RepsChart() {
           setBack(backCoord);
         };
         if (chestCoord.length > 0) {
-          setChest(chestCoord)
+          setChest(chestCoord);
+          console.log(chestCoord);
         };
         if (shouldersCoord.length > 0) {
           setShoulders(shouldersCoord);
@@ -226,7 +227,10 @@ function RepsChart() {
           colorRange={myPalette}>
 
           {/* colors are according to index numbers within the myPalette array */}
-          <LineSeries onValueMouseOver={(value) => setValue({value})} data={chest} color={0} />
+          <LineSeries onNearestX={value => {
+            
+            setValue({value})}
+            } data={chest} color={0} />
           <LineSeries data={back} color={1} />
           <LineSeries data={shoulders} color={2}/>
           <LineSeries data={biceps} color={3} />
@@ -249,7 +253,8 @@ function RepsChart() {
           />
           <XAxis title="days" />
           <YAxis title="reps" />
-          {value ? <Hint value={value} /> : null}
+          <Crosshair
+          values={value}/>
         </FlexibleWidthXYPlot>
         <button
           className="showcase-button btn btn-sm"

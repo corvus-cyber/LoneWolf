@@ -4,10 +4,6 @@ import Footer from "../components/Footer/Footer"
 import Wrapper from "../components/Wrapper/Wrapper"
 import MainWorkout from "../components/Mainworkout/Mainworkout"
 import {useLocation, Link} from "react-router-dom";
-import {
-  GiMuscleUp
-
-} from "react-icons/gi";
 
 function Workout() {
   const location = useLocation();

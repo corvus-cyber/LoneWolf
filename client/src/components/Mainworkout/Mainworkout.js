@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react'
 // import {useLocation} from "react-router-dom";
 import "./style.css"
 
-import { Collapse, Button, CardBody} from 'reactstrap';
+import { Collapse, CardBody} from 'reactstrap';
 import {BsFillInfoCircleFill} from "react-icons/bs";
 import Modal from "../Modal/Modal";
 import { useAuth0 } from '@auth0/auth0-react';
