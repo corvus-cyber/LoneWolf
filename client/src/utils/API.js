@@ -3,8 +3,8 @@ import axios from "axios";
 export default {
 
   // get weight and lean body mass stats
-  getWeightStats: function () {
-    return axios.get("/api/stats");
+  getWeightStats: function (userToken) {
+    return axios.get("/api/stats", { params: { token: userToken} });
   },
 
   // Saves new user weight and lean body mass to the database
